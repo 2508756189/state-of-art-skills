@@ -1,4 +1,0 @@
-interface:
-  display_name: "PostgreSQL Debug"
-  short_description: "Inspect PostgreSQL schema and live records safely"
-  default_prompt: "Use $postgresql-debug to inspect PostgreSQL schema, sample records, and live incident data without modifying anything."

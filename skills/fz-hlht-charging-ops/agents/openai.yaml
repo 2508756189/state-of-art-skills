@@ -1,4 +1,0 @@
-interface:
-  display_name: "FZ HLHT Charging Ops"
-  short_description: "Fengze TLD-HLHT charging triage and safe production workflow"
-  default_prompt: "Use $fz-hlht-charging-ops to inspect a Fengze TLD-HLHT charging order, interpret connector state, and recommend the next safe production action."

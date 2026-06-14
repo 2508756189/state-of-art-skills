@@ -1,4 +1,0 @@
-interface:
-  display_name: "Deploy Tianyiting Business"
-  short_description: "Deploy and upgrade the tianyiting_business Docker stack."
-  default_prompt: "Use this skill to plan or execute deployment of the tianyiting_business project, including Docker Compose production deployment, PostgreSQL upgrade scripts, and rollout verification."

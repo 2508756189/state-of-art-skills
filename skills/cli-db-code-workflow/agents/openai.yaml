@@ -1,3 +1,0 @@
-display_name: CLI DB Code Workflow
-short_description: CLI database and code editing workflow.
-default_prompt: Use CLI DB Code Workflow to inspect code, query PostgreSQL, and edit files safely in this workspace.

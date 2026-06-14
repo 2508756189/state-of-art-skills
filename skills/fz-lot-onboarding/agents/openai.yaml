@@ -1,5 +1,0 @@
-version: 1
-display:
-  display_name: "Fengze Lot Onboarding"
-  short_description: "Standardize Fengze parking lot, barrier, payment, and charging setup."
-  default_prompt: "Use $fz-lot-onboarding to produce or apply a safe Fengze parking lot configuration package."

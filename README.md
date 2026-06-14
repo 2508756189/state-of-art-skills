@@ -1,14 +1,14 @@
 # State-of-Art Skills
 
-Curated local and external-inspired skills for Codex, Claude, and portable coding-agent workflows.
+Curated external-inspired and imported skills for Codex, Claude, and portable coding-agent workflows.
 
 This repository intentionally separates:
 
-- local/project skills copied from the maintained `dxSkills` source
 - external-inspired adaptation skills
+- imported high-signal skills from public skill repositories
 - runtime placement guidance
 
-Private by default. Several local skills encode operational workflows and project context that should not be published publicly without review.
+Private by default while curation and runtime adaptation are still evolving.
 
 ## Layout
 

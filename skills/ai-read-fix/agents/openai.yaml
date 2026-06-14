@@ -1,4 +1,0 @@
-interface:
-  display_name: "AI Read Fix"
-  short_description: "Fix tool, PATH, and encoding issues that break local file reads or writes"
-  default_prompt: "Use ai-read-fix to diagnose why local files, generated files, paths, or command output are unreadable, garbled, access-denied, or written with wrong encoding/BOM, especially on Windows with rg, PowerShell, Chinese paths or values, command files, JSON, Postman artifacts, or PDF extraction."
