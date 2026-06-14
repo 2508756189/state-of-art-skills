@@ -15,6 +15,12 @@ Use this file before syncing skills into a runtime.
 
 ## Portable Or Mostly Portable
 
+- `anbeime-agent-team`
+- `anbeime-content-research-writer`
+- `anbeime-frontend-design`
+- `anbeime-multi-agent-meeting`
+- `anbeime-product-manager-toolkit`
+- `anbeime-web-design-analyzer`
 - `bkv`
 - `compound`
 - `cpw-production-ops`

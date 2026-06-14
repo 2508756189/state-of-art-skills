@@ -40,6 +40,19 @@ These skills are lightweight local adaptations and source-attribution wrappers. 
 - `compound`: inspired by `https://github.com/everyinc/compound-engineering-plugin`
 - `ecc`: inspired by `https://github.com/affaan-m/ecc`
 
+## Imported Skill Sources
+
+Selected high-signal skills are imported and namespaced from `https://github.com/anbeime/skill` after review, not blindly mirrored:
+
+- `anbeime-agent-team`
+- `anbeime-multi-agent-meeting`
+- `anbeime-content-research-writer`
+- `anbeime-product-manager-toolkit`
+- `anbeime-frontend-design`
+- `anbeime-web-design-analyzer`
+
+These use the `anbeime-` prefix to avoid collisions with local skills and plugin-provided skills.
+
 ## Safety
 
 Before pushing:
