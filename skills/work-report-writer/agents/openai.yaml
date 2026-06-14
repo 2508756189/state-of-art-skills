@@ -1,0 +1,4 @@
+interface:
+  display_name: "Work Report Writer"
+  short_description: "Draft concise Chinese work reports from scattered evidence"
+  default_prompt: "Use $work-report-writer to turn recent work evidence into a concise Chinese work report with dates, scope, verification, risks, and follow-up."

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Codex To Claude History Migration"
+  short_description: "Migrate Codex history into Claude local history safely."
+  default_prompt: "Use $codex-to-claude-history-migration to migrate selected Codex Desktop conversations into Claude local history and verify titles, grouping, and encoding."
+policy:
+  allow_implicit_invocation: true

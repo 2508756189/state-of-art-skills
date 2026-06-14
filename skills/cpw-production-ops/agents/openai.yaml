@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tianyi CPW Ops"
+  short_description: "Tianyi CPW and parking-platform product runbook"
+  default_prompt: "Use cpw-production-ops for Tianyi Parking CPW or parking_platform product-specific production issues; pair it with production-ops for generic server access, file deployment, and restart mechanics."

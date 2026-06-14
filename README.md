@@ -1,0 +1,50 @@
+# State-of-Art Skills
+
+Curated local and external-inspired skills for Codex, Claude, and portable coding-agent workflows.
+
+This repository intentionally separates:
+
+- local/project skills copied from the maintained `dxSkills` source
+- external-inspired adaptation skills
+- runtime placement guidance
+
+Private by default. Several local skills encode operational workflows and project context that should not be published publicly without review.
+
+## Layout
+
+```text
+skills/
+  <skill-name>/
+    SKILL.md
+    agents/openai.yaml      # optional
+    scripts/                # optional
+    references/             # optional
+```
+
+## Runtime Placement
+
+- Codex-only skills: install to `.codex/skills`.
+- Claude-only skills: install to `.claude/skills`.
+- Portable skills: install to `.agents/skills` and optionally mirror to Claude after review.
+
+Do not blindly sync the whole repository into every runtime. Classify each skill first.
+
+## External-Inspired Skills
+
+These skills are lightweight local adaptations and source-attribution wrappers. They do not vendor upstream repositories.
+
+- `markitdown`: inspired by `https://github.com/microsoft/markitdown`
+- `headroom`: inspired by `https://github.com/chopratejas/headroom`
+- `taste-skill`: inspired by `https://github.com/leonxlnx/taste-skill`
+- `supermemory`: inspired by `https://github.com/supermemoryai/supermemory` and `https://github.com/supermemoryai/claude-supermemory`
+- `compound`: inspired by `https://github.com/everyinc/compound-engineering-plugin`
+- `ecc`: inspired by `https://github.com/affaan-m/ecc`
+
+## Safety
+
+Before pushing:
+
+- check for secrets, tokens, cookies, private account exports, and `.env` files
+- validate every `SKILL.md` frontmatter
+- check duplicate `name:` values
+- keep generated caches and local backups out of git

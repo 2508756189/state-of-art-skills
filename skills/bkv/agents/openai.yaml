@@ -1,0 +1,4 @@
+interface:
+  display_name: "BKV 二轮充电"
+  short_description: "丰泽 BKV 二轮充电开发、联调、真实设备测试和排障流程。"
+  default_prompt: "使用 bkv skill 协助我处理丰泽 BKV 二轮充电接口、策略、数据库配置、日志排障或真实设备联调问题。"

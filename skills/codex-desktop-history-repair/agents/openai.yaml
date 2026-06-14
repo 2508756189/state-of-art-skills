@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Desktop History Repair"
+  short_description: "Repair Codex Desktop history and project indexing"
+  default_prompt: "Use codex-desktop-history-repair to diagnose and repair Codex Desktop history visibility problems, including provider migration, rollout JSONL metadata, state_5.sqlite threads, projectless-thread-ids, electron-saved-workspace-roots, project-order, active-workspace-roots, and Windows path issues."

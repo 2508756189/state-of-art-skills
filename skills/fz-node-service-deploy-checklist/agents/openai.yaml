@@ -1,0 +1,4 @@
+interface:
+  display_name: "FZ Deploy Checklist"
+  short_description: "Safe Fengze Node service deploy, restart, and smoke workflow"
+  default_prompt: "Use $fz-node-service-deploy-checklist to deploy a Fengze Node service with backups, syntax checks, the verified process model, restart evidence, and smoke verification."

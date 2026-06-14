@@ -1,0 +1,4 @@
+interface:
+  display_name: "HX RS485"
+  short_description: "Debug HX external display and voice control over RS485."
+  default_prompt: "Use $hx-rs485-peripheral-debug to check HX RS485 screen, voice, and remaining-space control."

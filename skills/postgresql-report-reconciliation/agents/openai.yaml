@@ -1,0 +1,4 @@
+interface:
+  display_name: "PG Report Reconciliation"
+  short_description: "Reconcile reports, bank files, rerun jobs, and PostgreSQL flow"
+  default_prompt: "Use $postgresql-report-reconciliation to prove report discrepancies against PostgreSQL raw trades, payment or bank files, UnionPay/云闪付 allowance rows, statistics tables, charging or parking income, refunds, report rerun jobs, and report logic without modifying data."

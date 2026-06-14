@@ -1,0 +1,4 @@
+interface:
+  display_name: "HX Barrier"
+  short_description: "Debug and extend the current HX MQTT barrier integration."
+  default_prompt: "Use $hx-barrier-integration to verify or update the current HX-to-CPW integration flow."

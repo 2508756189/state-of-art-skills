@@ -1,0 +1,4 @@
+interface:
+  display_name: "Production Ops"
+  short_description: "Safe server access, deploy, and restart runbook"
+  default_prompt: "Use production-ops to safely access a production server, back up or replace files, restart services, and verify ports or endpoints."
