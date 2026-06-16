@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/2508756189/state-of-art-skills/market/schema.v1.json",
+  "title": "TokenPort Skill Market Registry",
+  "type": "object",
+  "required": ["schemaVersion", "generatedAt", "repository", "categories", "skills"],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "generatedAt": { "type": "string" },
+    "repository": { "type": "string" },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "description"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "description",
+          "category",
+          "tags",
+          "runtime",
+          "installTargets",
+          "version",
+          "license",
+          "source",
+          "riskLevel",
+          "path",
+          "archive"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "category": { "type": "string" },
+          "tags": { "type": "array", "items": { "type": "string" } },
+          "runtime": { "type": "array", "items": { "enum": ["codex", "claude", "portable"] } },
+          "installTargets": { "type": "object", "additionalProperties": { "type": "string" } },
+          "version": { "type": "string" },
+          "license": { "type": "string" },
+          "source": { "type": "string" },
+          "riskLevel": { "enum": ["low", "medium", "high"] },
+          "path": { "type": "string" },
+          "archive": {
+            "type": "object",
+            "required": ["path", "sha256", "size"],
+            "properties": {
+              "path": { "type": "string" },
+              "sha256": { "type": "string" },
+              "size": { "type": "integer" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

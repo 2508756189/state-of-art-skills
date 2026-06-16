@@ -1,0 +1,115 @@
+{
+  "categories": [
+    {
+      "id": "engineering",
+      "name": "工程研发",
+      "description": "代码开发、评审、工程协作和跨 Agent 兼容能力"
+    },
+    {
+      "id": "product",
+      "name": "产品与研究",
+      "description": "需求分析、内容研究、PRD、用户访谈和优先级判断"
+    },
+    {
+      "id": "design",
+      "name": "设计体验",
+      "description": "前端设计、网页分析、视觉体系和产品品味优化"
+    },
+    {
+      "id": "knowledge",
+      "name": "知识与记忆",
+      "description": "文档转换、上下文管理、长期记忆和知识沉淀"
+    },
+    {
+      "id": "workflow",
+      "name": "组织协作",
+      "description": "多智能体会议、团队协作和复合工作流"
+    }
+  ],
+  "skills": {
+    "anbeime-agent-team": {
+      "category": "workflow",
+      "tags": ["multi-agent", "team", "collaboration"],
+      "runtime": ["portable"],
+      "riskLevel": "medium",
+      "source": "https://github.com/anbeime/skill"
+    },
+    "anbeime-content-research-writer": {
+      "category": "product",
+      "tags": ["research", "writing", "content"],
+      "runtime": ["portable"],
+      "riskLevel": "low",
+      "source": "https://github.com/anbeime/skill"
+    },
+    "anbeime-frontend-design": {
+      "category": "design",
+      "tags": ["frontend", "ui", "design"],
+      "runtime": ["portable"],
+      "riskLevel": "low",
+      "source": "https://github.com/anbeime/skill"
+    },
+    "anbeime-multi-agent-meeting": {
+      "category": "workflow",
+      "tags": ["meeting", "decision", "multi-agent"],
+      "runtime": ["portable"],
+      "riskLevel": "medium",
+      "source": "https://github.com/anbeime/skill"
+    },
+    "anbeime-product-manager-toolkit": {
+      "category": "product",
+      "tags": ["product", "prd", "prioritization"],
+      "runtime": ["portable"],
+      "riskLevel": "low",
+      "source": "https://github.com/anbeime/skill"
+    },
+    "anbeime-web-design-analyzer": {
+      "category": "design",
+      "tags": ["design-system", "screenshot", "frontend"],
+      "runtime": ["portable"],
+      "riskLevel": "medium",
+      "source": "https://github.com/anbeime/skill"
+    },
+    "compound": {
+      "category": "engineering",
+      "tags": ["workflow", "engineering", "review"],
+      "runtime": ["portable"],
+      "riskLevel": "low",
+      "source": "https://github.com/everyinc/compound-engineering-plugin"
+    },
+    "ecc": {
+      "category": "engineering",
+      "tags": ["compatibility", "codex", "claude"],
+      "runtime": ["portable"],
+      "riskLevel": "low",
+      "source": "https://github.com/affaan-m/ecc"
+    },
+    "headroom": {
+      "category": "knowledge",
+      "tags": ["context", "planning", "memory"],
+      "runtime": ["portable"],
+      "riskLevel": "low",
+      "source": "https://github.com/chopratejas/headroom"
+    },
+    "markitdown": {
+      "category": "knowledge",
+      "tags": ["documents", "markdown", "conversion"],
+      "runtime": ["portable"],
+      "riskLevel": "medium",
+      "source": "https://github.com/microsoft/markitdown"
+    },
+    "supermemory": {
+      "category": "knowledge",
+      "tags": ["memory", "knowledge", "retrieval"],
+      "runtime": ["portable"],
+      "riskLevel": "medium",
+      "source": "https://github.com/supermemoryai/supermemory"
+    },
+    "taste-skill": {
+      "category": "design",
+      "tags": ["taste", "ui", "product"],
+      "runtime": ["portable"],
+      "riskLevel": "low",
+      "source": "https://github.com/leonxlnx/taste-skill"
+    }
+  }
+}

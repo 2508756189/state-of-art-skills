@@ -1,0 +1,382 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-06-16T15:04:22Z",
+  "repository": "https://github.com/2508756189/state-of-art-skills",
+  "categories": [
+    {
+      "id": "engineering",
+      "name": "工程研发",
+      "description": "代码开发、评审、工程协作和跨 Agent 兼容能力"
+    },
+    {
+      "id": "product",
+      "name": "产品与研究",
+      "description": "需求分析、内容研究、PRD、用户访谈和优先级判断"
+    },
+    {
+      "id": "design",
+      "name": "设计体验",
+      "description": "前端设计、网页分析、视觉体系和产品品味优化"
+    },
+    {
+      "id": "knowledge",
+      "name": "知识与记忆",
+      "description": "文档转换、上下文管理、长期记忆和知识沉淀"
+    },
+    {
+      "id": "workflow",
+      "name": "组织协作",
+      "description": "多智能体会议、团队协作和复合工作流"
+    }
+  ],
+  "skills": [
+    {
+      "id": "anbeime-agent-team",
+      "name": "anbeime-agent-team",
+      "description": "统一管理多智能体角色的团队协作框架，支持智能体动态组合、灵活协作和扩展新角色。智能体本质上是\"角色定义\"，可以根据任务需求灵活组建团队，实现从会议决策到系统构建的完整能力。智能体角色明确分工：有干活的、有指挥的、有挑毛病的，能实时看到沟通过程，共享数据库记忆，确保上下文一致。",
+      "category": "workflow",
+      "tags": [
+        "multi-agent",
+        "team",
+        "collaboration"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/anbeime-agent-team",
+        "claude": "~/.claude/skills/anbeime-agent-team",
+        "portable": "~/.agents/skills/anbeime-agent-team"
+      },
+      "version": "0.1.0",
+      "license": "review-required",
+      "source": "https://github.com/anbeime/skill",
+      "riskLevel": "medium",
+      "path": "skills/anbeime-agent-team",
+      "archive": {
+        "path": "dist/skills/anbeime-agent-team.zip",
+        "sha256": "ea5053c50a3331dfdbe48274c58a15a4be479e917bdef91657455dbf3facdabf",
+        "size": 36483
+      }
+    },
+    {
+      "id": "anbeime-content-research-writer",
+      "name": "anbeime-content-research-writer",
+      "description": "Assists in writing high-quality content by conducting research, adding citations, improving hooks, iterating on outlines, and providing real-time feedback on each section. Transforms your writing process from solo effort to collaborative partnership.",
+      "category": "product",
+      "tags": [
+        "research",
+        "writing",
+        "content"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/anbeime-content-research-writer",
+        "claude": "~/.claude/skills/anbeime-content-research-writer",
+        "portable": "~/.agents/skills/anbeime-content-research-writer"
+      },
+      "version": "0.1.0",
+      "license": "review-required",
+      "source": "https://github.com/anbeime/skill",
+      "riskLevel": "low",
+      "path": "skills/anbeime-content-research-writer",
+      "archive": {
+        "path": "dist/skills/anbeime-content-research-writer.zip",
+        "sha256": "856fc11919a0969237b3caf53bb52e752ecee285f81ff81db1f98a36668839d8",
+        "size": 5965
+      }
+    },
+    {
+      "id": "anbeime-frontend-design",
+      "name": "anbeime-frontend-design",
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, or applications. Generates creative, polished code that avoids generic AI aesthetics.",
+      "category": "design",
+      "tags": [
+        "frontend",
+        "ui",
+        "design"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/anbeime-frontend-design",
+        "claude": "~/.claude/skills/anbeime-frontend-design",
+        "portable": "~/.agents/skills/anbeime-frontend-design"
+      },
+      "version": "0.1.0",
+      "license": "Complete terms in LICENSE.txt",
+      "source": "https://github.com/anbeime/skill",
+      "riskLevel": "low",
+      "path": "skills/anbeime-frontend-design",
+      "archive": {
+        "path": "dist/skills/anbeime-frontend-design.zip",
+        "sha256": "d10f18b7de7ec1f3d5d8bd7624a844ed7b1445e614e9ebd0dbaba55ac91b5033",
+        "size": 2319
+      }
+    },
+    {
+      "id": "anbeime-multi-agent-meeting",
+      "name": "anbeime-multi-agent-meeting",
+      "description": "模拟多个AI智能体协作开会并进行决策讨论的场景。适用于需要从多个专业角度分析问题、进行辩论和达成共识的场景，如项目决策、技术方案评审、商业策略制定等。",
+      "category": "workflow",
+      "tags": [
+        "meeting",
+        "decision",
+        "multi-agent"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/anbeime-multi-agent-meeting",
+        "claude": "~/.claude/skills/anbeime-multi-agent-meeting",
+        "portable": "~/.agents/skills/anbeime-multi-agent-meeting"
+      },
+      "version": "0.1.0",
+      "license": "review-required",
+      "source": "https://github.com/anbeime/skill",
+      "riskLevel": "medium",
+      "path": "skills/anbeime-multi-agent-meeting",
+      "archive": {
+        "path": "dist/skills/anbeime-multi-agent-meeting.zip",
+        "sha256": "9a1dd96d38a4f04c78d5f20ecb8f31551da6b57e8a084523e3dc9d46b180970f",
+        "size": 18203
+      }
+    },
+    {
+      "id": "anbeime-product-manager-toolkit",
+      "name": "anbeime-product-manager-toolkit",
+      "description": "Comprehensive toolkit for product managers including RICE prioritization, customer interview analysis, PRD templates, discovery frameworks, and go-to-market strategies. Use for feature prioritization, user research synthesis, requirement documentation, and product strategy development.",
+      "category": "product",
+      "tags": [
+        "product",
+        "prd",
+        "prioritization"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/anbeime-product-manager-toolkit",
+        "claude": "~/.claude/skills/anbeime-product-manager-toolkit",
+        "portable": "~/.agents/skills/anbeime-product-manager-toolkit"
+      },
+      "version": "0.1.0",
+      "license": "review-required",
+      "source": "https://github.com/anbeime/skill",
+      "riskLevel": "low",
+      "path": "skills/anbeime-product-manager-toolkit",
+      "archive": {
+        "path": "dist/skills/anbeime-product-manager-toolkit.zip",
+        "sha256": "c8984e05ebb823ab2e239917ffeb8e1fe12a50c502096c09a0ad354a69bf87c9",
+        "size": 17877
+      }
+    },
+    {
+      "id": "anbeime-web-design-analyzer",
+      "name": "anbeime-web-design-analyzer",
+      "description": "分析网页截图，提取设计系统（Design System）并生成结构化数据和可用的 AI Coding Prompt。适用于 UI/UX 设计师和前端工程师需要从现有网页设计中提取设计规范、配色方案、排版系统和组件风格的场景。",
+      "category": "design",
+      "tags": [
+        "design-system",
+        "screenshot",
+        "frontend"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/anbeime-web-design-analyzer",
+        "claude": "~/.claude/skills/anbeime-web-design-analyzer",
+        "portable": "~/.agents/skills/anbeime-web-design-analyzer"
+      },
+      "version": "0.1.0",
+      "license": "review-required",
+      "source": "https://github.com/anbeime/skill",
+      "riskLevel": "medium",
+      "path": "skills/anbeime-web-design-analyzer",
+      "archive": {
+        "path": "dist/skills/anbeime-web-design-analyzer.zip",
+        "sha256": "15e3f3ec63fed700f7c764f68c867f2d679638698a72065683794911f6b23c4e",
+        "size": 14455
+      }
+    },
+    {
+      "id": "compound",
+      "name": "compound",
+      "description": "Coordinate multi-step engineering workflows across planning, implementation, review, and verification. Use when the user wants a compound agent workflow, parallel workstreams, or a structured loop for feature delivery rather than a single direct edit.",
+      "category": "engineering",
+      "tags": [
+        "workflow",
+        "engineering",
+        "review"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/compound",
+        "claude": "~/.claude/skills/compound",
+        "portable": "~/.agents/skills/compound"
+      },
+      "version": "0.1.0",
+      "license": "review-required",
+      "source": "https://github.com/everyinc/compound-engineering-plugin",
+      "riskLevel": "low",
+      "path": "skills/compound",
+      "archive": {
+        "path": "dist/skills/compound.zip",
+        "sha256": "8dce63aa472ea2fdcca676a7dea3223f887b5e4474052c6b764c0b41b34f88f8",
+        "size": 1001
+      }
+    },
+    {
+      "id": "ecc",
+      "name": "ecc",
+      "description": "Build and maintain cross-agent compatibility for skills, prompts, commands, and workflows across Codex, Claude Code, Gemini CLI, and other coding-agent harnesses. Use when adapting agent instructions between runtimes or designing portable skill repositories.",
+      "category": "engineering",
+      "tags": [
+        "compatibility",
+        "codex",
+        "claude"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/ecc",
+        "claude": "~/.claude/skills/ecc",
+        "portable": "~/.agents/skills/ecc"
+      },
+      "version": "0.1.0",
+      "license": "review-required",
+      "source": "https://github.com/affaan-m/ecc",
+      "riskLevel": "low",
+      "path": "skills/ecc",
+      "archive": {
+        "path": "dist/skills/ecc.zip",
+        "sha256": "469cf00fb9918aefc660714c75f90c277c26101789e7b42843fcd20befb47cba",
+        "size": 1158
+      }
+    },
+    {
+      "id": "headroom",
+      "name": "headroom",
+      "description": "Manage context pressure and workspace headroom for long agent runs. Use when a task is getting context-heavy, when summaries are stale or oversized, when many files/logs/search results compete for attention, or when the user asks to keep an agent run efficient without losing important state.",
+      "category": "knowledge",
+      "tags": [
+        "context",
+        "planning",
+        "memory"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/headroom",
+        "claude": "~/.claude/skills/headroom",
+        "portable": "~/.agents/skills/headroom"
+      },
+      "version": "0.1.0",
+      "license": "review-required",
+      "source": "https://github.com/chopratejas/headroom",
+      "riskLevel": "low",
+      "path": "skills/headroom",
+      "archive": {
+        "path": "dist/skills/headroom.zip",
+        "sha256": "3b170958381bdf2531bebfb617d92dff209f58f83a45194b2231f79871f23962",
+        "size": 1194
+      }
+    },
+    {
+      "id": "markitdown",
+      "name": "markitdown",
+      "description": "Convert local documents, PDFs, Office files, images, audio, HTML, CSV, JSON, XML, ZIPs, or URLs into clean Markdown using Microsoft MarkItDown or safe local fallbacks. Use when the user asks to extract document content, prepare files for LLM context, compare source documents, or preserve evidence from heterogeneous files.",
+      "category": "knowledge",
+      "tags": [
+        "documents",
+        "markdown",
+        "conversion"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/markitdown",
+        "claude": "~/.claude/skills/markitdown",
+        "portable": "~/.agents/skills/markitdown"
+      },
+      "version": "0.1.0",
+      "license": "review-required",
+      "source": "https://github.com/microsoft/markitdown",
+      "riskLevel": "medium",
+      "path": "skills/markitdown",
+      "archive": {
+        "path": "dist/skills/markitdown.zip",
+        "sha256": "e1f4ba4dc95ba61b8989ee68378c54f311a8fafcead2cb7bf673d7762eab098b",
+        "size": 1211
+      }
+    },
+    {
+      "id": "supermemory",
+      "name": "supermemory",
+      "description": "Capture, retrieve, and reconcile durable project memory without leaking secrets. Use when the user wants important decisions, workflows, links, facts, or repeated troubleshooting lessons saved or searched through a Supermemory-like service or a local memory store.",
+      "category": "knowledge",
+      "tags": [
+        "memory",
+        "knowledge",
+        "retrieval"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/supermemory",
+        "claude": "~/.claude/skills/supermemory",
+        "portable": "~/.agents/skills/supermemory"
+      },
+      "version": "0.1.0",
+      "license": "review-required",
+      "source": "https://github.com/supermemoryai/supermemory",
+      "riskLevel": "medium",
+      "path": "skills/supermemory",
+      "archive": {
+        "path": "dist/skills/supermemory.zip",
+        "sha256": "cfa4ed4ae7b38cdac3337902e122bd93ead7581d37b4094f78ed7c73c9233550",
+        "size": 1028
+      }
+    },
+    {
+      "id": "taste-skill",
+      "name": "taste-skill",
+      "description": "Improve product taste, UI polish, frontend composition, visual hierarchy, copy density, and interaction quality. Use when building or reviewing web apps, dashboards, tools, landing pages, games, or design systems where the user wants the result to feel considered rather than generic.",
+      "category": "design",
+      "tags": [
+        "taste",
+        "ui",
+        "product"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/taste-skill",
+        "claude": "~/.claude/skills/taste-skill",
+        "portable": "~/.agents/skills/taste-skill"
+      },
+      "version": "0.1.0",
+      "license": "review-required",
+      "source": "https://github.com/leonxlnx/taste-skill",
+      "riskLevel": "low",
+      "path": "skills/taste-skill",
+      "archive": {
+        "path": "dist/skills/taste-skill.zip",
+        "sha256": "71e5bc5ae3f1f0e8ba9dd3fb30957d23508eca91dbad8302722b80351651233e",
+        "size": 1175
+      }
+    }
+  ]
+}

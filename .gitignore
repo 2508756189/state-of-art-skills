@@ -6,6 +6,7 @@
 *.bak
 *.7z
 *.zip
+!dist/skills/*.zip
 __pycache__/
 *.pyc
 .DS_Store

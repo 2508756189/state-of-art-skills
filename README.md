@@ -1,63 +1,86 @@
-# State-of-Art Skills
+# TokenPort Skill Market
 
-Curated external-inspired and imported skills for Codex, Claude, and portable coding-agent workflows.
+Curated skill packs for TokenPort, Codex, Claude Code, and portable coding-agent workflows.
 
-This repository intentionally separates:
+This repository is now a lightweight Skill Market:
 
-- external-inspired adaptation skills
-- imported high-signal skills from public skill repositories
-- runtime placement guidance
+- `skills/` stores reviewed skill source directories.
+- `market/categories.json` classifies skills for product display.
+- `market/index.json` is the generated registry consumed by TokenPort/Sub2API.
+- `dist/skills/*.zip` contains installable skill archives with SHA256 checksums.
 
-Private by default while curation and runtime adaptation are still evolving.
+## Registry
 
-## Layout
+Consumers fetch the registry from jsDelivr (CORS-enabled, globally cached, reachable from mainland China):
 
 ```text
-skills/
-  <skill-name>/
-    SKILL.md
-    agents/openai.yaml      # optional
-    scripts/                # optional
-    references/             # optional
+https://cdn.jsdelivr.net/gh/2508756189/state-of-art-skills@main/market/index.json
 ```
 
-## Runtime Placement
+`raw.githubusercontent.com` is a fallback for environments where jsDelivr is blocked.
 
-- Codex-only skills: install to `.codex/skills`.
-- Claude-only skills: install to `.claude/skills`.
-- Portable skills: install to `.agents/skills` and optionally mirror to Claude after review.
+Registry schema:
 
-Do not blindly sync the whole repository into every runtime. Classify each skill first.
+```text
+market/schema.v1.json
+```
 
-## External-Inspired Skills
+Each registry item contains:
 
-These skills are lightweight local adaptations and source-attribution wrappers. They do not vendor upstream repositories.
+- `id`, `name`, `description`
+- `category`, `tags`, `runtime`
+- `installTargets` for Codex, Claude, and portable runtimes
+- `version`, `license`, `source`, `riskLevel`
+- `archive.path`, `archive.sha256`, `archive.size`
 
-- `markitdown`: inspired by `https://github.com/microsoft/markitdown`
-- `headroom`: inspired by `https://github.com/chopratejas/headroom`
-- `taste-skill`: inspired by `https://github.com/leonxlnx/taste-skill`
-- `supermemory`: inspired by `https://github.com/supermemoryai/supermemory` and `https://github.com/supermemoryai/claude-supermemory`
-- `compound`: inspired by `https://github.com/everyinc/compound-engineering-plugin`
-- `ecc`: inspired by `https://github.com/affaan-m/ecc`
+## Install Targets
 
-## Imported Skill Sources
+Use the registry-provided install target for the runtime you are configuring:
 
-Selected high-signal skills are imported and namespaced from `https://github.com/anbeime/skill` after review, not blindly mirrored:
+| Runtime | Default target |
+| --- | --- |
+| Codex | `~/.codex/skills/<skill-id>` |
+| Claude Code | `~/.claude/skills/<skill-id>` |
+| Portable/shared | `~/.agents/skills/<skill-id>` |
 
-- `anbeime-agent-team`
-- `anbeime-multi-agent-meeting`
-- `anbeime-content-research-writer`
-- `anbeime-product-manager-toolkit`
-- `anbeime-frontend-design`
-- `anbeime-web-design-analyzer`
+TokenPort should generate a copyable install command rather than writing local files from the browser.
 
-These use the `anbeime-` prefix to avoid collisions with local skills and plugin-provided skills.
+## Build And Validate
+
+```powershell
+python scripts\test_build_market.py
+python scripts\build_market.py
+```
+
+The build script:
+
+- parses every `skills/*/SKILL.md` frontmatter
+- rejects duplicate skill names
+- scans for secret-like values
+- writes `market/index.json`
+- creates `dist/skills/*.zip`
+- records SHA256 and archive size in the registry
+
+CI runs the same checks in `.github/workflows/validate-market.yml`.
+
+## Skill Curation
+
+Current categories:
+
+- `engineering`: code development, review, interoperability, and engineering workflows
+- `product`: research, PRD, prioritization, and product strategy
+- `design`: frontend design, design-system extraction, and product taste
+- `knowledge`: document conversion, context, memory, and knowledge capture
+- `workflow`: multi-agent collaboration and meeting/decision workflows
+
+Do not blindly sync the whole repository into every runtime. Classify each skill first and install only the selected packages.
 
 ## Safety
 
-Before pushing:
+Before publishing:
 
-- check for secrets, tokens, cookies, private account exports, and `.env` files
-- validate every `SKILL.md` frontmatter
-- check duplicate `name:` values
-- keep generated caches and local backups out of git
+- run the market build script
+- check generated registry and archive checksums
+- verify source attribution and license notes
+- keep account exports, cookies, `.env`, and private keys out of skills
+- mark skills with external services, code execution, or filesystem assumptions as `medium` or `high` risk
