@@ -229,8 +229,8 @@
       "path": "skills/compound",
       "archive": {
         "path": "dist/skills/compound.zip",
-        "sha256": "8dce63aa472ea2fdcca676a7dea3223f887b5e4474052c6b764c0b41b34f88f8",
-        "size": 1001
+        "sha256": "f73c6a5461a98c7fd61ef9b59e8a049479487aa2595c035b9012c4e1c51f6861",
+        "size": 1127
       }
     },
     {
@@ -287,8 +287,8 @@
       "path": "skills/headroom",
       "archive": {
         "path": "dist/skills/headroom.zip",
-        "sha256": "3b170958381bdf2531bebfb617d92dff209f58f83a45194b2231f79871f23962",
-        "size": 1194
+        "sha256": "0bb4023f130391edfc3506d11951322c3e0dbd86fdff79191b258d00fb1c78a2",
+        "size": 1271
       }
     },
     {

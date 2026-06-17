@@ -24,8 +24,10 @@ This skill captures the workflow pattern only. Do not assume the upstream plugin
    - risk list
    - review finding
 4. Integrate outputs into one implementation path.
-5. Run verification before claiming completion.
-6. Leave a concise handoff with files changed, tests run, remaining risk, and next step.
+5. Before review, simplify the implementation: remove stale scaffolding, collapse avoidable indirection, and make the change easy to inspect.
+6. Treat review output as a report of findings and evidence. Apply fixes deliberately after reconciling them with the current code, tests, and user goal.
+7. Run verification before claiming completion.
+8. Leave a concise handoff with files changed, tests run, remaining risk, and next step.
 
 ## Good Use Cases
 
