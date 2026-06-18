@@ -180,18 +180,9 @@ def build_market(root: Path, write: bool) -> dict[str, Any]:
         }
         items.append(item)
 
-    existing_generated_at = None
-    existing_index = root / "market" / "index.json"
-    if existing_index.exists():
-        try:
-            existing_generated_at = json.loads(existing_index.read_text(encoding="utf-8")).get("generatedAt")
-        except (OSError, json.JSONDecodeError):
-            existing_generated_at = None
-
     registry = {
         "schemaVersion": SCHEMA_VERSION,
-        "generatedAt": existing_generated_at
-        or datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
+        "generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
         "repository": REPO_URL,
         "categories": categories,
         "skills": items,

@@ -70,7 +70,7 @@ Current categories:
 - `engineering`: code development, review, interoperability, and engineering workflows
 - `product`: research, PRD, prioritization, and product strategy
 - `design`: frontend design, design-system extraction, and product taste
-- `knowledge`: document conversion, context, memory, and knowledge capture
+- `knowledge`: document conversion, presentation generation, context, memory, and knowledge capture
 - `workflow`: multi-agent collaboration and meeting/decision workflows
 
 Do not blindly sync the whole repository into every runtime. Classify each skill first and install only the selected packages.

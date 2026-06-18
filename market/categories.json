@@ -62,6 +62,13 @@
       "riskLevel": "low",
       "source": "https://github.com/anbeime/skill"
     },
+    "anbeime-pptx-generator": {
+      "category": "knowledge",
+      "tags": ["pptx", "presentations", "documents"],
+      "runtime": ["portable"],
+      "riskLevel": "medium",
+      "source": "https://github.com/anbeime/skill"
+    },
     "anbeime-web-design-analyzer": {
       "category": "design",
       "tags": ["design-system", "screenshot", "frontend"],

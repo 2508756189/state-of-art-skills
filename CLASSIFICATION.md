@@ -9,6 +9,7 @@ Use this file before syncing skills into a runtime.
 - `anbeime-frontend-design`
 - `anbeime-multi-agent-meeting`
 - `anbeime-product-manager-toolkit`
+- `anbeime-pptx-generator`
 - `anbeime-web-design-analyzer`
 - `compound`
 - `ecc`
