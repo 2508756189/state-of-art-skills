@@ -88,10 +88,52 @@ def zip_skill(root: Path, skill_dir: Path, dist_dir: Path) -> tuple[Path, str, i
             if path.is_file():
                 info = zipfile.ZipInfo(str(path.relative_to(root)).replace("\\", "/"))
                 info.date_time = (2026, 1, 1, 0, 0, 0)
+                info.create_system = 0
                 info.compress_type = zipfile.ZIP_DEFLATED
                 info.external_attr = 0o644 << 16
                 zf.writestr(info, path.read_bytes())
     return archive, sha256_file(archive), archive.stat().st_size
+
+
+def expected_zip_contents(root: Path, skill_dir: Path) -> dict[str, bytes]:
+    return {
+        str(path.relative_to(root)).replace("\\", "/"): path.read_bytes()
+        for path in sorted(skill_dir.rglob("*"))
+        if path.is_file()
+    }
+
+
+def validate_existing_artifacts(root: Path) -> None:
+    registry_path = root / "market" / "index.json"
+    if not registry_path.exists():
+        raise MarketError(f"registry not found: {registry_path}")
+    registry = json.loads(registry_path.read_text(encoding="utf-8"))
+    for item in registry.get("skills", []):
+        if not isinstance(item, dict):
+            raise MarketError("registry contains a non-object skill item")
+        skill_id = str(item.get("id") or "")
+        skill_dir = root / "skills" / skill_id
+        if not skill_dir.exists():
+            raise MarketError(f"registry skill {skill_id!r} has no source directory")
+        archive = item.get("archive") if isinstance(item.get("archive"), dict) else {}
+        archive_path = root / str(archive.get("path") or "")
+        if not archive_path.exists():
+            raise MarketError(f"{skill_id} archive not found: {archive_path}")
+        checksum = str(archive.get("sha256") or "")
+        size = int(archive.get("size") or 0)
+        if checksum != sha256_file(archive_path):
+            raise MarketError(f"{skill_id} archive checksum is stale")
+        if size != archive_path.stat().st_size:
+            raise MarketError(f"{skill_id} archive size is stale")
+
+        expected = expected_zip_contents(root, skill_dir)
+        with zipfile.ZipFile(archive_path) as zf:
+            actual_names = sorted(info.filename for info in zf.infolist() if not info.is_dir())
+            if actual_names != sorted(expected):
+                raise MarketError(f"{skill_id} archive contents are stale")
+            for name, expected_bytes in expected.items():
+                if zf.read(name) != expected_bytes:
+                    raise MarketError(f"{skill_id} archive file is stale: {name}")
 
 
 def default_install_targets(skill_id: str, runtime: list[str]) -> dict[str, str]:
@@ -204,6 +246,8 @@ def main() -> int:
     args = parser.parse_args()
     try:
         registry = build_market(args.root.resolve(), write=not args.check)
+        if args.check:
+            validate_existing_artifacts(args.root.resolve())
     except MarketError as exc:
         print(f"market validation failed: {exc}", file=sys.stderr)
         return 1

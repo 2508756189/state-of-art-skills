@@ -92,6 +92,41 @@ class BuildMarketTests(unittest.TestCase):
             with self.assertRaisesRegex(build_market.MarketError, "secret-like"):
                 build_market.build_market(root, write=False)
 
+    def test_rejects_stale_archive_contents(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            skill_dir = root / "skills" / "codex-review"
+            skill_dir.mkdir(parents=True)
+            skill_md = skill_dir / "SKILL.md"
+            skill_md.write_text(
+                "---\n"
+                "name: codex-review\n"
+                "description: Review code changes with Codex.\n"
+                "---\n\n"
+                "# Codex Review\n",
+                encoding="utf-8",
+            )
+            market_dir = root / "market"
+            market_dir.mkdir()
+            (market_dir / "categories.json").write_text(
+                json.dumps({"categories": [], "skills": {}}),
+                encoding="utf-8",
+            )
+
+            build_market.build_market(root, write=True)
+            build_market.validate_existing_artifacts(root)
+
+            skill_md.write_text(
+                "---\n"
+                "name: codex-review\n"
+                "description: Review code changes with Codex.\n"
+                "---\n\n"
+                "# Changed\n",
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(build_market.MarketError, "archive file is stale"):
+                build_market.validate_existing_artifacts(root)
+
 
 if __name__ == "__main__":
     unittest.main()
