@@ -127,6 +127,35 @@ class BuildMarketTests(unittest.TestCase):
             with self.assertRaisesRegex(build_market.MarketError, "archive file is stale"):
                 build_market.validate_existing_artifacts(root)
 
+    def test_normalizes_text_line_endings_in_archives(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            skill_dir = root / "skills" / "crlf-skill"
+            skill_dir.mkdir(parents=True)
+            (skill_dir / "SKILL.md").write_bytes(
+                b"---\r\n"
+                b"name: crlf-skill\r\n"
+                b"description: CRLF source should archive as LF.\r\n"
+                b"---\r\n\r\n"
+                b"# CRLF\r\n"
+            )
+            (root / "market").mkdir()
+            (root / "market" / "categories.json").write_text(
+                json.dumps({"categories": [], "skills": {}}),
+                encoding="utf-8",
+            )
+
+            registry = build_market.build_market(root, write=True)
+            archive_path = root / registry["skills"][0]["archive"]["path"]
+
+            import zipfile
+
+            with zipfile.ZipFile(archive_path) as zf:
+                data = zf.read("skills/crlf-skill/SKILL.md")
+
+            self.assertNotIn(b"\r\n", data)
+            self.assertIn(b"---\nname: crlf-skill\n", data)
+
 
 if __name__ == "__main__":
     unittest.main()

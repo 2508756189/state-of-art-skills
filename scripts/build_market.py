@@ -19,6 +19,7 @@ SECRET_PATTERNS = [
     re.compile(r"ctp_[A-Za-z0-9_.-]{10,}"),
     re.compile(r"(?i)(api[_-]?key|token|cookie|secret)\s*[:=]\s*[A-Za-z0-9_.-]{12,}"),
 ]
+BINARY_SUFFIXES = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".zip"}
 
 
 class MarketError(RuntimeError):
@@ -81,6 +82,17 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
+def archive_file_bytes(path: Path) -> bytes:
+    data = path.read_bytes()
+    if path.suffix.lower() in BINARY_SUFFIXES or b"\0" in data:
+        return data
+    try:
+        text = data.decode("utf-8")
+    except UnicodeDecodeError:
+        return data
+    return text.replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")
+
+
 def zip_skill(root: Path, skill_dir: Path, dist_dir: Path) -> tuple[Path, str, int]:
     archive = dist_dir / f"{skill_dir.name}.zip"
     with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED) as zf:
@@ -91,13 +103,13 @@ def zip_skill(root: Path, skill_dir: Path, dist_dir: Path) -> tuple[Path, str, i
                 info.create_system = 0
                 info.compress_type = zipfile.ZIP_DEFLATED
                 info.external_attr = 0o644 << 16
-                zf.writestr(info, path.read_bytes())
+                zf.writestr(info, archive_file_bytes(path))
     return archive, sha256_file(archive), archive.stat().st_size
 
 
 def expected_zip_contents(root: Path, skill_dir: Path) -> dict[str, bytes]:
     return {
-        str(path.relative_to(root)).replace("\\", "/"): path.read_bytes()
+        str(path.relative_to(root)).replace("\\", "/"): archive_file_bytes(path)
         for path in sorted(skill_dir.rglob("*"))
         if path.is_file()
     }

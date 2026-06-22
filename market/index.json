@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-06-22T03:14:55Z",
+  "generatedAt": "2026-06-22T07:10:33Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -55,8 +55,8 @@
       "path": "skills/anbeime-agent-team",
       "archive": {
         "path": "dist/skills/anbeime-agent-team.zip",
-        "sha256": "ea5053c50a3331dfdbe48274c58a15a4be479e917bdef91657455dbf3facdabf",
-        "size": 36483
+        "sha256": "3a4a0577c9d11ee5cf9bd63a1f653fc58c581fbb209afc957569975362d86a0f",
+        "size": 36208
       }
     },
     {
@@ -84,8 +84,8 @@
       "path": "skills/anbeime-content-research-writer",
       "archive": {
         "path": "dist/skills/anbeime-content-research-writer.zip",
-        "sha256": "856fc11919a0969237b3caf53bb52e752ecee285f81ff81db1f98a36668839d8",
-        "size": 5965
+        "sha256": "196a99cd885ffda53dac79c70e6a5457c864c3ab80f2a587009579495c4da15d",
+        "size": 5899
       }
     },
     {
@@ -113,8 +113,8 @@
       "path": "skills/anbeime-frontend-design",
       "archive": {
         "path": "dist/skills/anbeime-frontend-design.zip",
-        "sha256": "d10f18b7de7ec1f3d5d8bd7624a844ed7b1445e614e9ebd0dbaba55ac91b5033",
-        "size": 2319
+        "sha256": "fcae9694d49473d0226c676a09147df94fcaef0627b1b228788cd41032390166",
+        "size": 2306
       }
     },
     {
@@ -142,8 +142,8 @@
       "path": "skills/anbeime-multi-agent-meeting",
       "archive": {
         "path": "dist/skills/anbeime-multi-agent-meeting.zip",
-        "sha256": "9a1dd96d38a4f04c78d5f20ecb8f31551da6b57e8a084523e3dc9d46b180970f",
-        "size": 18203
+        "sha256": "fc10480cf5d911736e1dda4e804703a0be41eb8db7b482f0e8af608cc676f580",
+        "size": 18029
       }
     },
     {
@@ -171,8 +171,8 @@
       "path": "skills/anbeime-pptx-generator",
       "archive": {
         "path": "dist/skills/anbeime-pptx-generator.zip",
-        "sha256": "1820b3f3fa51a28a954489ca22986e7108a275efd3fc46aba820211840b02aad",
-        "size": 18593
+        "sha256": "5f8c26e630184b796323f0eb36f3895845357c1aadb8c8a117490a0d1d3577bc",
+        "size": 18398
       }
     },
     {
@@ -200,8 +200,8 @@
       "path": "skills/anbeime-product-manager-toolkit",
       "archive": {
         "path": "dist/skills/anbeime-product-manager-toolkit.zip",
-        "sha256": "c8984e05ebb823ab2e239917ffeb8e1fe12a50c502096c09a0ad354a69bf87c9",
-        "size": 17877
+        "sha256": "11ff9e7188e995199743006eef78c54762ed36f6e6599439757f35944e741c5b",
+        "size": 17717
       }
     },
     {
@@ -229,8 +229,8 @@
       "path": "skills/anbeime-web-design-analyzer",
       "archive": {
         "path": "dist/skills/anbeime-web-design-analyzer.zip",
-        "sha256": "15e3f3ec63fed700f7c764f68c867f2d679638698a72065683794911f6b23c4e",
-        "size": 14455
+        "sha256": "6baec84e48471ae15a0fd7cf0c2f967652d72bca36363e401758709b0aaed6eb",
+        "size": 14338
       }
     },
     {
@@ -258,8 +258,8 @@
       "path": "skills/compound",
       "archive": {
         "path": "dist/skills/compound.zip",
-        "sha256": "e5f0f2477aedf9bf83368b1d9787237881aa7d6b6c6951b5a472a8b4f0645b10",
-        "size": 1143
+        "sha256": "f73c6a5461a98c7fd61ef9b59e8a049479487aa2595c035b9012c4e1c51f6861",
+        "size": 1127
       }
     },
     {
@@ -287,8 +287,8 @@
       "path": "skills/ecc",
       "archive": {
         "path": "dist/skills/ecc.zip",
-        "sha256": "469cf00fb9918aefc660714c75f90c277c26101789e7b42843fcd20befb47cba",
-        "size": 1158
+        "sha256": "88b8926ed7c9ea5779d8e6aa087cf4fd8cd3c0311632ddfaf001973c941e2217",
+        "size": 1148
       }
     },
     {
@@ -316,8 +316,8 @@
       "path": "skills/headroom",
       "archive": {
         "path": "dist/skills/headroom.zip",
-        "sha256": "e34af4af7f6689ad5371acc57579dc13bdf30ac710cdcdde559e021251aec1e8",
-        "size": 1283
+        "sha256": "0bb4023f130391edfc3506d11951322c3e0dbd86fdff79191b258d00fb1c78a2",
+        "size": 1271
       }
     },
     {
@@ -345,8 +345,8 @@
       "path": "skills/markitdown",
       "archive": {
         "path": "dist/skills/markitdown.zip",
-        "sha256": "e1f4ba4dc95ba61b8989ee68378c54f311a8fafcead2cb7bf673d7762eab098b",
-        "size": 1211
+        "sha256": "8164e3feb4f427a436ec9874f80a6dd10ed4a2a78a4a36214e55f37f1f59b3a0",
+        "size": 1201
       }
     },
     {
@@ -374,8 +374,8 @@
       "path": "skills/supermemory",
       "archive": {
         "path": "dist/skills/supermemory.zip",
-        "sha256": "cfa4ed4ae7b38cdac3337902e122bd93ead7581d37b4094f78ed7c73c9233550",
-        "size": 1028
+        "sha256": "8dc9a60180544ab836c9305266c63114a4171eac7928ee6081b3d6494f882bb5",
+        "size": 1015
       }
     },
     {
@@ -403,8 +403,8 @@
       "path": "skills/taste-skill",
       "archive": {
         "path": "dist/skills/taste-skill.zip",
-        "sha256": "71e5bc5ae3f1f0e8ba9dd3fb30957d23508eca91dbad8302722b80351651233e",
-        "size": 1175
+        "sha256": "272d80c719f244443ff00bf742cc8f9a8de52d36f0f2533b965197a2b16b355f",
+        "size": 1165
       }
     }
   ]
