@@ -26,6 +26,18 @@ class MarketError(RuntimeError):
     pass
 
 
+def is_placeholder_secret(value: str) -> bool:
+    lowered = value.lower()
+    return (
+        "process.env." in value
+        or "os.environ" in value
+        or "your_" in lowered
+        or "example" in lowered
+        or "placeholder" in lowered
+        or value.startswith("<")
+    )
+
+
 def parse_frontmatter(path: Path) -> dict[str, Any]:
     text = path.read_text(encoding="utf-8")
     match = re.match(r"^---\n(.*?)\n---", text, re.S)
@@ -69,9 +81,11 @@ def scan_for_secrets(skill_dir: Path) -> None:
         if not path.is_file() or path.suffix.lower() in {".png", ".jpg", ".jpeg", ".gif", ".webp"}:
             continue
         text = path.read_text(encoding="utf-8", errors="ignore")
-        for pattern in SECRET_PATTERNS:
-            if pattern.search(text):
-                raise MarketError(f"{path} contains secret-like content")
+        for line in text.splitlines():
+            for pattern in SECRET_PATTERNS:
+                match = pattern.search(line)
+                if match and not is_placeholder_secret(line[match.start() :].strip()):
+                    raise MarketError(f"{path} contains secret-like content")
 
 
 def sha256_file(path: Path) -> str:
