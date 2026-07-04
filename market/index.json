@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-06-25T10:12:39Z",
+  "generatedAt": "2026-07-04T01:17:04Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -374,8 +374,8 @@
       "path": "skills/supermemory",
       "archive": {
         "path": "dist/skills/supermemory.zip",
-        "sha256": "186d2d2feaf47ad51fc3e5936ecc7739fa2528265f5076247da19c2fa3917d3f",
-        "size": 32950
+        "sha256": "630e98121d45ede126da62501e970e3688862bb9d9c13cb3fb76b11d12685f4a",
+        "size": 33009
       }
     },
     {
