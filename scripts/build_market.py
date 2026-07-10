@@ -12,7 +12,7 @@ from pathlib import Path
 from typing import Any
 
 
-SCHEMA_VERSION = "1.0"
+SCHEMA_VERSION = "1.1"
 REPO_URL = "https://github.com/2508756189/state-of-art-skills"
 SECRET_PATTERNS = [
     re.compile(r"sk-[A-Za-z0-9_.-]{10,}"),
@@ -55,6 +55,13 @@ def parse_frontmatter(path: Path) -> dict[str, Any]:
     if not data.get("name") or not data.get("description"):
         raise MarketError(f"{path} frontmatter must include name and description")
     return data
+
+
+def skill_markdown_body(path: Path) -> str:
+    text = path.read_text(encoding="utf-8")
+    match = re.match(r"^---\n.*?\n---\n?", text, re.S)
+    body = text[match.end():] if match else text
+    return body.replace("\r\n", "\n").replace("\r", "\n").lstrip()
 
 
 def load_categories(root: Path) -> dict[str, Any]:
@@ -147,6 +154,16 @@ def validate_existing_artifacts(root: Path) -> None:
                 if zf.read(name) != expected_bytes:
                     raise MarketError(f"{skill_id} archive file is stale: {name}")
 
+        detail = item.get("detail") if isinstance(item.get("detail"), dict) else {}
+        markdown_path = str(detail.get("markdownPath") or "")
+        if markdown_path:
+            detail_path = root / "market" / markdown_path
+            if not detail_path.exists():
+                raise MarketError(f"{skill_id} detail markdown not found: {detail_path}")
+            expected_detail = skill_markdown_body(skill_dir / "SKILL.md")
+            if detail_path.read_text(encoding="utf-8") != expected_detail:
+                raise MarketError(f"{skill_id} detail markdown is stale")
+
 
 def default_install_targets(skill_id: str, runtime: list[str]) -> dict[str, str]:
     targets: dict[str, str] = {}
@@ -167,6 +184,18 @@ def normalize_list(value: Any, fallback: list[str]) -> list[str]:
     return fallback
 
 
+def build_detail(skill_id: str, meta: dict[str, Any], override: dict[str, Any]) -> dict[str, Any]:
+    detail = override.get("detail") if isinstance(override.get("detail"), dict) else {}
+    return {
+        "summary": str(detail.get("summary") or meta.get("description") or ""),
+        "useCases": normalize_list(detail.get("useCases"), []),
+        "capabilities": normalize_list(detail.get("capabilities"), []),
+        "requirements": normalize_list(detail.get("requirements"), []),
+        "permissions": normalize_list(detail.get("permissions"), []),
+        "markdownPath": f"details/{skill_id}.md",
+    }
+
+
 def build_market(root: Path, write: bool) -> dict[str, Any]:
     skills_root = root / "skills"
     if not skills_root.exists():
@@ -178,8 +207,10 @@ def build_market(root: Path, write: bool) -> dict[str, Any]:
     category_ids = {str(item.get("id")) for item in categories if isinstance(item, dict)}
 
     dist_dir = root / "dist" / "skills"
+    detail_dir = root / "market" / "details"
     if write:
         dist_dir.mkdir(parents=True, exist_ok=True)
+        detail_dir.mkdir(parents=True, exist_ok=True)
 
     seen_names: dict[str, Path] = {}
     items: list[dict[str, Any]] = []
@@ -206,12 +237,17 @@ def build_market(root: Path, write: bool) -> dict[str, Any]:
         source = str(override.get("source") or meta.get("source") or REPO_URL)
         version = str(override.get("version") or meta.get("version") or "0.1.0")
         license_value = str(override.get("license") or meta.get("license") or "review-required")
+        detail = build_detail(skill_dir.name, meta, override)
 
         archive_path: Path | None = None
         checksum = ""
         size = 0
         if write:
             archive_path, checksum, size = zip_skill(root, skill_dir, dist_dir)
+            (detail_dir / f"{skill_dir.name}.md").write_text(
+                skill_markdown_body(skill_md),
+                encoding="utf-8",
+            )
 
         item = {
             "id": skill_dir.name,
@@ -226,6 +262,7 @@ def build_market(root: Path, write: bool) -> dict[str, Any]:
             "source": source,
             "riskLevel": risk_level,
             "path": f"skills/{skill_dir.name}",
+            "detail": detail,
             "archive": {
                 "path": str(archive_path.relative_to(root)).replace("\\", "/") if archive_path else f"dist/skills/{skill_dir.name}.zip",
                 "sha256": checksum,

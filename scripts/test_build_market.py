@@ -46,13 +46,18 @@ class BuildMarketTests(unittest.TestCase):
             registry = build_market.build_market(root, write=True)
             item = registry["skills"][0]
 
-            self.assertEqual(registry["schemaVersion"], "1.0")
+            self.assertEqual(registry["schemaVersion"], "1.1")
             self.assertEqual(item["id"], "codex-review")
             self.assertEqual(item["category"], "engineering")
             self.assertEqual(item["installTargets"]["codex"], "~/.codex/skills/codex-review")
             self.assertEqual(item["installTargets"]["claude"], "~/.claude/skills/codex-review")
             self.assertTrue(item["archive"]["sha256"])
             self.assertTrue((root / item["archive"]["path"]).exists())
+            self.assertEqual(item["detail"]["markdownPath"], "details/codex-review.md")
+            self.assertEqual(
+                (root / "market" / item["detail"]["markdownPath"]).read_text(encoding="utf-8"),
+                "# Codex Review\n",
+            )
             self.assertTrue((root / "market" / "index.json").exists())
 
     def test_rejects_duplicate_skill_names(self):
@@ -125,6 +130,28 @@ class BuildMarketTests(unittest.TestCase):
                 encoding="utf-8",
             )
             with self.assertRaisesRegex(build_market.MarketError, "archive file is stale"):
+                build_market.validate_existing_artifacts(root)
+
+    def test_rejects_stale_detail_markdown(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            skill_dir = root / "skills" / "codex-review"
+            skill_dir.mkdir(parents=True)
+            (skill_dir / "SKILL.md").write_text(
+                "---\nname: codex-review\ndescription: Review code.\n---\n\n# Review\n",
+                encoding="utf-8",
+            )
+            (root / "market").mkdir()
+            (root / "market" / "categories.json").write_text(
+                json.dumps({"categories": [], "skills": {}}),
+                encoding="utf-8",
+            )
+
+            registry = build_market.build_market(root, write=True)
+            detail_path = root / "market" / registry["skills"][0]["detail"]["markdownPath"]
+            detail_path.write_text("# Stale\n", encoding="utf-8")
+
+            with self.assertRaisesRegex(build_market.MarketError, "detail markdown is stale"):
                 build_market.validate_existing_artifacts(root)
 
     def test_normalizes_text_line_endings_in_archives(self):

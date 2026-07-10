@@ -5,7 +5,7 @@
   "type": "object",
   "required": ["schemaVersion", "generatedAt", "repository", "categories", "skills"],
   "properties": {
-    "schemaVersion": { "const": "1.0" },
+    "schemaVersion": { "enum": ["1.0", "1.1"] },
     "generatedAt": { "type": "string" },
     "repository": { "type": "string" },
     "categories": {
@@ -52,6 +52,18 @@
           "source": { "type": "string" },
           "riskLevel": { "enum": ["low", "medium", "high"] },
           "path": { "type": "string" },
+          "detail": {
+            "type": "object",
+            "required": ["summary", "useCases", "capabilities", "requirements", "permissions", "markdownPath"],
+            "properties": {
+              "summary": { "type": "string" },
+              "useCases": { "type": "array", "items": { "type": "string" } },
+              "capabilities": { "type": "array", "items": { "type": "string" } },
+              "requirements": { "type": "array", "items": { "type": "string" } },
+              "permissions": { "type": "array", "items": { "type": "string" } },
+              "markdownPath": { "type": "string" }
+            }
+          },
           "archive": {
             "type": "object",
             "required": ["path", "sha256", "size"],

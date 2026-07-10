@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "1.0",
-  "generatedAt": "2026-07-08T03:04:48Z",
+  "schemaVersion": "1.1",
+  "generatedAt": "2026-07-10T08:16:58Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -53,6 +53,26 @@
       "source": "https://github.com/anbeime/skill",
       "riskLevel": "medium",
       "path": "skills/anbeime-agent-team",
+      "detail": {
+        "summary": "组织多个角色型智能体协作完成复杂任务，并保留明确的角色分工与交付链路。",
+        "useCases": [
+          "技术方案评审",
+          "复杂系统构建",
+          "多角色任务分派"
+        ],
+        "capabilities": [
+          "角色编排",
+          "协作流程",
+          "共享上下文"
+        ],
+        "requirements": [
+          "支持 Skill 的智能体客户端"
+        ],
+        "permissions": [
+          "按任务需要读写项目文件"
+        ],
+        "markdownPath": "details/anbeime-agent-team.md"
+      },
       "archive": {
         "path": "dist/skills/anbeime-agent-team.zip",
         "sha256": "3a4a0577c9d11ee5cf9bd63a1f653fc58c581fbb209afc957569975362d86a0f",
@@ -82,6 +102,27 @@
       "source": "https://github.com/anbeime/skill",
       "riskLevel": "low",
       "path": "skills/anbeime-content-research-writer",
+      "detail": {
+        "summary": "将调研、引用、提纲和章节迭代整合为可复用的内容生产流程。",
+        "useCases": [
+          "研究报告",
+          "行业文章",
+          "方案材料"
+        ],
+        "capabilities": [
+          "资料研究",
+          "引用整理",
+          "内容润色"
+        ],
+        "requirements": [
+          "需要联网研究时由客户端提供网络能力"
+        ],
+        "permissions": [
+          "读取参考资料",
+          "写入内容文件"
+        ],
+        "markdownPath": "details/anbeime-content-research-writer.md"
+      },
       "archive": {
         "path": "dist/skills/anbeime-content-research-writer.zip",
         "sha256": "196a99cd885ffda53dac79c70e6a5457c864c3ab80f2a587009579495c4da15d",
@@ -111,6 +152,26 @@
       "source": "https://github.com/anbeime/skill",
       "riskLevel": "low",
       "path": "skills/anbeime-frontend-design",
+      "detail": {
+        "summary": "面向生产级前端界面的设计与实现规范，强化布局、层级和交互质感。",
+        "useCases": [
+          "业务后台",
+          "产品页面",
+          "交互组件"
+        ],
+        "capabilities": [
+          "界面设计",
+          "组件实现",
+          "响应式优化"
+        ],
+        "requirements": [
+          "前端项目或页面需求"
+        ],
+        "permissions": [
+          "读取和修改前端源文件"
+        ],
+        "markdownPath": "details/anbeime-frontend-design.md"
+      },
       "archive": {
         "path": "dist/skills/anbeime-frontend-design.zip",
         "sha256": "fcae9694d49473d0226c676a09147df94fcaef0627b1b228788cd41032390166",
@@ -140,6 +201,27 @@
       "source": "https://github.com/anbeime/skill",
       "riskLevel": "medium",
       "path": "skills/anbeime-multi-agent-meeting",
+      "detail": {
+        "summary": "模拟多个专业角色讨论并形成有依据的会议结论和行动项。",
+        "useCases": [
+          "架构决策",
+          "产品定价",
+          "风险评估"
+        ],
+        "capabilities": [
+          "角色讨论",
+          "观点对比",
+          "决策纪要"
+        ],
+        "requirements": [
+          "明确的会议主题和目标"
+        ],
+        "permissions": [
+          "读取会议背景资料",
+          "写入会议记录"
+        ],
+        "markdownPath": "details/anbeime-multi-agent-meeting.md"
+      },
       "archive": {
         "path": "dist/skills/anbeime-multi-agent-meeting.zip",
         "sha256": "fc10480cf5d911736e1dda4e804703a0be41eb8db7b482f0e8af608cc676f580",
@@ -169,6 +251,28 @@
       "source": "https://github.com/anbeime/skill",
       "riskLevel": "medium",
       "path": "skills/anbeime-pptx-generator",
+      "detail": {
+        "summary": "从结构化内容生成可编辑 PowerPoint，并提供布局、图表和校验能力。",
+        "useCases": [
+          "路演汇报",
+          "项目计划",
+          "方案展示"
+        ],
+        "capabilities": [
+          "PPTX 生成",
+          "图表表格",
+          "文件校验"
+        ],
+        "requirements": [
+          "Python 3",
+          "python-pptx、Pillow、openpyxl"
+        ],
+        "permissions": [
+          "读取模板和素材",
+          "写入 PPTX 文件"
+        ],
+        "markdownPath": "details/anbeime-pptx-generator.md"
+      },
       "archive": {
         "path": "dist/skills/anbeime-pptx-generator.zip",
         "sha256": "660fb0675b9b3ff662cc01adf185ab4a563672433d56af147dad6752a4e405a5",
@@ -198,6 +302,27 @@
       "source": "https://github.com/anbeime/skill",
       "riskLevel": "low",
       "path": "skills/anbeime-product-manager-toolkit",
+      "detail": {
+        "summary": "覆盖需求分析、优先级、访谈与 PRD 产出的产品管理工具集。",
+        "useCases": [
+          "需求评审",
+          "RICE 排序",
+          "PRD 编写"
+        ],
+        "capabilities": [
+          "需求分析",
+          "用户研究",
+          "路线规划"
+        ],
+        "requirements": [
+          "产品背景或需求材料"
+        ],
+        "permissions": [
+          "读取业务资料",
+          "写入产品文档"
+        ],
+        "markdownPath": "details/anbeime-product-manager-toolkit.md"
+      },
       "archive": {
         "path": "dist/skills/anbeime-product-manager-toolkit.zip",
         "sha256": "11ff9e7188e995199743006eef78c54762ed36f6e6599439757f35944e741c5b",
@@ -227,6 +352,27 @@
       "source": "https://github.com/anbeime/skill",
       "riskLevel": "medium",
       "path": "skills/anbeime-web-design-analyzer",
+      "detail": {
+        "summary": "从网页截图提取设计系统、排版和组件规律，辅助复刻与改版。",
+        "useCases": [
+          "竞品页面分析",
+          "设计系统提取",
+          "前端提示词生成"
+        ],
+        "capabilities": [
+          "截图分析",
+          "视觉规范提取",
+          "实现建议"
+        ],
+        "requirements": [
+          "清晰网页截图"
+        ],
+        "permissions": [
+          "读取图片",
+          "写入分析文档"
+        ],
+        "markdownPath": "details/anbeime-web-design-analyzer.md"
+      },
       "archive": {
         "path": "dist/skills/anbeime-web-design-analyzer.zip",
         "sha256": "6baec84e48471ae15a0fd7cf0c2f967652d72bca36363e401758709b0aaed6eb",
@@ -256,6 +402,26 @@
       "source": "https://github.com/everyinc/compound-engineering-plugin",
       "riskLevel": "low",
       "path": "skills/compound",
+      "detail": {
+        "summary": "将计划、实现、复查和验证组织成可追踪的复合工程流程。",
+        "useCases": [
+          "跨模块功能",
+          "复杂缺陷修复",
+          "交付前审查"
+        ],
+        "capabilities": [
+          "任务拆分",
+          "结果整合",
+          "验证闭环"
+        ],
+        "requirements": [
+          "明确的工程目标"
+        ],
+        "permissions": [
+          "按任务需要访问代码和测试"
+        ],
+        "markdownPath": "details/compound.md"
+      },
       "archive": {
         "path": "dist/skills/compound.zip",
         "sha256": "f73c6a5461a98c7fd61ef9b59e8a049479487aa2595c035b9012c4e1c51f6861",
@@ -285,6 +451,26 @@
       "source": "https://github.com/affaan-m/ecc",
       "riskLevel": "low",
       "path": "skills/ecc",
+      "detail": {
+        "summary": "维护 Codex、Claude Code 等不同智能体运行时之间的技能兼容。",
+        "useCases": [
+          "跨客户端迁移",
+          "Skill 适配",
+          "配置一致性检查"
+        ],
+        "capabilities": [
+          "兼容分析",
+          "格式适配",
+          "运行时映射"
+        ],
+        "requirements": [
+          "目标运行时的配置目录"
+        ],
+        "permissions": [
+          "读取和写入 Skill 配置文件"
+        ],
+        "markdownPath": "details/ecc.md"
+      },
       "archive": {
         "path": "dist/skills/ecc.zip",
         "sha256": "88b8926ed7c9ea5779d8e6aa087cf4fd8cd3c0311632ddfaf001973c941e2217",
@@ -314,6 +500,26 @@
       "source": "https://github.com/chopratejas/headroom",
       "riskLevel": "low",
       "path": "skills/headroom",
+      "detail": {
+        "summary": "在长任务中管理上下文余量、信息取舍和执行节奏。",
+        "useCases": [
+          "长周期开发",
+          "大文档分析",
+          "多阶段任务"
+        ],
+        "capabilities": [
+          "上下文预算",
+          "资料压缩",
+          "阶段交接"
+        ],
+        "requirements": [
+          "支持长任务的智能体客户端"
+        ],
+        "permissions": [
+          "读取当前任务上下文"
+        ],
+        "markdownPath": "details/headroom.md"
+      },
       "archive": {
         "path": "dist/skills/headroom.zip",
         "sha256": "0bb4023f130391edfc3506d11951322c3e0dbd86fdff79191b258d00fb1c78a2",
@@ -343,6 +549,27 @@
       "source": "https://github.com/microsoft/markitdown",
       "riskLevel": "medium",
       "path": "skills/markitdown",
+      "detail": {
+        "summary": "将 Office、PDF、网页和多媒体资料转换为便于 AI 使用的 Markdown。",
+        "useCases": [
+          "文档入库",
+          "资料清洗",
+          "AI 知识处理"
+        ],
+        "capabilities": [
+          "多格式解析",
+          "Markdown 转换",
+          "批量处理"
+        ],
+        "requirements": [
+          "Python 3 和对应格式解析依赖"
+        ],
+        "permissions": [
+          "读取源文件",
+          "写入 Markdown 文件"
+        ],
+        "markdownPath": "details/markitdown.md"
+      },
       "archive": {
         "path": "dist/skills/markitdown.zip",
         "sha256": "8164e3feb4f427a436ec9874f80a6dd10ed4a2a78a4a36214e55f37f1f59b3a0",
@@ -372,6 +599,27 @@
       "source": "https://github.com/supermemoryai/supermemory",
       "riskLevel": "medium",
       "path": "skills/supermemory",
+      "detail": {
+        "summary": "沉淀项目事实、决策和知识片段，并在后续任务中检索复用。",
+        "useCases": [
+          "项目记忆",
+          "决策追踪",
+          "知识检索"
+        ],
+        "capabilities": [
+          "信息采集",
+          "语义检索",
+          "上下文复用"
+        ],
+        "requirements": [
+          "按配置提供记忆存储能力"
+        ],
+        "permissions": [
+          "读取待沉淀内容",
+          "访问配置的记忆服务"
+        ],
+        "markdownPath": "details/supermemory.md"
+      },
       "archive": {
         "path": "dist/skills/supermemory.zip",
         "sha256": "8dc9a60180544ab836c9305266c63114a4171eac7928ee6081b3d6494f882bb5",
@@ -401,6 +649,27 @@
       "source": "https://github.com/leonxlnx/taste-skill",
       "riskLevel": "low",
       "path": "skills/taste-skill",
+      "detail": {
+        "summary": "审视并提升产品界面的视觉层级、信息密度和交互细节。",
+        "useCases": [
+          "界面改版",
+          "设计评审",
+          "交互打磨"
+        ],
+        "capabilities": [
+          "体验审查",
+          "视觉优化",
+          "状态设计"
+        ],
+        "requirements": [
+          "现有界面、截图或前端代码"
+        ],
+        "permissions": [
+          "读取界面资料",
+          "按任务修改前端文件"
+        ],
+        "markdownPath": "details/taste-skill.md"
+      },
       "archive": {
         "path": "dist/skills/taste-skill.zip",
         "sha256": "272d80c719f244443ff00bf742cc8f9a8de52d36f0f2533b965197a2b16b355f",
