@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.1",
-  "generatedAt": "2026-07-10T10:17:59Z",
+  "generatedAt": "2026-07-10T17:52:40Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -275,8 +275,8 @@
       },
       "archive": {
         "path": "dist/skills/anbeime-pptx-generator.zip",
-        "sha256": "660fb0675b9b3ff662cc01adf185ab4a563672433d56af147dad6752a4e405a5",
-        "size": 25039
+        "sha256": "5f8c26e630184b796323f0eb36f3895845357c1aadb8c8a117490a0d1d3577bc",
+        "size": 18398
       }
     },
     {
