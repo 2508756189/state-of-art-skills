@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.1",
-  "generatedAt": "2026-07-11T10:47:15Z",
+  "generatedAt": "2026-07-11T10:51:21Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -476,8 +476,8 @@
       },
       "archive": {
         "path": "dist/skills/dashmotion.zip",
-        "sha256": "16a9cd4a4e468ff74ca72814ce53a5fdf5237d9863c448ab7ae23694874b101e",
-        "size": 54502
+        "sha256": "6c60946ca79cb55d000b35efa5e6662793c88c927fa5102a784876ace1346ea1",
+        "size": 55266
       }
     },
     {
