@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.1",
-  "generatedAt": "2026-07-10T17:52:40Z",
+  "generatedAt": "2026-07-11T10:47:15Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -426,6 +426,58 @@
         "path": "dist/skills/compound.zip",
         "sha256": "f73c6a5461a98c7fd61ef9b59e8a049479487aa2595c035b9012c4e1c51f6861",
         "size": 1127
+      }
+    },
+    {
+      "id": "dashmotion",
+      "name": "dashmotion",
+      "description": "Create dark-themed, animated technical diagrams as self-contained HTML+SVG files — flowcharts whose connectors visibly flow, and architecture diagrams where requests travel as light dots through the system (Diagrid/Temporal landing-page style). Use this skill whenever the user asks for a flowchart, workflow, pipeline, process diagram, state machine, system architecture, infrastructure, cloud, microservices, or network topology diagram — and especially when they mention \"animated\", \"flowing\", \"dynamic\", \"alive\", \"GIF-like\", or want a diagram for a landing page, README, docs, or product demo. Also use it to convert Mermaid source (a mermaid code block or .mmd file) into an animated diagram — \"animate this mermaid\", \"make this flowchart move\". Prefer this over static diagram output whenever the diagram represents anything that moves: requests, events, data, jobs, messages, or control flow.",
+      "category": "design",
+      "tags": [
+        "diagram",
+        "architecture",
+        "workflow",
+        "mermaid",
+        "html"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/dashmotion",
+        "claude": "~/.claude/skills/dashmotion",
+        "portable": "~/.agents/skills/dashmotion"
+      },
+      "version": "2.2.4",
+      "license": "MIT",
+      "source": "https://github.com/csthink/dashmotion/tree/ae2fe4f28c60caa53da8b15fa3537f4ea576f4ad",
+      "riskLevel": "medium",
+      "path": "skills/dashmotion",
+      "detail": {
+        "summary": "将流程、系统架构或 Mermaid 输入生成带动画、自包含且可离线打开的 HTML/SVG 技术图。",
+        "useCases": [
+          "系统架构说明",
+          "业务流程演示",
+          "README 或方案中的动态图"
+        ],
+        "capabilities": [
+          "确定性布局",
+          "Mermaid 流程和状态图转换",
+          "结构校验"
+        ],
+        "requirements": [
+          "Python 3 用于渲染和结构检查"
+        ],
+        "permissions": [
+          "读取图定义或 Mermaid 文件",
+          "写入 HTML 图文件"
+        ],
+        "markdownPath": "details/dashmotion.md"
+      },
+      "archive": {
+        "path": "dist/skills/dashmotion.zip",
+        "sha256": "16a9cd4a4e468ff74ca72814ce53a5fdf5237d9863c448ab7ae23694874b101e",
+        "size": 54502
       }
     },
     {

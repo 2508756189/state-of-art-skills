@@ -125,6 +125,22 @@
         "permissions": ["读取图片", "写入分析文档"]
       }
     },
+    "dashmotion": {
+      "category": "design",
+      "tags": ["diagram", "architecture", "workflow", "mermaid", "html"],
+      "runtime": ["portable"],
+      "version": "2.2.4",
+      "license": "MIT",
+      "riskLevel": "medium",
+      "source": "https://github.com/csthink/dashmotion/tree/ae2fe4f28c60caa53da8b15fa3537f4ea576f4ad",
+      "detail": {
+        "summary": "将流程、系统架构或 Mermaid 输入生成带动画、自包含且可离线打开的 HTML/SVG 技术图。",
+        "useCases": ["系统架构说明", "业务流程演示", "README 或方案中的动态图"],
+        "capabilities": ["确定性布局", "Mermaid 流程和状态图转换", "结构校验"],
+        "requirements": ["Python 3 用于渲染和结构检查"],
+        "permissions": ["读取图定义或 Mermaid 文件", "写入 HTML 图文件"]
+      }
+    },
     "compound": {
       "category": "engineering",
       "tags": ["workflow", "engineering", "review"],
