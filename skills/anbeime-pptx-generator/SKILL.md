@@ -1,11 +1,6 @@
 ---
 name: anbeime-pptx-generator
 description: Generate editable .pptx presentations from structured JSON using python-pptx, validation helpers, layout guides, and reusable style templates. Use when the user needs a real PowerPoint artifact instead of only outline text.
-dependency:
-  python:
-    - python-pptx>=1.0.2
-    - pillow>=9.0.0
-    - openpyxl>=3.1.0
 ---
 
 # PPTX 文件生成器

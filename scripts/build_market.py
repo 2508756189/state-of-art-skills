@@ -31,6 +31,7 @@ EXCLUDED_DIRECTORY_NAMES = {
 }
 EXCLUDED_FILE_NAMES = {".DS_Store", "Thumbs.db"}
 EXCLUDED_FILE_SUFFIXES = {".7z", ".bak", ".log", ".pyc", ".pyo", ".tmp", ".zip"}
+ALLOWED_FRONTMATTER_KEYS = {"name", "description", "license", "allowed-tools", "metadata"}
 
 
 class MarketError(RuntimeError):
@@ -77,6 +78,9 @@ def parse_frontmatter(path: Path) -> dict[str, Any]:
             data[current_key] = []
     if not data.get("name") or not data.get("description"):
         raise MarketError(f"{path} frontmatter must include name and description")
+    unexpected = sorted(set(data) - ALLOWED_FRONTMATTER_KEYS)
+    if unexpected:
+        raise MarketError(f"{path} frontmatter has unsupported keys: {', '.join(unexpected)}")
     return data
 
 

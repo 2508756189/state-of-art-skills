@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.1",
-  "generatedAt": "2026-07-14T09:52:08Z",
+  "generatedAt": "2026-07-14T10:51:33Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -275,8 +275,8 @@
       },
       "archive": {
         "path": "dist/skills/anbeime-pptx-generator.zip",
-        "sha256": "5f8c26e630184b796323f0eb36f3895845357c1aadb8c8a117490a0d1d3577bc",
-        "size": 18398
+        "sha256": "a21a5ac42e1df6240e9127551a8ec8b2f8230d7c546d654c40be650b8709e61a",
+        "size": 18384
       }
     },
     {
@@ -350,7 +350,7 @@
       "version": "0.1.0",
       "license": "review-required",
       "source": "https://github.com/anbeime/skill",
-      "riskLevel": "medium",
+      "riskLevel": "high",
       "path": "skills/anbeime-web-design-analyzer",
       "detail": {
         "summary": "从网页截图提取设计系统、排版和组件规律，辅助复刻与改版。",
@@ -365,18 +365,21 @@
           "实现建议"
         ],
         "requirements": [
-          "清晰网页截图"
+          "清晰网页截图",
+          "Pillow>=10.0.0",
+          "OpenAI API 凭证与联网能力"
         ],
         "permissions": [
           "读取图片",
+          "将截图发送到 OpenAI API",
           "写入分析文档"
         ],
         "markdownPath": "details/anbeime-web-design-analyzer.md"
       },
       "archive": {
         "path": "dist/skills/anbeime-web-design-analyzer.zip",
-        "sha256": "6baec84e48471ae15a0fd7cf0c2f967652d72bca36363e401758709b0aaed6eb",
-        "size": 14338
+        "sha256": "0c8fb34b48961c05e07034bb44b3ab8872aa4a0b4a3f827368b955edd4057233",
+        "size": 14800
       }
     },
     {

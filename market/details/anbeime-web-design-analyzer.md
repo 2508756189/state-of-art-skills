@@ -16,6 +16,8 @@
   ```
   Pillow>=10.0.0
   ```
+- 外部服务：需要访问 OpenAI Chat Completions API，并通过 `OPENAI_API_KEY` 提供凭证；兼容旧 Coze 环境变量 `COZE_OPENAI_VISION_API_7597458179647111194`。
+- 隐私边界：截图会作为 base64 图像发送到 OpenAI。处理敏感页面前必须获得用户确认，并避免上传账号、令牌、客户数据或其他机密信息。
 - 非标准文件/文件夹准备：无
 
 ## 操作步骤
@@ -77,7 +79,6 @@
   # 1. 调用脚本分析图片
   # 2. 展示结果
   # 3. 使用生成的 Coding Prompt 指导代码生成
-  ```
 
 ### 示例 3：导出为路演视频风格
 - **功能说明**：将网页设计转换为路演视频可用的品牌风格配置
@@ -100,3 +101,5 @@
 ## Source
 
 Imported and namespaced from anbeime/skill: https://github.com/anbeime/skill/tree/main/skills/web-design-analyzer/web-design-analyzer
+
+The Skill Market copy replaces the Coze-only HTTP wrapper with Python standard-library networking, documents the OpenAI credential and screenshot-upload boundary, and keeps the legacy Coze credential variable only as a compatibility fallback.

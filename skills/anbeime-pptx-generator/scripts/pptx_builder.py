@@ -9,6 +9,7 @@ supporting multiple layouts, styles, charts, and tables.
 import argparse
 import json
 import os
+import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -16,7 +17,7 @@ try:
     from pptx import Presentation
     from pptx.util import Inches, Pt
     from pptx.enum.text import PP_ALIGN
-    from pptx.dml.color import RgbColor
+    from pptx.dml.color import RGBColor
 except ImportError:
     print("错误: 未安装 python-pptx")
     print("请运行: pip install python-pptx")
@@ -166,7 +167,7 @@ class PPTXBuilder:
         font.name = self.style_config.get('title_font', 'Arial')
         font.size = Pt(self.style_config.get('title_font_size', 36))
         font.bold = True
-        font.color.rgb = RgbColor(*self._hex_to_rgb(
+        font.color.rgb = RGBColor(*self._hex_to_rgb(
             self.style_config.get('title_color', '#333333')
         ))
 
@@ -210,7 +211,7 @@ class PPTXBuilder:
             font = paragraph.font
             font.name = self.style_config.get('content_font', 'Arial')
             font.size = Pt(self.style_config.get('content_font_size', 24))
-            font.color.rgb = RgbColor(*self._hex_to_rgb(
+            font.color.rgb = RGBColor(*self._hex_to_rgb(
                 self.style_config.get('content_color', '#555555')
             ))
 
@@ -334,6 +335,7 @@ def main():
         print(f"\n完成！PPTX 文件已保存到: {args.output}")
     else:
         print(f"\n失败：无法生成 PPTX 文件")
+        sys.exit(1)
 
 
 if __name__ == '__main__':

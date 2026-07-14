@@ -115,14 +115,14 @@
       "category": "design",
       "tags": ["design-system", "screenshot", "frontend"],
       "runtime": ["portable"],
-      "riskLevel": "medium",
+      "riskLevel": "high",
       "source": "https://github.com/anbeime/skill",
       "detail": {
         "summary": "从网页截图提取设计系统、排版和组件规律，辅助复刻与改版。",
         "useCases": ["竞品页面分析", "设计系统提取", "前端提示词生成"],
         "capabilities": ["截图分析", "视觉规范提取", "实现建议"],
-        "requirements": ["清晰网页截图"],
-        "permissions": ["读取图片", "写入分析文档"]
+        "requirements": ["清晰网页截图", "Pillow>=10.0.0", "OpenAI API 凭证与联网能力"],
+        "permissions": ["读取图片", "将截图发送到 OpenAI API", "写入分析文档"]
       }
     },
     "dashmotion": {

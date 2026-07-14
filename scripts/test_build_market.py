@@ -79,6 +79,31 @@ class BuildMarketTests(unittest.TestCase):
             with self.assertRaisesRegex(build_market.MarketError, "Duplicate skill name"):
                 build_market.build_market(root, write=False)
 
+    def test_rejects_unsupported_frontmatter_keys(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            skill_dir = root / "skills" / "invalid-frontmatter"
+            skill_dir.mkdir(parents=True)
+            (skill_dir / "SKILL.md").write_text(
+                "---\n"
+                "name: invalid-frontmatter\n"
+                "description: Contains a runtime-unsupported top-level key.\n"
+                "dependency:\n"
+                "  python:\n"
+                "    - example-package\n"
+                "---\n\n"
+                "# Invalid Frontmatter\n",
+                encoding="utf-8",
+            )
+            (root / "market").mkdir()
+            (root / "market" / "categories.json").write_text(
+                json.dumps({"categories": [], "skills": {}}),
+                encoding="utf-8",
+            )
+
+            with self.assertRaisesRegex(build_market.MarketError, "unsupported keys: dependency"):
+                build_market.build_market(root, write=False)
+
     def test_rejects_secret_like_content(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

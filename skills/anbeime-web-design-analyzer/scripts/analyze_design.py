@@ -17,8 +17,9 @@ import sys
 import json
 import base64
 import argparse
+import urllib.error
+import urllib.request
 from pathlib import Path
-from coze_workload_identity import requests
 from PIL import Image
 
 
@@ -72,10 +73,14 @@ def call_openai_vision_api(
     skill_id = "7597458179647111194"
 
     # 1. 获取凭证
-    credential = os.getenv(f"COZE_OPENAI_VISION_API_{skill_id}")
+    credential = (
+        api_key
+        or os.getenv("OPENAI_API_KEY")
+        or os.getenv(f"COZE_OPENAI_VISION_API_{skill_id}")
+    )
     if not credential:
         raise ValueError(
-            "缺少 OpenAI Vision API 凭证配置，请检查环境变量 COZE_OPENAI_VISION_API_<skill_id>"
+            "缺少 OpenAI Vision API 凭证配置，请设置 OPENAI_API_KEY；旧 Coze 环境可继续使用 COZE_OPENAI_VISION_API_<skill_id>"
         )
 
     # 2. 构建系统提示词
@@ -161,14 +166,14 @@ def call_openai_vision_api(
 
     # 4. 发起请求
     try:
-        response = requests.post(
+        request = urllib.request.Request(
             url,
+            data=json.dumps(payload).encode("utf-8"),
             headers=headers,
-            json=payload,
-            timeout=60
+            method="POST",
         )
-        response.raise_for_status()
-        data = response.json()
+        with urllib.request.urlopen(request, timeout=60) as response:
+            data = json.loads(response.read().decode("utf-8"))
 
         # 5. 提取结果
         if "choices" not in data or len(data["choices"]) == 0:
@@ -180,7 +185,7 @@ def call_openai_vision_api(
             "usage": data.get("usage", {})
         }
 
-    except requests.exceptions.RequestException as e:
+    except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError) as e:
         raise Exception(f"API 调用失败: {str(e)}")
 
 
