@@ -20,6 +20,17 @@ SECRET_PATTERNS = [
     re.compile(r"(?i)(api[_-]?key|token|cookie|secret)\s*[:=]\s*[A-Za-z0-9_.-]{12,}"),
 ]
 BINARY_SUFFIXES = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".zip"}
+EXCLUDED_DIRECTORY_NAMES = {
+    ".git",
+    ".in_use",
+    ".venv",
+    "__pycache__",
+    "backups",
+    "node_modules",
+    "venv",
+}
+EXCLUDED_FILE_NAMES = {".DS_Store", "Thumbs.db"}
+EXCLUDED_FILE_SUFFIXES = {".7z", ".bak", ".log", ".pyc", ".pyo", ".tmp", ".zip"}
 
 
 class MarketError(RuntimeError):
@@ -83,9 +94,30 @@ def load_categories(root: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def should_package_path(path: Path, skill_dir: Path) -> bool:
+    relative = path.relative_to(skill_dir)
+    if any(part in EXCLUDED_DIRECTORY_NAMES for part in relative.parts[:-1]):
+        return False
+    if path.name in EXCLUDED_FILE_NAMES or path.suffix.lower() in EXCLUDED_FILE_SUFFIXES:
+        return False
+    if path.name == ".env" or (path.name.startswith(".env.") and path.name != ".env.example"):
+        return False
+    if path.name.endswith(".local.md"):
+        return False
+    return True
+
+
+def skill_runtime_files(skill_dir: Path) -> list[Path]:
+    return [
+        path
+        for path in sorted(skill_dir.rglob("*"))
+        if path.is_file() and should_package_path(path, skill_dir)
+    ]
+
+
 def scan_for_secrets(skill_dir: Path) -> None:
-    for path in skill_dir.rglob("*"):
-        if not path.is_file() or path.suffix.lower() in {".png", ".jpg", ".jpeg", ".gif", ".webp"}:
+    for path in skill_runtime_files(skill_dir):
+        if path.suffix.lower() in {".png", ".jpg", ".jpeg", ".gif", ".webp"}:
             continue
         text = path.read_text(encoding="utf-8", errors="ignore")
         for line in text.splitlines():
@@ -117,22 +149,20 @@ def archive_file_bytes(path: Path) -> bytes:
 def zip_skill(root: Path, skill_dir: Path, dist_dir: Path) -> tuple[Path, str, int]:
     archive = dist_dir / f"{skill_dir.name}.zip"
     with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED) as zf:
-        for path in sorted(skill_dir.rglob("*")):
-            if path.is_file():
-                info = zipfile.ZipInfo(str(path.relative_to(root)).replace("\\", "/"))
-                info.date_time = (2026, 1, 1, 0, 0, 0)
-                info.create_system = 0
-                info.compress_type = zipfile.ZIP_DEFLATED
-                info.external_attr = 0o644 << 16
-                zf.writestr(info, archive_file_bytes(path))
+        for path in skill_runtime_files(skill_dir):
+            info = zipfile.ZipInfo(str(path.relative_to(root)).replace("\\", "/"))
+            info.date_time = (2026, 1, 1, 0, 0, 0)
+            info.create_system = 0
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.external_attr = 0o644 << 16
+            zf.writestr(info, archive_file_bytes(path))
     return archive, sha256_file(archive), archive.stat().st_size
 
 
 def expected_zip_contents(root: Path, skill_dir: Path) -> dict[str, bytes]:
     return {
         str(path.relative_to(root)).replace("\\", "/"): archive_file_bytes(path)
-        for path in sorted(skill_dir.rglob("*"))
-        if path.is_file()
+        for path in skill_runtime_files(skill_dir)
     }
 
 

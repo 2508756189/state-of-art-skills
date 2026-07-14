@@ -205,6 +205,44 @@ class BuildMarketTests(unittest.TestCase):
             self.assertNotIn(b"\r\n", data)
             self.assertIn(b"---\nname: crlf-skill\n", data)
 
+    def test_ignores_local_cache_and_backup_files(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            skill_dir = root / "skills" / "clean-skill"
+            script_dir = skill_dir / "scripts"
+            cache_dir = script_dir / "__pycache__"
+            cache_dir.mkdir(parents=True)
+            (skill_dir / "SKILL.md").write_text(
+                "---\nname: clean-skill\ndescription: Excludes local build noise.\n---\n\n# Clean\n",
+                encoding="utf-8",
+            )
+            (script_dir / "run.py").write_text("print('ok')\n", encoding="utf-8")
+            (cache_dir / "run.cpython-313.pyc").write_bytes(b"local-cache")
+            (skill_dir / "notes.local.md").write_text("private\n", encoding="utf-8")
+            (skill_dir / "artifact.bak").write_text("backup\n", encoding="utf-8")
+            (root / "market").mkdir()
+            (root / "market" / "categories.json").write_text(
+                json.dumps({"categories": [], "skills": {}}),
+                encoding="utf-8",
+            )
+
+            registry = build_market.build_market(root, write=True)
+            archive_path = root / registry["skills"][0]["archive"]["path"]
+
+            import zipfile
+
+            with zipfile.ZipFile(archive_path) as zf:
+                names = set(zf.namelist())
+
+            self.assertIn("skills/clean-skill/SKILL.md", names)
+            self.assertIn("skills/clean-skill/scripts/run.py", names)
+            self.assertNotIn("skills/clean-skill/scripts/__pycache__/run.cpython-313.pyc", names)
+            self.assertNotIn("skills/clean-skill/notes.local.md", names)
+            self.assertNotIn("skills/clean-skill/artifact.bak", names)
+
+            (cache_dir / "later.cpython-313.pyc").write_bytes(b"later-cache")
+            build_market.validate_existing_artifacts(root)
+
 
 if __name__ == "__main__":
     unittest.main()
