@@ -201,8 +201,9 @@
       "category": "knowledge",
       "tags": ["memory", "knowledge", "retrieval"],
       "runtime": ["portable"],
+      "license": "MIT",
       "riskLevel": "medium",
-      "source": "https://github.com/supermemoryai/supermemory",
+      "source": "https://github.com/supermemoryai/supermemory/tree/ef0026a23c160e2976480352e5a6f58762d70d13/skills/supermemory",
       "detail": {
         "summary": "沉淀项目事实、决策和知识片段，并在后续任务中检索复用。",
         "useCases": ["项目记忆", "决策追踪", "知识检索"],

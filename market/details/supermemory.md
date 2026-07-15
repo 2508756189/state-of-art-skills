@@ -164,7 +164,7 @@ Traditional AI applications are stateless and forget context between sessions. S
 
 ## Source
 
-Synced from `supermemoryai/supermemory` at commit `af61880da16659ed61909e5e4ef6c4f79aa30e1f`, path `skills/supermemory`, with a local safety overlay for this Skill Market. Upstream `README.md` is intentionally omitted because it duplicates Claude/API installation prose rather than Codex runtime instructions.
+Synced from `supermemoryai/supermemory` at commit `ef0026a23c160e2976480352e5a6f58762d70d13`, path `skills/supermemory`, under the upstream MIT license, with a local safety overlay for this Skill Market. Upstream `README.md` is intentionally omitted because it duplicates Claude/API installation prose rather than Codex runtime instructions.
 
 ---
 

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.1",
-  "generatedAt": "2026-07-14T10:51:33Z",
+  "generatedAt": "2026-07-15T01:10:14Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -650,8 +650,8 @@
         "portable": "~/.agents/skills/supermemory"
       },
       "version": "0.1.0",
-      "license": "review-required",
-      "source": "https://github.com/supermemoryai/supermemory",
+      "license": "MIT",
+      "source": "https://github.com/supermemoryai/supermemory/tree/ef0026a23c160e2976480352e5a6f58762d70d13/skills/supermemory",
       "riskLevel": "medium",
       "path": "skills/supermemory",
       "detail": {
@@ -677,8 +677,8 @@
       },
       "archive": {
         "path": "dist/skills/supermemory.zip",
-        "sha256": "546d68ba085607a7ec35dc24d4d465e0b2aa7320fa8b7c4b2a0f5691c7a82976",
-        "size": 33009
+        "sha256": "3d1545e34b2fbaedfc044cdf8438cd206165df6541dab6300c2eec22bbecea2d",
+        "size": 29705
       }
     },
     {
