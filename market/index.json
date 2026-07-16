@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.1",
-  "generatedAt": "2026-07-15T01:10:14Z",
+  "generatedAt": "2026-07-16T04:01:17Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -54,6 +54,7 @@
       "riskLevel": "medium",
       "path": "skills/anbeime-agent-team",
       "detail": {
+        "displayName": "多智能体团队框架",
         "summary": "组织多个角色型智能体协作完成复杂任务，并保留明确的角色分工与交付链路。",
         "useCases": [
           "技术方案评审",
@@ -103,6 +104,7 @@
       "riskLevel": "low",
       "path": "skills/anbeime-content-research-writer",
       "detail": {
+        "displayName": "内容研究写作助手",
         "summary": "将调研、引用、提纲和章节迭代整合为可复用的内容生产流程。",
         "useCases": [
           "研究报告",
@@ -153,6 +155,7 @@
       "riskLevel": "low",
       "path": "skills/anbeime-frontend-design",
       "detail": {
+        "displayName": "前端体验设计",
         "summary": "面向生产级前端界面的设计与实现规范，强化布局、层级和交互质感。",
         "useCases": [
           "业务后台",
@@ -202,6 +205,7 @@
       "riskLevel": "medium",
       "path": "skills/anbeime-multi-agent-meeting",
       "detail": {
+        "displayName": "多智能体会议",
         "summary": "模拟多个专业角色讨论并形成有依据的会议结论和行动项。",
         "useCases": [
           "架构决策",
@@ -252,6 +256,7 @@
       "riskLevel": "medium",
       "path": "skills/anbeime-pptx-generator",
       "detail": {
+        "displayName": "PPT 生成器",
         "summary": "从结构化内容生成可编辑 PowerPoint，并提供布局、图表和校验能力。",
         "useCases": [
           "路演汇报",
@@ -303,6 +308,7 @@
       "riskLevel": "low",
       "path": "skills/anbeime-product-manager-toolkit",
       "detail": {
+        "displayName": "产品经理工具包",
         "summary": "覆盖需求分析、优先级、访谈与 PRD 产出的产品管理工具集。",
         "useCases": [
           "需求评审",
@@ -353,6 +359,7 @@
       "riskLevel": "high",
       "path": "skills/anbeime-web-design-analyzer",
       "detail": {
+        "displayName": "网页设计分析器",
         "summary": "从网页截图提取设计系统、排版和组件规律，辅助复刻与改版。",
         "useCases": [
           "竞品页面分析",
@@ -406,6 +413,7 @@
       "riskLevel": "low",
       "path": "skills/compound",
       "detail": {
+        "displayName": "复合工程工作流",
         "summary": "将计划、实现、复查和验证组织成可追踪的复合工程流程。",
         "useCases": [
           "跨模块功能",
@@ -457,6 +465,7 @@
       "riskLevel": "medium",
       "path": "skills/dashmotion",
       "detail": {
+        "displayName": "动态技术图生成器",
         "summary": "将流程、系统架构或 Mermaid 输入生成带动画、自包含且可离线打开的 HTML/SVG 技术图。",
         "useCases": [
           "系统架构说明",
@@ -507,6 +516,7 @@
       "riskLevel": "low",
       "path": "skills/ecc",
       "detail": {
+        "displayName": "跨 Agent 兼容套件",
         "summary": "维护 Codex、Claude Code 等不同智能体运行时之间的技能兼容。",
         "useCases": [
           "跨客户端迁移",
@@ -556,6 +566,7 @@
       "riskLevel": "low",
       "path": "skills/headroom",
       "detail": {
+        "displayName": "上下文余量管理",
         "summary": "在长任务中管理上下文余量、信息取舍和执行节奏。",
         "useCases": [
           "长周期开发",
@@ -605,6 +616,7 @@
       "riskLevel": "medium",
       "path": "skills/markitdown",
       "detail": {
+        "displayName": "文档转 Markdown",
         "summary": "将 Office、PDF、网页和多媒体资料转换为便于 AI 使用的 Markdown。",
         "useCases": [
           "文档入库",
@@ -655,6 +667,7 @@
       "riskLevel": "medium",
       "path": "skills/supermemory",
       "detail": {
+        "displayName": "长期记忆与知识检索",
         "summary": "沉淀项目事实、决策和知识片段，并在后续任务中检索复用。",
         "useCases": [
           "项目记忆",
@@ -705,6 +718,7 @@
       "riskLevel": "low",
       "path": "skills/taste-skill",
       "detail": {
+        "displayName": "产品品味优化",
         "summary": "审视并提升产品界面的视觉层级、信息密度和交互细节。",
         "useCases": [
           "界面改版",

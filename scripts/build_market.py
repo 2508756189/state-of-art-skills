@@ -235,6 +235,7 @@ def normalize_list(value: Any, fallback: list[str]) -> list[str]:
 def build_detail(skill_id: str, meta: dict[str, Any], override: dict[str, Any]) -> dict[str, Any]:
     detail = override.get("detail") if isinstance(override.get("detail"), dict) else {}
     return {
+        "displayName": str(detail.get("displayName") or meta.get("name") or skill_id),
         "summary": str(detail.get("summary") or meta.get("description") or ""),
         "useCases": normalize_list(detail.get("useCases"), []),
         "capabilities": normalize_list(detail.get("capabilities"), []),

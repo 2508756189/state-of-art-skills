@@ -34,6 +34,7 @@
       "riskLevel": "medium",
       "source": "https://github.com/anbeime/skill",
       "detail": {
+        "displayName": "多智能体团队框架",
         "summary": "组织多个角色型智能体协作完成复杂任务，并保留明确的角色分工与交付链路。",
         "useCases": ["技术方案评审", "复杂系统构建", "多角色任务分派"],
         "capabilities": ["角色编排", "协作流程", "共享上下文"],
@@ -48,6 +49,7 @@
       "riskLevel": "low",
       "source": "https://github.com/anbeime/skill",
       "detail": {
+        "displayName": "内容研究写作助手",
         "summary": "将调研、引用、提纲和章节迭代整合为可复用的内容生产流程。",
         "useCases": ["研究报告", "行业文章", "方案材料"],
         "capabilities": ["资料研究", "引用整理", "内容润色"],
@@ -62,6 +64,7 @@
       "riskLevel": "low",
       "source": "https://github.com/anbeime/skill",
       "detail": {
+        "displayName": "前端体验设计",
         "summary": "面向生产级前端界面的设计与实现规范，强化布局、层级和交互质感。",
         "useCases": ["业务后台", "产品页面", "交互组件"],
         "capabilities": ["界面设计", "组件实现", "响应式优化"],
@@ -76,6 +79,7 @@
       "riskLevel": "medium",
       "source": "https://github.com/anbeime/skill",
       "detail": {
+        "displayName": "多智能体会议",
         "summary": "模拟多个专业角色讨论并形成有依据的会议结论和行动项。",
         "useCases": ["架构决策", "产品定价", "风险评估"],
         "capabilities": ["角色讨论", "观点对比", "决策纪要"],
@@ -90,6 +94,7 @@
       "riskLevel": "low",
       "source": "https://github.com/anbeime/skill",
       "detail": {
+        "displayName": "产品经理工具包",
         "summary": "覆盖需求分析、优先级、访谈与 PRD 产出的产品管理工具集。",
         "useCases": ["需求评审", "RICE 排序", "PRD 编写"],
         "capabilities": ["需求分析", "用户研究", "路线规划"],
@@ -104,6 +109,7 @@
       "riskLevel": "medium",
       "source": "https://github.com/anbeime/skill",
       "detail": {
+        "displayName": "PPT 生成器",
         "summary": "从结构化内容生成可编辑 PowerPoint，并提供布局、图表和校验能力。",
         "useCases": ["路演汇报", "项目计划", "方案展示"],
         "capabilities": ["PPTX 生成", "图表表格", "文件校验"],
@@ -118,6 +124,7 @@
       "riskLevel": "high",
       "source": "https://github.com/anbeime/skill",
       "detail": {
+        "displayName": "网页设计分析器",
         "summary": "从网页截图提取设计系统、排版和组件规律，辅助复刻与改版。",
         "useCases": ["竞品页面分析", "设计系统提取", "前端提示词生成"],
         "capabilities": ["截图分析", "视觉规范提取", "实现建议"],
@@ -134,6 +141,7 @@
       "riskLevel": "medium",
       "source": "https://github.com/csthink/dashmotion/tree/ae2fe4f28c60caa53da8b15fa3537f4ea576f4ad",
       "detail": {
+        "displayName": "动态技术图生成器",
         "summary": "将流程、系统架构或 Mermaid 输入生成带动画、自包含且可离线打开的 HTML/SVG 技术图。",
         "useCases": ["系统架构说明", "业务流程演示", "README 或方案中的动态图"],
         "capabilities": ["确定性布局", "Mermaid 流程和状态图转换", "结构校验"],
@@ -148,6 +156,7 @@
       "riskLevel": "low",
       "source": "https://github.com/everyinc/compound-engineering-plugin",
       "detail": {
+        "displayName": "复合工程工作流",
         "summary": "将计划、实现、复查和验证组织成可追踪的复合工程流程。",
         "useCases": ["跨模块功能", "复杂缺陷修复", "交付前审查"],
         "capabilities": ["任务拆分", "结果整合", "验证闭环"],
@@ -162,6 +171,7 @@
       "riskLevel": "low",
       "source": "https://github.com/affaan-m/ecc",
       "detail": {
+        "displayName": "跨 Agent 兼容套件",
         "summary": "维护 Codex、Claude Code 等不同智能体运行时之间的技能兼容。",
         "useCases": ["跨客户端迁移", "Skill 适配", "配置一致性检查"],
         "capabilities": ["兼容分析", "格式适配", "运行时映射"],
@@ -176,6 +186,7 @@
       "riskLevel": "low",
       "source": "https://github.com/chopratejas/headroom",
       "detail": {
+        "displayName": "上下文余量管理",
         "summary": "在长任务中管理上下文余量、信息取舍和执行节奏。",
         "useCases": ["长周期开发", "大文档分析", "多阶段任务"],
         "capabilities": ["上下文预算", "资料压缩", "阶段交接"],
@@ -190,6 +201,7 @@
       "riskLevel": "medium",
       "source": "https://github.com/microsoft/markitdown",
       "detail": {
+        "displayName": "文档转 Markdown",
         "summary": "将 Office、PDF、网页和多媒体资料转换为便于 AI 使用的 Markdown。",
         "useCases": ["文档入库", "资料清洗", "AI 知识处理"],
         "capabilities": ["多格式解析", "Markdown 转换", "批量处理"],
@@ -205,6 +217,7 @@
       "riskLevel": "medium",
       "source": "https://github.com/supermemoryai/supermemory/tree/ef0026a23c160e2976480352e5a6f58762d70d13/skills/supermemory",
       "detail": {
+        "displayName": "长期记忆与知识检索",
         "summary": "沉淀项目事实、决策和知识片段，并在后续任务中检索复用。",
         "useCases": ["项目记忆", "决策追踪", "知识检索"],
         "capabilities": ["信息采集", "语义检索", "上下文复用"],
@@ -219,6 +232,7 @@
       "riskLevel": "low",
       "source": "https://github.com/leonxlnx/taste-skill",
       "detail": {
+        "displayName": "产品品味优化",
         "summary": "审视并提升产品界面的视觉层级、信息密度和交互细节。",
         "useCases": ["界面改版", "设计评审", "交互打磨"],
         "capabilities": ["体验审查", "视觉优化", "状态设计"],
