@@ -15,6 +15,7 @@ Use this file before syncing skills into a runtime.
 - `ecc`
 - `headroom`
 - `markitdown`
+- `mcp-security-audit`
 - `supermemory`
 - `taste-skill`
 
@@ -23,3 +24,4 @@ Use this file before syncing skills into a runtime.
 - `supermemory` should stay private unless external-memory configuration is removed or generalized.
 - `compound` is a workflow adaptation; use the upstream plugin separately if plugin behavior is required.
 - `ecc` is for portability reviews and should not hide runtime-specific assumptions.
+- `mcp-security-audit` is read-only and portable, but a clean scan does not approve the referenced server or package provenance.

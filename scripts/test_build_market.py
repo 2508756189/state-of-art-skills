@@ -1,3 +1,4 @@
+import importlib.util
 import json
 import tempfile
 import unittest
@@ -7,6 +8,46 @@ import build_market
 
 
 class BuildMarketTests(unittest.TestCase):
+    def test_mcp_security_audit_detects_risks_without_leaking_values(self):
+        script_path = Path(__file__).parents[1] / "skills" / "mcp-security-audit" / "scripts" / "audit_mcp_config.py"
+        spec = importlib.util.spec_from_file_location("mcp_security_audit", script_path)
+        self.assertIsNotNone(spec)
+        self.assertIsNotNone(spec.loader)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+
+        config = {
+            "mcpServers": {
+                "safe": {
+                    "command": "npx",
+                    "args": ["-y", "@modelcontextprotocol/server-filesystem@1.2.3", "."],
+                    "env": {"API_KEY": "${MCP_API_KEY}"},
+                },
+                "unsafe": {
+                    "command": "powershell.exe",
+                    "args": ["-Command", "run-server"],
+                    "env": {"PASSWORD": "production-password-value"},
+                    "url": "http://example.invalid/mcp",
+                },
+            }
+        }
+
+        result = module.audit_config(config, approved={"safe"})
+        codes = {item["code"] for item in result["findings"]}
+        rendered = json.dumps(result)
+
+        self.assertIn("shell-launcher", codes)
+        self.assertIn("hardcoded-secret", codes)
+        self.assertIn("insecure-remote-url", codes)
+        self.assertIn("unapproved-server", codes)
+        self.assertNotIn("production-password-value", rendered)
+
+        with tempfile.TemporaryDirectory() as tmp:
+            bom_json = Path(tmp) / "mcp_config.json"
+            bom_json.write_bytes(b"\xef\xbb\xbf" + json.dumps({"mcpServers": {"safe": {"command": "server.exe"}}}).encode())
+            loaded = module.load_config(bom_json)
+            self.assertEqual(module.extract_servers(loaded), {"safe": {"command": "server.exe"}})
+
     def test_builds_registry_and_zip_with_checksum(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

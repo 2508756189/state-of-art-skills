@@ -209,6 +209,23 @@
         "permissions": ["读取源文件", "写入 Markdown 文件"]
       }
     },
+    "mcp-security-audit": {
+      "category": "engineering",
+      "tags": ["mcp", "security", "supply-chain", "governance"],
+      "runtime": ["portable"],
+      "version": "0.1.0",
+      "license": "MIT",
+      "riskLevel": "medium",
+      "source": "https://github.com/github/awesome-copilot/tree/e95bd8c4ba65454121f86a7ad0d3ed17ab0bcf37/skills/mcp-security-audit",
+      "detail": {
+        "displayName": "MCP 配置安全审计",
+        "summary": "只读检查 MCP 配置中的凭证暴露、Shell 启动、未固定依赖、远程明文地址和批准清单漂移。",
+        "useCases": ["Codex MCP 配置审计", "Claude MCP 上线前检查", "Agent 工具供应链治理"],
+        "capabilities": ["JSON/TOML 解析", "脱敏安全检查", "批准清单核验"],
+        "requirements": ["Python 3.11+", "待审计的 MCP 配置文件"],
+        "permissions": ["只读访问指定配置文件"]
+      }
+    },
     "supermemory": {
       "category": "knowledge",
       "tags": ["memory", "knowledge", "retrieval"],
