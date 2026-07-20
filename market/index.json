@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.1",
-  "generatedAt": "2026-07-18T01:22:18Z",
+  "generatedAt": "2026-07-20T01:16:04Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -795,6 +795,61 @@
         "path": "dist/skills/taste-skill.zip",
         "sha256": "272d80c719f244443ff00bf742cc8f9a8de52d36f0f2533b965197a2b16b355f",
         "size": 1165
+      }
+    },
+    {
+      "id": "unit-test-vue-pinia",
+      "name": "unit-test-vue-pinia",
+      "description": "Write and review focused unit tests for Vue 3, TypeScript, Vitest, and Pinia codebases, using behavior-first assertions and the narrowest Pinia setup that proves the scenario.",
+      "category": "engineering",
+      "tags": [
+        "vue",
+        "pinia",
+        "vitest",
+        "testing"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/unit-test-vue-pinia",
+        "claude": "~/.claude/skills/unit-test-vue-pinia",
+        "portable": "~/.agents/skills/unit-test-vue-pinia"
+      },
+      "version": "0.1.0",
+      "license": "MIT",
+      "source": "https://github.com/github/awesome-copilot/tree/314cf968ab643bc0ad1488e98e6e7893b752004a/skills/unit-test-vue-pinia",
+      "riskLevel": "low",
+      "path": "skills/unit-test-vue-pinia",
+      "detail": {
+        "displayName": "Vue 与 Pinia 单元测试",
+        "summary": "为 Vue 3、Vitest 与 Pinia 项目编写行为优先、依赖明确且可重复运行的单元测试。",
+        "useCases": [
+          "Pinia store 测试",
+          "Vue 组件测试",
+          "Vitest 测试评审"
+        ],
+        "capabilities": [
+          "测试策略选择",
+          "Pinia 隔离",
+          "行为断言"
+        ],
+        "requirements": [
+          "Vue 3 项目",
+          "Vitest 与 Vue Test Utils",
+          "按需使用 @pinia/testing"
+        ],
+        "permissions": [
+          "读取前端源文件和测试",
+          "按任务修改测试文件",
+          "运行聚焦测试命令"
+        ],
+        "markdownPath": "details/unit-test-vue-pinia.md"
+      },
+      "archive": {
+        "path": "dist/skills/unit-test-vue-pinia.zip",
+        "sha256": "a94ccbf92cf20875d2b57b3da56f8a34526f9289c35a011ae4cdbd29382b2e80",
+        "size": 3867
       }
     }
   ]

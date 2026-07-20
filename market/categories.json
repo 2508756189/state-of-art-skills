@@ -226,6 +226,23 @@
         "permissions": ["只读访问指定配置文件"]
       }
     },
+    "unit-test-vue-pinia": {
+      "category": "engineering",
+      "tags": ["vue", "pinia", "vitest", "testing"],
+      "runtime": ["portable"],
+      "version": "0.1.0",
+      "license": "MIT",
+      "riskLevel": "low",
+      "source": "https://github.com/github/awesome-copilot/tree/314cf968ab643bc0ad1488e98e6e7893b752004a/skills/unit-test-vue-pinia",
+      "detail": {
+        "displayName": "Vue 与 Pinia 单元测试",
+        "summary": "为 Vue 3、Vitest 与 Pinia 项目编写行为优先、依赖明确且可重复运行的单元测试。",
+        "useCases": ["Pinia store 测试", "Vue 组件测试", "Vitest 测试评审"],
+        "capabilities": ["测试策略选择", "Pinia 隔离", "行为断言"],
+        "requirements": ["Vue 3 项目", "Vitest 与 Vue Test Utils", "按需使用 @pinia/testing"],
+        "permissions": ["读取前端源文件和测试", "按任务修改测试文件", "运行聚焦测试命令"]
+      }
+    },
     "supermemory": {
       "category": "knowledge",
       "tags": ["memory", "knowledge", "retrieval"],

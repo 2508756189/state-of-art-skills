@@ -18,6 +18,7 @@ Use this file before syncing skills into a runtime.
 - `mcp-security-audit`
 - `supermemory`
 - `taste-skill`
+- `unit-test-vue-pinia`
 
 ## Notes
 
@@ -25,3 +26,4 @@ Use this file before syncing skills into a runtime.
 - `compound` is a workflow adaptation; use the upstream plugin separately if plugin behavior is required.
 - `ecc` is for portability reviews and should not hide runtime-specific assumptions.
 - `mcp-security-audit` is read-only and portable, but a clean scan does not approve the referenced server or package provenance.
+- `unit-test-vue-pinia` is portable guidance; check installed package versions and do not add `@pinia/testing` unless the target test needs it.
