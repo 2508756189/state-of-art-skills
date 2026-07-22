@@ -243,6 +243,74 @@
         "permissions": ["读取前端源文件和测试", "按任务修改测试文件", "运行聚焦测试命令"]
       }
     },
+    "diagnosing-bugs": {
+      "category": "engineering",
+      "tags": ["debugging", "production", "performance", "triage"],
+      "runtime": ["portable"],
+      "version": "0.1.0",
+      "license": "MIT",
+      "riskLevel": "medium",
+      "source": "https://github.com/mattpocock/skills/tree/ed37663cc5fbef691ddfecd080dff42f7e7e350d/skills/engineering/diagnosing-bugs",
+      "detail": {
+        "displayName": "系统化故障排查",
+        "summary": "通过可重复反馈回路、最小复现、假设验证和回归检查定位复杂缺陷与性能回退。",
+        "useCases": ["生产故障定位", "接口或页面异常", "性能回退排查"],
+        "capabilities": ["反馈回路设计", "最小复现", "假设与证据验证", "回归检查"],
+        "requirements": ["可运行的测试、接口、日志或其他可观测信号"],
+        "permissions": ["按任务读取代码、日志和测试", "可选运行只读诊断脚本"]
+      }
+    },
+    "codebase-design": {
+      "category": "engineering",
+      "tags": ["architecture", "interfaces", "modules", "maintainability"],
+      "runtime": ["portable"],
+      "version": "0.1.0",
+      "license": "MIT",
+      "riskLevel": "medium",
+      "source": "https://github.com/mattpocock/skills/tree/ed37663cc5fbef691ddfecd080dff42f7e7e350d/skills/engineering/codebase-design",
+      "detail": {
+        "displayName": "代码库模块设计",
+        "summary": "用深模块、接口、接缝、杠杆和局部性等概念改善模块边界、可测试性与维护性。",
+        "useCases": ["模块重构", "接口设计", "架构可维护性评审"],
+        "capabilities": ["模块深度分析", "接口边界设计", "接缝识别", "替代方案比较"],
+        "requirements": ["目标代码库或明确的模块设计问题"],
+        "permissions": ["读取代码和架构资料", "按用户确认修改设计相关文件"]
+      }
+    },
+    "domain-modeling": {
+      "category": "engineering",
+      "tags": ["domain", "architecture", "glossary", "adr"],
+      "runtime": ["portable"],
+      "version": "0.1.0",
+      "license": "MIT",
+      "riskLevel": "medium",
+      "source": "https://github.com/mattpocock/skills/tree/ed37663cc5fbef691ddfecd080dff42f7e7e350d/skills/engineering/domain-modeling",
+      "detail": {
+        "displayName": "领域建模",
+        "summary": "澄清业务术语、边界和架构决策，并在用户确认后沉淀到领域上下文与 ADR。",
+        "useCases": ["停车充电业务建模", "领域术语统一", "架构决策记录"],
+        "capabilities": ["术语澄清", "边界场景推演", "上下文维护", "ADR 判断"],
+        "requirements": ["明确的业务背景和目标代码库"],
+        "permissions": ["读取业务代码和文档", "经确认后写入 CONTEXT.md 或 ADR"]
+      }
+    },
+    "resolving-merge-conflicts": {
+      "category": "engineering",
+      "tags": ["git", "merge", "rebase", "conflict-resolution"],
+      "runtime": ["portable"],
+      "version": "0.1.0",
+      "license": "MIT",
+      "riskLevel": "medium",
+      "source": "https://github.com/mattpocock/skills/tree/ed37663cc5fbef691ddfecd080dff42f7e7e350d/skills/engineering/resolving-merge-conflicts",
+      "detail": {
+        "displayName": "Git 冲突处理",
+        "summary": "按主来源、冲突意图、自动化检查和仓库完成流程处理 merge 或 rebase 冲突。",
+        "useCases": ["合并冲突", "变基冲突", "冲突后的验证"],
+        "capabilities": ["冲突状态检查", "主来源核对", "逐块处理", "完成前验证"],
+        "requirements": ["处于 merge 或 rebase 状态的 Git 仓库"],
+        "permissions": ["读取 Git 状态和提交历史", "按用户授权修改冲突文件和暂存区"]
+      }
+    },
     "supermemory": {
       "category": "knowledge",
       "tags": ["memory", "knowledge", "retrieval"],
