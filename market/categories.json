@@ -315,9 +315,10 @@
       "category": "knowledge",
       "tags": ["memory", "knowledge", "retrieval"],
       "runtime": ["portable"],
+      "version": "0.1.1",
       "license": "MIT",
       "riskLevel": "medium",
-      "source": "https://github.com/supermemoryai/supermemory/tree/ef0026a23c160e2976480352e5a6f58762d70d13/skills/supermemory",
+      "source": "https://github.com/supermemoryai/supermemory/tree/5a3ff85ea559a3f6ac32237a38de5042dc4bdd1a/skills/supermemory",
       "detail": {
         "displayName": "长期记忆与知识检索",
         "summary": "沉淀项目事实、决策和知识片段，并在后续任务中检索复用。",
