@@ -32,7 +32,7 @@
       "tags": ["multi-agent", "team", "collaboration"],
       "runtime": ["portable"],
       "riskLevel": "medium",
-      "source": "https://github.com/anbeime/skill",
+      "source": "https://github.com/2508756189/state-of-art-skills/tree/main/skills/anbeime-agent-team",
       "detail": {
         "displayName": "多智能体团队框架",
         "summary": "组织多个角色型智能体协作完成复杂任务，并保留明确的角色分工与交付链路。",
@@ -47,7 +47,7 @@
       "tags": ["research", "writing", "content"],
       "runtime": ["portable"],
       "riskLevel": "low",
-      "source": "https://github.com/anbeime/skill",
+      "source": "https://github.com/2508756189/state-of-art-skills/tree/main/skills/anbeime-content-research-writer",
       "detail": {
         "displayName": "内容研究写作助手",
         "summary": "将调研、引用、提纲和章节迭代整合为可复用的内容生产流程。",
@@ -62,7 +62,7 @@
       "tags": ["frontend", "ui", "design"],
       "runtime": ["portable"],
       "riskLevel": "low",
-      "source": "https://github.com/anbeime/skill",
+      "source": "https://github.com/2508756189/state-of-art-skills/tree/main/skills/anbeime-frontend-design",
       "detail": {
         "displayName": "前端体验设计",
         "summary": "面向生产级前端界面的设计与实现规范，强化布局、层级和交互质感。",
@@ -77,7 +77,7 @@
       "tags": ["meeting", "decision", "multi-agent"],
       "runtime": ["portable"],
       "riskLevel": "medium",
-      "source": "https://github.com/anbeime/skill",
+      "source": "https://github.com/2508756189/state-of-art-skills/tree/main/skills/anbeime-multi-agent-meeting",
       "detail": {
         "displayName": "多智能体会议",
         "summary": "模拟多个专业角色讨论并形成有依据的会议结论和行动项。",
@@ -92,7 +92,7 @@
       "tags": ["product", "prd", "prioritization"],
       "runtime": ["portable"],
       "riskLevel": "low",
-      "source": "https://github.com/anbeime/skill",
+      "source": "https://github.com/2508756189/state-of-art-skills/tree/main/skills/anbeime-product-manager-toolkit",
       "detail": {
         "displayName": "产品经理工具包",
         "summary": "覆盖需求分析、优先级、访谈与 PRD 产出的产品管理工具集。",
@@ -107,7 +107,7 @@
       "tags": ["pptx", "presentations", "documents"],
       "runtime": ["portable"],
       "riskLevel": "medium",
-      "source": "https://github.com/anbeime/skill",
+      "source": "https://github.com/2508756189/state-of-art-skills/tree/main/skills/anbeime-pptx-generator",
       "detail": {
         "displayName": "PPT 生成器",
         "summary": "从结构化内容生成可编辑 PowerPoint，并提供布局、图表和校验能力。",
@@ -122,7 +122,7 @@
       "tags": ["design-system", "screenshot", "frontend"],
       "runtime": ["portable"],
       "riskLevel": "high",
-      "source": "https://github.com/anbeime/skill",
+      "source": "https://github.com/2508756189/state-of-art-skills/tree/main/skills/anbeime-web-design-analyzer",
       "detail": {
         "displayName": "网页设计分析器",
         "summary": "从网页截图提取设计系统、排版和组件规律，辅助复刻与改版。",

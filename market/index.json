@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.2",
-  "generatedAt": "2026-07-26T07:47:00Z",
+  "generatedAt": "2026-07-26T17:29:57Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -50,7 +50,7 @@
       },
       "version": "0.1.0",
       "license": "review-required",
-      "source": "https://github.com/anbeime/skill",
+      "source": "https://github.com/2508756189/state-of-art-skills/tree/main/skills/anbeime-agent-team",
       "riskLevel": "medium",
       "path": "skills/anbeime-agent-team",
       "detail": {
@@ -105,7 +105,7 @@
       },
       "version": "0.1.0",
       "license": "review-required",
-      "source": "https://github.com/anbeime/skill",
+      "source": "https://github.com/2508756189/state-of-art-skills/tree/main/skills/anbeime-content-research-writer",
       "riskLevel": "low",
       "path": "skills/anbeime-content-research-writer",
       "detail": {
@@ -161,7 +161,7 @@
       },
       "version": "0.1.0",
       "license": "Complete terms in LICENSE.txt",
-      "source": "https://github.com/anbeime/skill",
+      "source": "https://github.com/2508756189/state-of-art-skills/tree/main/skills/anbeime-frontend-design",
       "riskLevel": "low",
       "path": "skills/anbeime-frontend-design",
       "detail": {
@@ -216,7 +216,7 @@
       },
       "version": "0.1.0",
       "license": "review-required",
-      "source": "https://github.com/anbeime/skill",
+      "source": "https://github.com/2508756189/state-of-art-skills/tree/main/skills/anbeime-multi-agent-meeting",
       "riskLevel": "medium",
       "path": "skills/anbeime-multi-agent-meeting",
       "detail": {
@@ -272,7 +272,7 @@
       },
       "version": "0.1.0",
       "license": "review-required",
-      "source": "https://github.com/anbeime/skill",
+      "source": "https://github.com/2508756189/state-of-art-skills/tree/main/skills/anbeime-pptx-generator",
       "riskLevel": "medium",
       "path": "skills/anbeime-pptx-generator",
       "detail": {
@@ -329,7 +329,7 @@
       },
       "version": "0.1.0",
       "license": "review-required",
-      "source": "https://github.com/anbeime/skill",
+      "source": "https://github.com/2508756189/state-of-art-skills/tree/main/skills/anbeime-product-manager-toolkit",
       "riskLevel": "low",
       "path": "skills/anbeime-product-manager-toolkit",
       "detail": {
@@ -385,7 +385,7 @@
       },
       "version": "0.1.0",
       "license": "review-required",
-      "source": "https://github.com/anbeime/skill",
+      "source": "https://github.com/2508756189/state-of-art-skills/tree/main/skills/anbeime-web-design-analyzer",
       "riskLevel": "high",
       "path": "skills/anbeime-web-design-analyzer",
       "detail": {
