@@ -7,6 +7,7 @@
 *.7z
 *.zip
 !dist/skills/*.zip
+!dist/teleagent/*.zip
 __pycache__/
 *.pyc
 .DS_Store

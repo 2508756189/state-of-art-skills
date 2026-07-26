@@ -12,7 +12,7 @@ from pathlib import Path
 from typing import Any
 
 
-SCHEMA_VERSION = "1.1"
+SCHEMA_VERSION = "1.2"
 REPO_URL = "https://github.com/2508756189/state-of-art-skills"
 SECRET_PATTERNS = [
     re.compile(r"sk-[A-Za-z0-9_.-]{10,}"),
@@ -150,11 +150,15 @@ def archive_file_bytes(path: Path) -> bytes:
     return text.replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")
 
 
-def zip_skill(root: Path, skill_dir: Path, dist_dir: Path) -> tuple[Path, str, int]:
+def zip_skill(base_dir: Path, skill_dir: Path, dist_dir: Path) -> tuple[Path, str, int]:
+    # Entry names are relative to base_dir. Standard archives use the skills/
+    # parent (entries: <id>/...) so install scripts extracting into the parent
+    # of ~/.../skills/<id> land correctly; TeleAgent archives use the skill
+    # directory itself (entries: SKILL.md at the archive root).
     archive = dist_dir / f"{skill_dir.name}.zip"
     with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED) as zf:
         for path in skill_runtime_files(skill_dir):
-            info = zipfile.ZipInfo(str(path.relative_to(root)).replace("\\", "/"))
+            info = zipfile.ZipInfo(str(path.relative_to(base_dir)).replace("\\", "/"))
             info.date_time = (2026, 1, 1, 0, 0, 0)
             info.create_system = 0
             info.compress_type = zipfile.ZIP_DEFLATED
@@ -163,11 +167,40 @@ def zip_skill(root: Path, skill_dir: Path, dist_dir: Path) -> tuple[Path, str, i
     return archive, sha256_file(archive), archive.stat().st_size
 
 
-def expected_zip_contents(root: Path, skill_dir: Path) -> dict[str, bytes]:
+def expected_zip_contents(base_dir: Path, skill_dir: Path) -> dict[str, bytes]:
     return {
-        str(path.relative_to(root)).replace("\\", "/"): archive_file_bytes(path)
+        str(path.relative_to(base_dir)).replace("\\", "/"): archive_file_bytes(path)
         for path in skill_runtime_files(skill_dir)
     }
+
+
+def validate_archive_entry(
+    root: Path,
+    skill_id: str,
+    entry: Any,
+    base_dir: Path,
+    skill_dir: Path,
+    label: str,
+) -> None:
+    archive = entry if isinstance(entry, dict) else {}
+    archive_path = root / str(archive.get("path") or "")
+    if not archive_path.exists():
+        raise MarketError(f"{skill_id} {label} not found: {archive_path}")
+    checksum = str(archive.get("sha256") or "")
+    size = int(archive.get("size") or 0)
+    if checksum != sha256_file(archive_path):
+        raise MarketError(f"{skill_id} {label} checksum is stale")
+    if size != archive_path.stat().st_size:
+        raise MarketError(f"{skill_id} {label} size is stale")
+
+    expected = expected_zip_contents(base_dir, skill_dir)
+    with zipfile.ZipFile(archive_path) as zf:
+        actual_names = sorted(info.filename for info in zf.infolist() if not info.is_dir())
+        if actual_names != sorted(expected):
+            raise MarketError(f"{skill_id} {label} contents are stale")
+        for name, expected_bytes in expected.items():
+            if zf.read(name) != expected_bytes:
+                raise MarketError(f"{skill_id} {label} file is stale: {name}")
 
 
 def validate_existing_artifacts(root: Path) -> None:
@@ -182,25 +215,22 @@ def validate_existing_artifacts(root: Path) -> None:
         skill_dir = root / "skills" / skill_id
         if not skill_dir.exists():
             raise MarketError(f"registry skill {skill_id!r} has no source directory")
-        archive = item.get("archive") if isinstance(item.get("archive"), dict) else {}
-        archive_path = root / str(archive.get("path") or "")
-        if not archive_path.exists():
-            raise MarketError(f"{skill_id} archive not found: {archive_path}")
-        checksum = str(archive.get("sha256") or "")
-        size = int(archive.get("size") or 0)
-        if checksum != sha256_file(archive_path):
-            raise MarketError(f"{skill_id} archive checksum is stale")
-        if size != archive_path.stat().st_size:
-            raise MarketError(f"{skill_id} archive size is stale")
-
-        expected = expected_zip_contents(root, skill_dir)
-        with zipfile.ZipFile(archive_path) as zf:
-            actual_names = sorted(info.filename for info in zf.infolist() if not info.is_dir())
-            if actual_names != sorted(expected):
-                raise MarketError(f"{skill_id} archive contents are stale")
-            for name, expected_bytes in expected.items():
-                if zf.read(name) != expected_bytes:
-                    raise MarketError(f"{skill_id} archive file is stale: {name}")
+        validate_archive_entry(
+            root,
+            skill_id,
+            item.get("archive"),
+            base_dir=skill_dir.parent,
+            skill_dir=skill_dir,
+            label="archive",
+        )
+        validate_archive_entry(
+            root,
+            skill_id,
+            item.get("teleagentArchive"),
+            base_dir=skill_dir,
+            skill_dir=skill_dir,
+            label="teleagent archive",
+        )
 
         detail = item.get("detail") if isinstance(item.get("detail"), dict) else {}
         markdown_path = str(detail.get("markdownPath") or "")
@@ -256,9 +286,11 @@ def build_market(root: Path, write: bool) -> dict[str, Any]:
     category_ids = {str(item.get("id")) for item in categories if isinstance(item, dict)}
 
     dist_dir = root / "dist" / "skills"
+    teleagent_dist_dir = root / "dist" / "teleagent"
     detail_dir = root / "market" / "details"
     if write:
         dist_dir.mkdir(parents=True, exist_ok=True)
+        teleagent_dist_dir.mkdir(parents=True, exist_ok=True)
         detail_dir.mkdir(parents=True, exist_ok=True)
 
     seen_names: dict[str, Path] = {}
@@ -291,8 +323,14 @@ def build_market(root: Path, write: bool) -> dict[str, Any]:
         archive_path: Path | None = None
         checksum = ""
         size = 0
+        teleagent_archive_path: Path | None = None
+        teleagent_checksum = ""
+        teleagent_size = 0
         if write:
-            archive_path, checksum, size = zip_skill(root, skill_dir, dist_dir)
+            archive_path, checksum, size = zip_skill(skills_root, skill_dir, dist_dir)
+            teleagent_archive_path, teleagent_checksum, teleagent_size = zip_skill(
+                skill_dir, skill_dir, teleagent_dist_dir
+            )
             (detail_dir / f"{skill_dir.name}.md").write_text(
                 skill_markdown_body(skill_md),
                 encoding="utf-8",
@@ -316,6 +354,11 @@ def build_market(root: Path, write: bool) -> dict[str, Any]:
                 "path": str(archive_path.relative_to(root)).replace("\\", "/") if archive_path else f"dist/skills/{skill_dir.name}.zip",
                 "sha256": checksum,
                 "size": size,
+            },
+            "teleagentArchive": {
+                "path": str(teleagent_archive_path.relative_to(root)).replace("\\", "/") if teleagent_archive_path else f"dist/teleagent/{skill_dir.name}.zip",
+                "sha256": teleagent_checksum,
+                "size": teleagent_size,
             },
         }
         items.append(item)

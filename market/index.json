@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "1.1",
-  "generatedAt": "2026-07-26T07:38:56Z",
+  "schemaVersion": "1.2",
+  "generatedAt": "2026-07-26T07:47:00Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -76,8 +76,13 @@
       },
       "archive": {
         "path": "dist/skills/anbeime-agent-team.zip",
-        "sha256": "3a4a0577c9d11ee5cf9bd63a1f653fc58c581fbb209afc957569975362d86a0f",
-        "size": 36208
+        "sha256": "f6bef34277b955bb80116c1e2a40a0f7492946a346990460cfd03e298d8db1c0",
+        "size": 36110
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/anbeime-agent-team.zip",
+        "sha256": "a48c7ed37f499e8617a051941d294b922c21352a3a3263c69133612c45ec5a65",
+        "size": 35844
       }
     },
     {
@@ -127,8 +132,13 @@
       },
       "archive": {
         "path": "dist/skills/anbeime-content-research-writer.zip",
-        "sha256": "196a99cd885ffda53dac79c70e6a5457c864c3ab80f2a587009579495c4da15d",
-        "size": 5899
+        "sha256": "c8aa0cce604b897a8f7598d515c0897d8a4e9c3478f1b08fdf8dc0d3182c5ef1",
+        "size": 5885
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/anbeime-content-research-writer.zip",
+        "sha256": "b60749447da250f5eed4507a4807aecd4ebb5d998568e25f38197ea46e674f38",
+        "size": 5821
       }
     },
     {
@@ -177,8 +187,13 @@
       },
       "archive": {
         "path": "dist/skills/anbeime-frontend-design.zip",
-        "sha256": "fcae9694d49473d0226c676a09147df94fcaef0627b1b228788cd41032390166",
-        "size": 2306
+        "sha256": "ab5ea085fd2de1c84b5de7a27c7df43ee9d9d0887f891860350a765a5e70fe46",
+        "size": 2292
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/anbeime-frontend-design.zip",
+        "sha256": "b2863dbf29d93fee1cf6616a4d16680427397d3856dfa7916049fddf7b8a5576",
+        "size": 2244
       }
     },
     {
@@ -228,8 +243,13 @@
       },
       "archive": {
         "path": "dist/skills/anbeime-multi-agent-meeting.zip",
-        "sha256": "fc10480cf5d911736e1dda4e804703a0be41eb8db7b482f0e8af608cc676f580",
-        "size": 18029
+        "sha256": "a34ef922c0efceaec6658db4c6d4a14d8bea8f30f848b812e40f85dbfdb61b98",
+        "size": 17917
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/anbeime-multi-agent-meeting.zip",
+        "sha256": "1a1ea6d4c23af90eb349ed46423bc6e931dfebe2be44b0dde8900da45796ded9",
+        "size": 17469
       }
     },
     {
@@ -280,8 +300,13 @@
       },
       "archive": {
         "path": "dist/skills/anbeime-pptx-generator.zip",
-        "sha256": "a21a5ac42e1df6240e9127551a8ec8b2f8230d7c546d654c40be650b8709e61a",
-        "size": 18384
+        "sha256": "5c738173dfc3f260151525470a35a1dd310b8809e4f5cd3a5eea259f1119c460",
+        "size": 18230
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/anbeime-pptx-generator.zip",
+        "sha256": "9666c5a1e53b192a94cf9242a905ca16b2f39ee236be6c2531df7ff4fbc3398a",
+        "size": 17724
       }
     },
     {
@@ -331,8 +356,13 @@
       },
       "archive": {
         "path": "dist/skills/anbeime-product-manager-toolkit.zip",
-        "sha256": "11ff9e7188e995199743006eef78c54762ed36f6e6599439757f35944e741c5b",
-        "size": 17717
+        "sha256": "f67594df81c20ebf4768e4d7a010cef2dbbbc13c7584ba8afe3191192fdacd36",
+        "size": 17661
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/anbeime-product-manager-toolkit.zip",
+        "sha256": "3cc9606e69eaa69b7dccaeb04121b8a5d967ed17fcb7565aec1bda850583128c",
+        "size": 17405
       }
     },
     {
@@ -385,8 +415,13 @@
       },
       "archive": {
         "path": "dist/skills/anbeime-web-design-analyzer.zip",
-        "sha256": "0c8fb34b48961c05e07034bb44b3ab8872aa4a0b4a3f827368b955edd4057233",
-        "size": 14800
+        "sha256": "ca352f1839b3ac1c1d091a563d7dc4ee45facfb9dbc0efbaea31e823af487d90",
+        "size": 14730
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/anbeime-web-design-analyzer.zip",
+        "sha256": "a8398fddd101d6ff601e5461e0c5aa5ff6583c8cb4f5d0d3781ad59572c8bc0d",
+        "size": 14450
       }
     },
     {
@@ -438,8 +473,13 @@
       },
       "archive": {
         "path": "dist/skills/codebase-design.zip",
-        "sha256": "2f9090a7fde1a86ed7c1f7969e388c8b9b99f3b8511bbb45dd94538debe8a3a3",
-        "size": 6854
+        "sha256": "e57bb8d72b22ff934829b2d49f0d1bd9a2afc3b0bdafa4a650d3ec5760a39342",
+        "size": 6784
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/codebase-design.zip",
+        "sha256": "082d8c485c88eb3cc8c5b8a04ef30ef0f7432dbc550f36f17b7244c4754130f7",
+        "size": 6624
       }
     },
     {
@@ -488,8 +528,13 @@
       },
       "archive": {
         "path": "dist/skills/compound.zip",
-        "sha256": "f73c6a5461a98c7fd61ef9b59e8a049479487aa2595c035b9012c4e1c51f6861",
-        "size": 1127
+        "sha256": "f8fea5958cb4fd1932956936a4572c0b63e8fc1f463fc9807be978a22f6c7b15",
+        "size": 1113
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/compound.zip",
+        "sha256": "51e488375879b33d375cbe4471f593135790f51c2a798d08f4a57ebbd6c1eb7a",
+        "size": 1095
       }
     },
     {
@@ -541,8 +586,13 @@
       },
       "archive": {
         "path": "dist/skills/dashmotion.zip",
-        "sha256": "6c60946ca79cb55d000b35efa5e6662793c88c927fa5102a784876ace1346ea1",
-        "size": 55266
+        "sha256": "c52c8a08fe67ca83f6c44ec3c4192e1664dede5b0bd66a30e124efc2dd390494",
+        "size": 55112
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/dashmotion.zip",
+        "sha256": "fa3e2c05ef1a2952569492398b2144d7203116a82edd1e42af6a0374c6e6dd66",
+        "size": 54870
       }
     },
     {
@@ -594,8 +644,13 @@
       },
       "archive": {
         "path": "dist/skills/diagnosing-bugs.zip",
-        "sha256": "5ec3de1316fabf9402b9bd529a0b4a76705375e83e1921096036ae1b80af61f4",
-        "size": 6144
+        "sha256": "4ed2508d73f91c6085d53b41f6d7f1639cf7e02fcf3e5f220a7ae77ab560c67d",
+        "size": 6088
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/diagnosing-bugs.zip",
+        "sha256": "30c903d7aa9e541f68e4158022ee4956465de78305c5aaf835cf32337251c31f",
+        "size": 5960
       }
     },
     {
@@ -647,8 +702,13 @@
       },
       "archive": {
         "path": "dist/skills/differential-review.zip",
-        "sha256": "35e250506e7cf0ec294d87a82b2331cbeb92681792452d9e34cc0a318ac3185f",
-        "size": 23028
+        "sha256": "1785f23dfd59a0ca4d2c4a7361540076a516f15d6b2bdd0d50a3374d4243ff1f",
+        "size": 22916
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/differential-review.zip",
+        "sha256": "8fda384992717fbc38f0f8901d2e2a5c696a1e97a5d00d78435a123fc763b8fc",
+        "size": 22596
       }
     },
     {
@@ -700,8 +760,13 @@
       },
       "archive": {
         "path": "dist/skills/domain-modeling.zip",
-        "sha256": "b2b1645809f4733ccf95a95587caaf88e344f3f59ca44bbdf78eed9fed4acb84",
-        "size": 5805
+        "sha256": "c04f08f1b91a079dd4e9605f91f2ebffaeecab63b5c3f6f2e59282f0dc0793a6",
+        "size": 5735
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/domain-modeling.zip",
+        "sha256": "44f2b0faf0e86728d3e3eab4fd973fb53ce141d2a8195398f8ac010b0c1a5f29",
+        "size": 5575
       }
     },
     {
@@ -750,8 +815,13 @@
       },
       "archive": {
         "path": "dist/skills/ecc.zip",
-        "sha256": "88b8926ed7c9ea5779d8e6aa087cf4fd8cd3c0311632ddfaf001973c941e2217",
-        "size": 1148
+        "sha256": "b6b4793596c222dae66eeb239c9dd49613b43a8f65a267f3b8a4457adf4b6cfa",
+        "size": 1134
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/ecc.zip",
+        "sha256": "e8f433b0791f6ba19d7a9adbfc14c324c2fe91ad1773cd789ffb4b30152314da",
+        "size": 1126
       }
     },
     {
@@ -800,8 +870,13 @@
       },
       "archive": {
         "path": "dist/skills/headroom.zip",
-        "sha256": "0bb4023f130391edfc3506d11951322c3e0dbd86fdff79191b258d00fb1c78a2",
-        "size": 1271
+        "sha256": "c5cc52e6ae8c400c2040b31fdcdc3ad7e9562fa9894d867615e786e9e7d1e6bb",
+        "size": 1257
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/headroom.zip",
+        "sha256": "2e6dc9a92f0e57cfb9399e0c2002fe5d79cd6ee417e726ff193be3fa64abe383",
+        "size": 1239
       }
     },
     {
@@ -851,8 +926,13 @@
       },
       "archive": {
         "path": "dist/skills/markitdown.zip",
-        "sha256": "8164e3feb4f427a436ec9874f80a6dd10ed4a2a78a4a36214e55f37f1f59b3a0",
-        "size": 1201
+        "sha256": "414c72a401fbfa1217f3e84e589ce6ec8bf085b5c1ba1c3ba402aee45a72b89f",
+        "size": 1187
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/markitdown.zip",
+        "sha256": "cea402e61ca6aaf116e34198ba3fda8ba533de8529a5b71bc542ab5899a8520c",
+        "size": 1165
       }
     },
     {
@@ -902,8 +982,13 @@
       },
       "archive": {
         "path": "dist/skills/mcp-builder.zip",
-        "sha256": "751977ec3e05222d277e5f1ee257d9a72fda9869f04c074b631284cfe634d25b",
-        "size": 42528
+        "sha256": "0b775580f86b98b6412bc9fd2993c9a6652c2d8cd3265304eaaae6ab83db4165",
+        "size": 42388
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/mcp-builder.zip",
+        "sha256": "f905334371787d5cf8d601cda81a60b90d3d4d12ef7b871e3ab28ec2146fa4dd",
+        "size": 42148
       }
     },
     {
@@ -954,8 +1039,13 @@
       },
       "archive": {
         "path": "dist/skills/mcp-security-audit.zip",
-        "sha256": "7b58039b64ae70b6f5ee11ef58ac0a69de32e00db60b1b449c01c0aa5e8c12de",
-        "size": 6540
+        "sha256": "9a8a93cc62bceda296b0e04a9fbf73452c93ee421516c95221e9c086ce225d30",
+        "size": 6498
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/mcp-security-audit.zip",
+        "sha256": "51c6732606a582f1840cbbf5fed583c6f36aa07b608a8faa4005ca805625a8f5",
+        "size": 6384
       }
     },
     {
@@ -1005,8 +1095,13 @@
       },
       "archive": {
         "path": "dist/skills/react-best-practices.zip",
-        "sha256": "af303e452cf59dce20efbd588d21298d31277e30dc0ffb5c51c7bffbd5cd141f",
-        "size": 98485
+        "sha256": "b73dd7ee4a58c653a628b299ae87f1943324b3a685c2f1425246afd990d37b74",
+        "size": 97421
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/react-best-practices.zip",
+        "sha256": "9079bfdb9d90e00b4b37c57e8dbbdfa396894960bef9ce0e18f92dc7c3408a77",
+        "size": 94229
       }
     },
     {
@@ -1058,8 +1153,13 @@
       },
       "archive": {
         "path": "dist/skills/resolving-merge-conflicts.zip",
-        "sha256": "cd06f44485440c8c5e7ce8f8990c727cb3a02e5215d4880c17e1a2402e803a77",
-        "size": 1997
+        "sha256": "8be25783632cff62b9228de22f20fc6eb52f360c4d99c8e5c7bd401083e74aac",
+        "size": 1955
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/resolving-merge-conflicts.zip",
+        "sha256": "5b92c268cbb409e2f41df03cd99076625627948deb56d909cf849199086dad1a",
+        "size": 1799
       }
     },
     {
@@ -1108,8 +1208,13 @@
       },
       "archive": {
         "path": "dist/skills/security-best-practices.zip",
-        "sha256": "6ddecc8162aa6cdf0f9d48fce787ab780f21b402b3410a6a38e093b3295ca2bf",
-        "size": 140827
+        "sha256": "35c038cd195f415ef0760c3d5209044f949f0401e02d9c340f9077fd1bcdc756",
+        "size": 140645
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/security-best-practices.zip",
+        "sha256": "f3f009384e91442f4d23759fea7cf2ff05a195f45cd291de3c07ae4661d0a5b5",
+        "size": 140021
       }
     },
     {
@@ -1160,8 +1265,13 @@
       },
       "archive": {
         "path": "dist/skills/skill-creator.zip",
-        "sha256": "77db0170ef53c8553682740c6ac1dd11dd36deb67269f5ae9e7283d9d86266f1",
-        "size": 73236
+        "sha256": "2868f676c8560aaaef04bdaae8ed0bc833144c0cdf366c134fd6e5c134811532",
+        "size": 72984
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/skill-creator.zip",
+        "sha256": "995a07458271b6b02c7b543fc3eac1f3965e66b1f7926e2b91a02b0887ab1ae9",
+        "size": 72480
       }
     },
     {
@@ -1211,8 +1321,13 @@
       },
       "archive": {
         "path": "dist/skills/supermemory.zip",
-        "sha256": "3d6db1c1adc400f5b52b8698c6f3970291d006e6f7fe330d7b0c80947506ccd0",
-        "size": 29812
+        "sha256": "be25453aa5d877f1f227d8f1ade08f4b079c6daa3892ca14530e50998bccbbbc",
+        "size": 29714
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/supermemory.zip",
+        "sha256": "3431d9027abf7a8c1fede2c245a531184895edd68a956df567820e0b5651e4bb",
+        "size": 29546
       }
     },
     {
@@ -1267,8 +1382,13 @@
       },
       "archive": {
         "path": "dist/skills/taste-skill.zip",
-        "sha256": "58a6c64cd00e0ce4eb2c217634a97ae7fd94b47b825b68c6e02aca6235074951",
-        "size": 35725
+        "sha256": "9fd4cdd50f7714f9008f86e84d0fc35d2a62bc0bd5a16fc39b9fdf2c05164303",
+        "size": 35697
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/taste-skill.zip",
+        "sha256": "29a0cd03520dfa6de6e7ef44c72829df4275c2f9c9d97f5d729810192b73d5ee",
+        "size": 35649
       }
     },
     {
@@ -1318,8 +1438,13 @@
       },
       "archive": {
         "path": "dist/skills/test-driven-development.zip",
-        "sha256": "5907564d2e01c37c750bea497e093c1b8dee1c2a5bdf3f4fae6ba2b008475daf",
-        "size": 8593
+        "sha256": "d02c9428c48ebbaccfcac5d2aaed5750b0fe2d2a3d11dde1e85601f6201eb292",
+        "size": 8551
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/test-driven-development.zip",
+        "sha256": "ca2b091605d3cd77b5faf807957e2eeaf991f84696dc968e539b74c56164e298",
+        "size": 8407
       }
     },
     {
@@ -1373,8 +1498,13 @@
       },
       "archive": {
         "path": "dist/skills/unit-test-vue-pinia.zip",
-        "sha256": "a94ccbf92cf20875d2b57b3da56f8a34526f9289c35a011ae4cdbd29382b2e80",
-        "size": 3867
+        "sha256": "af565cafbba7342889b9d528b27320e77f78e7a73047f0c9d95c3c4951dec456",
+        "size": 3839
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/unit-test-vue-pinia.zip",
+        "sha256": "941f7870b607c02bc6990c43046830f675629cd9e9516ba985ba0562496faadc",
+        "size": 3759
       }
     },
     {
@@ -1423,8 +1553,13 @@
       },
       "archive": {
         "path": "dist/skills/web-design-guidelines.zip",
-        "sha256": "c36e350cf387dcd9e2946eab1c79b24112a0db4aec21835616b832c2bb22cc8a",
-        "size": 902
+        "sha256": "e0301ca4a18675de4b78a4038caef4c1fb6266a772b8c44f99f0df4fed458de0",
+        "size": 888
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/web-design-guidelines.zip",
+        "sha256": "f089bc6738966db412357a4e4f0b8b084c09aae653c6e4b3cfeaaf501f2185a2",
+        "size": 844
       }
     },
     {
@@ -1476,8 +1611,13 @@
       },
       "archive": {
         "path": "dist/skills/webapp-testing.zip",
-        "sha256": "b5847d6be9d723b923595ea0c3d3956bde0e7de9a9a2a20edf4dfd0c89ee78bb",
-        "size": 9710
+        "sha256": "b4e47a10a5fa7051a2dcd2336ba34c98878f5bd01c806f6715d3cedab76b843e",
+        "size": 9626
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/webapp-testing.zip",
+        "sha256": "78e0febd27ce67daea0a2e7c9fb0b19b37c50b9a7162d67f73c987d80c8df0a0",
+        "size": 9446
       }
     }
   ]

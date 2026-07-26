@@ -87,7 +87,7 @@ class BuildMarketTests(unittest.TestCase):
             registry = build_market.build_market(root, write=True)
             item = registry["skills"][0]
 
-            self.assertEqual(registry["schemaVersion"], "1.1")
+            self.assertEqual(registry["schemaVersion"], "1.2")
             self.assertEqual(item["id"], "codex-review")
             self.assertEqual(item["category"], "engineering")
             self.assertEqual(item["installTargets"]["codex"], "~/.codex/skills/codex-review")
@@ -100,6 +100,30 @@ class BuildMarketTests(unittest.TestCase):
                 "# Codex Review\n",
             )
             self.assertTrue((root / "market" / "index.json").exists())
+
+            # Standard archives must unpack as <id>/... so install scripts that
+            # extract into the parent of ~/.../skills/<id> land correctly (B4).
+            import zipfile
+
+            with zipfile.ZipFile(root / item["archive"]["path"]) as zf:
+                self.assertEqual(zf.namelist(), ["codex-review/SKILL.md"])
+            self.assertEqual(
+                item["archive"]["sha256"],
+                build_market.sha256_file(root / item["archive"]["path"]),
+            )
+
+            # Every skill must also ship a TeleAgent archive with SKILL.md at
+            # the archive root, hashed against the file on disk (B6).
+            teleagent = item["teleagentArchive"]
+            self.assertEqual(teleagent["path"], "dist/teleagent/codex-review.zip")
+            self.assertTrue((root / teleagent["path"]).exists())
+            self.assertEqual(
+                teleagent["sha256"],
+                build_market.sha256_file(root / teleagent["path"]),
+            )
+            self.assertEqual(teleagent["size"], (root / teleagent["path"]).stat().st_size)
+            with zipfile.ZipFile(root / teleagent["path"]) as zf:
+                self.assertEqual(zf.namelist(), ["SKILL.md"])
 
     def test_rejects_duplicate_skill_names(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -266,7 +290,7 @@ class BuildMarketTests(unittest.TestCase):
             import zipfile
 
             with zipfile.ZipFile(archive_path) as zf:
-                data = zf.read("skills/crlf-skill/SKILL.md")
+                data = zf.read("crlf-skill/SKILL.md")
 
             self.assertNotIn(b"\r\n", data)
             self.assertIn(b"---\nname: crlf-skill\n", data)
@@ -300,14 +324,44 @@ class BuildMarketTests(unittest.TestCase):
             with zipfile.ZipFile(archive_path) as zf:
                 names = set(zf.namelist())
 
-            self.assertIn("skills/clean-skill/SKILL.md", names)
-            self.assertIn("skills/clean-skill/scripts/run.py", names)
-            self.assertNotIn("skills/clean-skill/scripts/__pycache__/run.cpython-313.pyc", names)
-            self.assertNotIn("skills/clean-skill/notes.local.md", names)
-            self.assertNotIn("skills/clean-skill/artifact.bak", names)
+            self.assertIn("clean-skill/SKILL.md", names)
+            self.assertIn("clean-skill/scripts/run.py", names)
+            self.assertNotIn("clean-skill/scripts/__pycache__/run.cpython-313.pyc", names)
+            self.assertNotIn("clean-skill/notes.local.md", names)
+            self.assertNotIn("clean-skill/artifact.bak", names)
+
+            teleagent_path = root / registry["skills"][0]["teleagentArchive"]["path"]
+            with zipfile.ZipFile(teleagent_path) as zf:
+                teleagent_names = set(zf.namelist())
+            self.assertIn("SKILL.md", teleagent_names)
+            self.assertIn("scripts/run.py", teleagent_names)
+            self.assertNotIn("notes.local.md", teleagent_names)
 
             (cache_dir / "later.cpython-313.pyc").write_bytes(b"later-cache")
             build_market.validate_existing_artifacts(root)
+
+    def test_rejects_stale_teleagent_archive(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            skill_dir = root / "skills" / "codex-review"
+            skill_dir.mkdir(parents=True)
+            (skill_dir / "SKILL.md").write_text(
+                "---\nname: codex-review\ndescription: Review code.\n---\n\n# Review\n",
+                encoding="utf-8",
+            )
+            (root / "market").mkdir()
+            (root / "market" / "categories.json").write_text(
+                json.dumps({"categories": [], "skills": {}}),
+                encoding="utf-8",
+            )
+
+            registry = build_market.build_market(root, write=True)
+            build_market.validate_existing_artifacts(root)
+
+            teleagent_path = root / registry["skills"][0]["teleagentArchive"]["path"]
+            teleagent_path.write_bytes(b"tampered")
+            with self.assertRaisesRegex(build_market.MarketError, "teleagent archive"):
+                build_market.validate_existing_artifacts(root)
 
 
 if __name__ == "__main__":
