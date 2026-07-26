@@ -330,17 +330,19 @@
     },
     "taste-skill": {
       "category": "design",
-      "tags": ["taste", "ui", "product"],
+      "tags": ["taste", "ui", "frontend", "landing-page", "anti-slop"],
       "runtime": ["portable"],
-      "riskLevel": "low",
-      "source": "https://github.com/leonxlnx/taste-skill",
+      "version": "1.0.0",
+      "license": "MIT",
+      "riskLevel": "medium",
+      "source": "https://github.com/leonxlnx/taste-skill/tree/e988add20dab0fa97d7a76781c48961c8184288e/skills/taste-skill",
       "detail": {
-        "displayName": "产品品味优化",
-        "summary": "审视并提升产品界面的视觉层级、信息密度和交互细节。",
-        "useCases": ["界面改版", "设计评审", "交互打磨"],
-        "capabilities": ["体验审查", "视觉优化", "状态设计"],
-        "requirements": ["现有界面、截图或前端代码"],
-        "permissions": ["读取界面资料", "按任务修改前端文件"]
+        "displayName": "反模板前端设计",
+        "summary": "面向落地页、作品集和站点改版的反模板化前端设计：先读需求推断设计方向，再匹配真实设计体系，产出不像 AI 模板的界面。",
+        "useCases": ["落地页设计", "作品集网站", "现有站点改版"],
+        "capabilities": ["设计方向推断", "设计体系匹配", "暗色模式与可访问性检查", "AI 痕迹清除"],
+        "requirements": ["前端项目或页面需求", "按所选设计体系安装对应 npm 包"],
+        "permissions": ["读取界面资料", "按任务修改前端文件", "经确认执行 npm 安装命令"]
       }
     }
   }
