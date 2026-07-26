@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.1",
-  "generatedAt": "2026-07-26T07:33:00Z",
+  "generatedAt": "2026-07-26T07:38:56Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -599,6 +599,59 @@
       }
     },
     {
+      "id": "differential-review",
+      "name": "differential-review",
+      "description": "Performs security-focused differential review of code changes (PRs, commits, diffs). Adapts analysis depth to codebase size, uses git history for context, calculates blast radius, checks test coverage, and generates comprehensive markdown reports. Automatically detects and prevents security regressions.",
+      "category": "engineering",
+      "tags": [
+        "security",
+        "code-review",
+        "diff"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/differential-review",
+        "claude": "~/.claude/skills/differential-review",
+        "portable": "~/.agents/skills/differential-review"
+      },
+      "version": "0.1.0",
+      "license": "CC-BY-SA-4.0",
+      "source": "https://github.com/trailofbits/skills/tree/cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af/plugins/differential-review/skills/differential-review",
+      "riskLevel": "medium",
+      "path": "skills/differential-review",
+      "detail": {
+        "displayName": "安全差分评审",
+        "summary": "Trail of Bits 出品：对 PR、commit 或 diff 做安全回归评审，计算影响面与测试覆盖，生成结构化报告。",
+        "useCases": [
+          "PR 安全评审",
+          "上线前变更审计",
+          "安全回归排查"
+        ],
+        "capabilities": [
+          "差分分析",
+          "爆炸半径计算",
+          "对抗性视角",
+          "报告生成"
+        ],
+        "requirements": [
+          "Git 仓库与待评审的变更"
+        ],
+        "permissions": [
+          "读取代码与 Git 历史",
+          "运行只读 git 命令",
+          "写评审报告"
+        ],
+        "markdownPath": "details/differential-review.md"
+      },
+      "archive": {
+        "path": "dist/skills/differential-review.zip",
+        "sha256": "35e250506e7cf0ec294d87a82b2331cbeb92681792452d9e34cc0a318ac3185f",
+        "size": 23028
+      }
+    },
+    {
       "id": "domain-modeling",
       "name": "domain-modeling",
       "description": "Build and sharpen a project's domain model. Use when the user wants to pin down domain terminology or a ubiquitous language, record an architectural decision, or when another skill needs to maintain the domain model.",
@@ -803,6 +856,57 @@
       }
     },
     {
+      "id": "mcp-builder",
+      "name": "mcp-builder",
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+      "category": "engineering",
+      "tags": [
+        "mcp",
+        "server",
+        "scaffolding"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/mcp-builder",
+        "claude": "~/.claude/skills/mcp-builder",
+        "portable": "~/.agents/skills/mcp-builder"
+      },
+      "version": "0.1.0",
+      "license": "Apache-2.0",
+      "source": "https://github.com/anthropics/skills/tree/b29e7cf65e5cb78a5ac33d582270551bc74a14eb/skills/mcp-builder",
+      "riskLevel": "medium",
+      "path": "skills/mcp-builder",
+      "detail": {
+        "displayName": "MCP 服务器构建",
+        "summary": "Anthropic 官方 MCP 服务器开发指南：从工具设计、Python/TypeScript 实现到评测脚本的完整构建流程。",
+        "useCases": [
+          "封装外部 API 为 MCP",
+          "MCP 工具设计评审",
+          "MCP 服务器评测"
+        ],
+        "capabilities": [
+          "最佳实践参考",
+          "Python/Node 脚手架",
+          "评测脚本"
+        ],
+        "requirements": [
+          "Python 3 或 Node.js 开发环境"
+        ],
+        "permissions": [
+          "读写 MCP 服务器代码",
+          "运行本地评测脚本"
+        ],
+        "markdownPath": "details/mcp-builder.md"
+      },
+      "archive": {
+        "path": "dist/skills/mcp-builder.zip",
+        "sha256": "751977ec3e05222d277e5f1ee257d9a72fda9869f04c074b631284cfe634d25b",
+        "size": 42528
+      }
+    },
+    {
       "id": "mcp-security-audit",
       "name": "mcp-security-audit",
       "description": "Audit MCP client and server configuration files for exposed credentials, unsafe shell launchers, unpinned package runners, insecure remote URLs, and unapproved servers. Use for Codex config.toml, Claude-style .mcp.json files, desktop MCP configuration, or repository MCP governance reviews.",
@@ -852,6 +956,57 @@
         "path": "dist/skills/mcp-security-audit.zip",
         "sha256": "7b58039b64ae70b6f5ee11ef58ac0a69de32e00db60b1b449c01c0aa5e8c12de",
         "size": 6540
+      }
+    },
+    {
+      "id": "react-best-practices",
+      "name": "vercel-react-best-practices",
+      "description": "React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patterns. Triggers on tasks involving React components, Next.js pages, data fetching, bundle optimization, or performance improvements.",
+      "category": "engineering",
+      "tags": [
+        "react",
+        "nextjs",
+        "performance"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/react-best-practices",
+        "claude": "~/.claude/skills/react-best-practices",
+        "portable": "~/.agents/skills/react-best-practices"
+      },
+      "version": "1.0.0",
+      "license": "MIT",
+      "source": "https://github.com/vercel-labs/agent-skills/tree/7c180d9044c9ae2b442b567aad4e42a28dd5ed62/skills/react-best-practices",
+      "riskLevel": "low",
+      "path": "skills/react-best-practices",
+      "detail": {
+        "displayName": "React 性能最佳实践",
+        "summary": "Vercel 工程团队官方 React/Next.js 性能规则集：70 条按影响力分级的规则，写码与评审两用。",
+        "useCases": [
+          "React 组件优化",
+          "Next.js 数据获取",
+          "bundle 体积治理"
+        ],
+        "capabilities": [
+          "性能规则检索",
+          "反模式识别",
+          "重构建议"
+        ],
+        "requirements": [
+          "React 或 Next.js 项目"
+        ],
+        "permissions": [
+          "读取前端代码",
+          "按任务修改前端文件"
+        ],
+        "markdownPath": "details/react-best-practices.md"
+      },
+      "archive": {
+        "path": "dist/skills/react-best-practices.zip",
+        "sha256": "af303e452cf59dce20efbd588d21298d31277e30dc0ffb5c51c7bffbd5cd141f",
+        "size": 98485
       }
     },
     {
@@ -905,6 +1060,108 @@
         "path": "dist/skills/resolving-merge-conflicts.zip",
         "sha256": "cd06f44485440c8c5e7ce8f8990c727cb3a02e5215d4880c17e1a2402e803a77",
         "size": 1997
+      }
+    },
+    {
+      "id": "security-best-practices",
+      "name": "security-best-practices",
+      "description": "Perform language and framework specific security best-practice reviews and suggest improvements. Trigger only when the user explicitly requests security best practices guidance, a security review/report, or secure-by-default coding help. Trigger only for supported languages (python, javascript/typescript, go). Do not trigger for general code review, debugging, or non-security tasks.",
+      "category": "engineering",
+      "tags": [
+        "security",
+        "best-practices",
+        "review"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/security-best-practices",
+        "claude": "~/.claude/skills/security-best-practices",
+        "portable": "~/.agents/skills/security-best-practices"
+      },
+      "version": "0.1.0",
+      "license": "Apache-2.0",
+      "source": "https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/security-best-practices",
+      "riskLevel": "low",
+      "path": "skills/security-best-practices",
+      "detail": {
+        "displayName": "安全最佳实践审查",
+        "summary": "OpenAI 官方安全基线技能：按检测到的语言与框架（Python/JS/TS/Go、Vue/React/Django 等）加载安全编码基线做审查。",
+        "useCases": [
+          "安全编码指导",
+          "存量代码安全审查",
+          "漏洞报告与修复建议"
+        ],
+        "capabilities": [
+          "语言框架识别",
+          "安全基线检索",
+          "针对性改进建议"
+        ],
+        "requirements": [
+          "支持语言：Python、JavaScript/TypeScript、Go"
+        ],
+        "permissions": [
+          "读取项目代码"
+        ],
+        "markdownPath": "details/security-best-practices.md"
+      },
+      "archive": {
+        "path": "dist/skills/security-best-practices.zip",
+        "sha256": "6ddecc8162aa6cdf0f9d48fce787ab780f21b402b3410a6a38e093b3295ca2bf",
+        "size": 140827
+      }
+    },
+    {
+      "id": "skill-creator",
+      "name": "skill-creator",
+      "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+      "category": "workflow",
+      "tags": [
+        "skills",
+        "meta",
+        "evals"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/skill-creator",
+        "claude": "~/.claude/skills/skill-creator",
+        "portable": "~/.agents/skills/skill-creator"
+      },
+      "version": "0.1.0",
+      "license": "Apache-2.0",
+      "source": "https://github.com/anthropics/skills/tree/b29e7cf65e5cb78a5ac33d582270551bc74a14eb/skills/skill-creator",
+      "riskLevel": "medium",
+      "path": "skills/skill-creator",
+      "detail": {
+        "displayName": "技能创建器",
+        "summary": "Anthropic 官方元技能：引导创建、改进、评测符合 Agent Skills 规范的技能包，并可量化对比效果。",
+        "useCases": [
+          "新建技能",
+          "优化技能描述",
+          "技能效果评测"
+        ],
+        "capabilities": [
+          "技能脚手架",
+          "打包校验",
+          "评测与报告"
+        ],
+        "requirements": [
+          "Python 3",
+          "评测功能需要可调用的 agent CLI"
+        ],
+        "permissions": [
+          "读写技能目录",
+          "运行本地评测脚本"
+        ],
+        "markdownPath": "details/skill-creator.md"
+      },
+      "archive": {
+        "path": "dist/skills/skill-creator.zip",
+        "sha256": "77db0170ef53c8553682740c6ac1dd11dd36deb67269f5ae9e7283d9d86266f1",
+        "size": 73236
       }
     },
     {
@@ -1015,6 +1272,57 @@
       }
     },
     {
+      "id": "test-driven-development",
+      "name": "test-driven-development",
+      "description": "Use when implementing any feature or bugfix, before writing implementation code",
+      "category": "engineering",
+      "tags": [
+        "tdd",
+        "testing",
+        "workflow"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/test-driven-development",
+        "claude": "~/.claude/skills/test-driven-development",
+        "portable": "~/.agents/skills/test-driven-development"
+      },
+      "version": "6.2.0",
+      "license": "MIT",
+      "source": "https://github.com/obra/superpowers/tree/3dcbd5c4b48e02263fbf4a3c01e3fe4f81d584d9/skills/test-driven-development",
+      "riskLevel": "low",
+      "path": "skills/test-driven-development",
+      "detail": {
+        "displayName": "测试驱动开发（Superpowers）",
+        "summary": "强制红-绿-重构的 TDD 循环：先写失败测试、看它失败、再写最小实现，防止 agent 跳过测试直接写代码。",
+        "useCases": [
+          "新功能实现",
+          "缺陷修复",
+          "重构保护"
+        ],
+        "capabilities": [
+          "失败测试先行",
+          "最小实现",
+          "测试质量指导"
+        ],
+        "requirements": [
+          "项目具备可运行的测试框架"
+        ],
+        "permissions": [
+          "读写测试与实现代码",
+          "运行测试命令"
+        ],
+        "markdownPath": "details/test-driven-development.md"
+      },
+      "archive": {
+        "path": "dist/skills/test-driven-development.zip",
+        "sha256": "5907564d2e01c37c750bea497e093c1b8dee1c2a5bdf3f4fae6ba2b008475daf",
+        "size": 8593
+      }
+    },
+    {
       "id": "unit-test-vue-pinia",
       "name": "unit-test-vue-pinia",
       "description": "Write and review focused unit tests for Vue 3, TypeScript, Vitest, and Pinia codebases, using behavior-first assertions and the narrowest Pinia setup that proves the scenario.",
@@ -1067,6 +1375,109 @@
         "path": "dist/skills/unit-test-vue-pinia.zip",
         "sha256": "a94ccbf92cf20875d2b57b3da56f8a34526f9289c35a011ae4cdbd29382b2e80",
         "size": 3867
+      }
+    },
+    {
+      "id": "web-design-guidelines",
+      "name": "web-design-guidelines",
+      "description": "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check my site against best practices\".",
+      "category": "design",
+      "tags": [
+        "ui",
+        "accessibility",
+        "review"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/web-design-guidelines",
+        "claude": "~/.claude/skills/web-design-guidelines",
+        "portable": "~/.agents/skills/web-design-guidelines"
+      },
+      "version": "1.0.0",
+      "license": "MIT",
+      "source": "https://github.com/vercel-labs/agent-skills/tree/7c180d9044c9ae2b442b567aad4e42a28dd5ed62/skills/web-design-guidelines",
+      "riskLevel": "medium",
+      "path": "skills/web-design-guidelines",
+      "detail": {
+        "displayName": "Web 界面规范审查",
+        "summary": "对照 Vercel Web Interface Guidelines 审查 UI 代码的可访问性、交互与排版；规则源已固定到指定 commit。",
+        "useCases": [
+          "UI 代码评审",
+          "可访问性检查",
+          "设计规范审计"
+        ],
+        "capabilities": [
+          "规范对照审查",
+          "file:line 级发现输出"
+        ],
+        "requirements": [
+          "需要联网获取固定版本的规则文件"
+        ],
+        "permissions": [
+          "读取 UI 代码",
+          "从固定 URL 拉取规则"
+        ],
+        "markdownPath": "details/web-design-guidelines.md"
+      },
+      "archive": {
+        "path": "dist/skills/web-design-guidelines.zip",
+        "sha256": "c36e350cf387dcd9e2946eab1c79b24112a0db4aec21835616b832c2bb22cc8a",
+        "size": 902
+      }
+    },
+    {
+      "id": "webapp-testing",
+      "name": "webapp-testing",
+      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+      "category": "engineering",
+      "tags": [
+        "playwright",
+        "testing",
+        "web"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/webapp-testing",
+        "claude": "~/.claude/skills/webapp-testing",
+        "portable": "~/.agents/skills/webapp-testing"
+      },
+      "version": "0.1.0",
+      "license": "Apache-2.0",
+      "source": "https://github.com/anthropics/skills/tree/b29e7cf65e5cb78a5ac33d582270551bc74a14eb/skills/webapp-testing",
+      "riskLevel": "medium",
+      "path": "skills/webapp-testing",
+      "detail": {
+        "displayName": "Web 应用测试",
+        "summary": "Anthropic 官方 Playwright 测试技能：对本地 Web 应用做端到端验证、截图、读取浏览器日志与 UI 调试。",
+        "useCases": [
+          "前端功能验证",
+          "UI 行为调试",
+          "浏览器日志排查"
+        ],
+        "capabilities": [
+          "Playwright 脚本",
+          "服务生命周期管理",
+          "截图与日志采集"
+        ],
+        "requirements": [
+          "Python 3 与 Playwright",
+          "可本地启动的 Web 应用"
+        ],
+        "permissions": [
+          "启动本地服务",
+          "驱动本地浏览器",
+          "写测试脚本与截图"
+        ],
+        "markdownPath": "details/webapp-testing.md"
+      },
+      "archive": {
+        "path": "dist/skills/webapp-testing.zip",
+        "sha256": "b5847d6be9d723b923595ea0c3d3956bde0e7de9a9a2a20edf4dfd0c89ee78bb",
+        "size": 9710
       }
     }
   ]
