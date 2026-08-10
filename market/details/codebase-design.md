@@ -2,7 +2,7 @@
 
 ## Source And Curation
 
-Source: https://github.com/mattpocock/skills/tree/ed37663cc5fbef691ddfecd080dff42f7e7e350d/skills/engineering/codebase-design
+Source: https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/codebase-design
 
 This market entry keeps the upstream vocabulary and reference material. Alternative-design exercises and sub-agent use are optional and must follow the user's request and the active runtime's capabilities.
 

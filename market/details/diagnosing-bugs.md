@@ -2,13 +2,19 @@
 
 ## Source And Curation
 
-Source: https://github.com/mattpocock/skills/tree/ed37663cc5fbef691ddfecd080dff42f7e7e350d/skills/engineering/diagnosing-bugs
+Source: https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/diagnosing-bugs
 
 This market entry preserves the upstream diagnostic techniques but treats the phases as a checklist. Skip or reorder a phase when the evidence, scope, or runtime makes that more reliable.
 
 A discipline for hard bugs. Use the phases that improve the feedback signal for the current task.
 
 When exploring the codebase, read `CONTEXT.md` (if it exists) to get a clear mental model of the relevant modules, and check ADRs in the area you're touching.
+
+## Redact
+
+This skill has you show commands, outputs, and captured artifacts. **Redact every secret first** - write `<REDACTED>` in its place. Build loops against environment variables so credentials stay in the environment rather than in displayed commands. Captured artifacts can carry authentication headers; quote only the lines that carry the diagnostic signal.
+
+If redacted output is not enough to diagnose the bug, say so and ask the user for the minimum additional evidence.
 
 ## Phase 1 — Build a feedback loop
 
@@ -47,11 +53,11 @@ The goal is not a clean repro but a **higher reproduction rate**. Loop the trigg
 
 ### When you genuinely cannot build a loop
 
-Stop and say so explicitly. List what you tried. Ask the user for: (a) access to whatever environment reproduces it, (b) a captured artifact (HAR file, log dump, core dump, screen recording with timestamps), or (c) permission to add temporary production instrumentation. Do **not** proceed to hypothesise without a loop.
+Stop and say so explicitly. List what you tried. Ask the user for: (a) access to whatever environment reproduces it, (b) a redacted captured artifact (HAR file, log dump, core dump, screen recording with timestamps), or (c) permission to add temporary production instrumentation. Do **not** proceed to hypothesise without a loop.
 
 ### Completion criterion — a tight loop that goes red
 
-Phase 1 is done when the loop is **tight** and **red-capable**: you can name **one command** — a script path, a test invocation, a curl — that you have **already run at least once** (paste the invocation and its output), and that is:
+Phase 1 is done when the loop is **tight** and **red-capable**: you can name **one command** — a script path, a test invocation, a curl — that you have **already run at least once** (show the invocation and its redacted output), and that is:
 
 - [ ] **Red-capable** — it drives the actual bug code path and asserts the **user's exact symptom**, so it can go red on this bug and green once fixed. Not "runs without erroring" — it must be able to _catch this specific bug_.
 - [ ] **Deterministic** — same verdict every run (flaky bugs: a pinned, high reproduction rate, per above).

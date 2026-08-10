@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.2",
-  "generatedAt": "2026-07-26T17:29:57Z",
+  "generatedAt": "2026-08-10T01:36:30Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -443,9 +443,9 @@
         "claude": "~/.claude/skills/codebase-design",
         "portable": "~/.agents/skills/codebase-design"
       },
-      "version": "0.1.0",
+      "version": "0.1.1",
       "license": "MIT",
-      "source": "https://github.com/mattpocock/skills/tree/ed37663cc5fbef691ddfecd080dff42f7e7e350d/skills/engineering/codebase-design",
+      "source": "https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/codebase-design",
       "riskLevel": "medium",
       "path": "skills/codebase-design",
       "detail": {
@@ -473,13 +473,13 @@
       },
       "archive": {
         "path": "dist/skills/codebase-design.zip",
-        "sha256": "e57bb8d72b22ff934829b2d49f0d1bd9a2afc3b0bdafa4a650d3ec5760a39342",
-        "size": 6784
+        "sha256": "5f1ea944f4e84f78e59faab3d7df388bd8515c06e6c0519f8f375966d7b25c19",
+        "size": 6785
       },
       "teleagentArchive": {
         "path": "dist/teleagent/codebase-design.zip",
-        "sha256": "082d8c485c88eb3cc8c5b8a04ef30ef0f7432dbc550f36f17b7244c4754130f7",
-        "size": 6624
+        "sha256": "cb6b9dde6ae5b127e3e988a83c88cedae054a20a1f49f5a4673d3ff933b6d7fd",
+        "size": 6625
       }
     },
     {
@@ -614,9 +614,9 @@
         "claude": "~/.claude/skills/diagnosing-bugs",
         "portable": "~/.agents/skills/diagnosing-bugs"
       },
-      "version": "0.1.0",
+      "version": "0.1.1",
       "license": "MIT",
-      "source": "https://github.com/mattpocock/skills/tree/ed37663cc5fbef691ddfecd080dff42f7e7e350d/skills/engineering/diagnosing-bugs",
+      "source": "https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/diagnosing-bugs",
       "riskLevel": "medium",
       "path": "skills/diagnosing-bugs",
       "detail": {
@@ -644,13 +644,13 @@
       },
       "archive": {
         "path": "dist/skills/diagnosing-bugs.zip",
-        "sha256": "4ed2508d73f91c6085d53b41f6d7f1639cf7e02fcf3e5f220a7ae77ab560c67d",
-        "size": 6088
+        "sha256": "920bcad6300683b87b79b38e25b53a42f120bfa971b91a7cf91475f9dc0471b4",
+        "size": 6359
       },
       "teleagentArchive": {
         "path": "dist/teleagent/diagnosing-bugs.zip",
-        "sha256": "30c903d7aa9e541f68e4158022ee4956465de78305c5aaf835cf32337251c31f",
-        "size": 5960
+        "sha256": "3d22546df0ab1cfd03e576fd34c1dcb387489419d25e53f8ebd10c601df8c5e1",
+        "size": 6231
       }
     },
     {
