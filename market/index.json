@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.2",
-  "generatedAt": "2026-08-10T01:36:30Z",
+  "generatedAt": "2026-08-14T07:26:35Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -714,7 +714,7 @@
     {
       "id": "domain-modeling",
       "name": "domain-modeling",
-      "description": "Build and sharpen a project's domain model. Use when the user wants to pin down domain terminology or a ubiquitous language, record an architectural decision, or when another skill needs to maintain the domain model.",
+      "description": "Build and sharpen a project's domain model. Use when discussing codebase or domain terminology, defining a ubiquitous language, writing or editing a CONTEXT.md, or recording or editing an ADR.",
       "category": "engineering",
       "tags": [
         "domain",
@@ -730,9 +730,9 @@
         "claude": "~/.claude/skills/domain-modeling",
         "portable": "~/.agents/skills/domain-modeling"
       },
-      "version": "0.1.0",
+      "version": "0.1.1",
       "license": "MIT",
-      "source": "https://github.com/mattpocock/skills/tree/ed37663cc5fbef691ddfecd080dff42f7e7e350d/skills/engineering/domain-modeling",
+      "source": "https://github.com/mattpocock/skills/tree/8b78b531ab965735c5dc74f6f7a219e1e37326df/skills/engineering/domain-modeling",
       "riskLevel": "medium",
       "path": "skills/domain-modeling",
       "detail": {
@@ -760,13 +760,13 @@
       },
       "archive": {
         "path": "dist/skills/domain-modeling.zip",
-        "sha256": "c04f08f1b91a079dd4e9605f91f2ebffaeecab63b5c3f6f2e59282f0dc0793a6",
-        "size": 5735
+        "sha256": "ca5ae6019f43122db7a86ba8d845b8683bb3b7b8da91f1212258e5ce25f6cb92",
+        "size": 5719
       },
       "teleagentArchive": {
         "path": "dist/teleagent/domain-modeling.zip",
-        "sha256": "44f2b0faf0e86728d3e3eab4fd973fb53ce141d2a8195398f8ac010b0c1a5f29",
-        "size": 5575
+        "sha256": "2315248f3b3eed68ef6698d35032ca9795d91d86b4ad163e536f2030d2f662b9",
+        "size": 5559
       }
     },
     {

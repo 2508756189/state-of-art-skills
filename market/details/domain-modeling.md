@@ -2,7 +2,7 @@
 
 ## Source And Curation
 
-Source: https://github.com/mattpocock/skills/tree/ed37663cc5fbef691ddfecd080dff42f7e7e350d/skills/engineering/domain-modeling
+Source: https://github.com/mattpocock/skills/tree/8b78b531ab965735c5dc74f6f7a219e1e37326df/skills/engineering/domain-modeling
 
 This market entry preserves the upstream domain-modeling workflow. It is intended for deliberate, user-approved domain work; do not create or rewrite `CONTEXT.md` or ADR files without confirming the target and scope.
 
