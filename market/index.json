@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.2",
-  "generatedAt": "2026-08-14T07:26:35Z",
+  "generatedAt": "2026-08-17T08:02:40Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -614,9 +614,9 @@
         "claude": "~/.claude/skills/diagnosing-bugs",
         "portable": "~/.agents/skills/diagnosing-bugs"
       },
-      "version": "0.1.1",
+      "version": "0.1.2",
       "license": "MIT",
-      "source": "https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/diagnosing-bugs",
+      "source": "https://github.com/mattpocock/skills/tree/068b6e0c62393147daf03530149cdce209c93da8/skills/engineering/diagnosing-bugs",
       "riskLevel": "medium",
       "path": "skills/diagnosing-bugs",
       "detail": {
@@ -644,13 +644,13 @@
       },
       "archive": {
         "path": "dist/skills/diagnosing-bugs.zip",
-        "sha256": "920bcad6300683b87b79b38e25b53a42f120bfa971b91a7cf91475f9dc0471b4",
-        "size": 6359
+        "sha256": "7c778a82b9b21ecf30b9217d4a9ac940fa1f7998a4773f21b02aac3688716aac",
+        "size": 6200
       },
       "teleagentArchive": {
         "path": "dist/teleagent/diagnosing-bugs.zip",
-        "sha256": "3d22546df0ab1cfd03e576fd34c1dcb387489419d25e53f8ebd10c601df8c5e1",
-        "size": 6231
+        "sha256": "93887681bdf4973d40021baae02150d1b3aedc02cd1af8ea7ca717a8ac22601b",
+        "size": 6072
       }
     },
     {
@@ -989,6 +989,64 @@
         "path": "dist/teleagent/mcp-builder.zip",
         "sha256": "f905334371787d5cf8d601cda81a60b90d3d4d12ef7b871e3ab28ec2146fa4dd",
         "size": 42148
+      }
+    },
+    {
+      "id": "mcp-implementation-security-review",
+      "name": "mcp-implementation-security-review",
+      "description": "Review the implementation source code of MCP (Model Context Protocol) servers, clients, and tool handlers against a security baseline — authentication, sessions, rate limiting, input-schema validation, official-SDK usage, RCE vectors, and the OWASP MCP Top 10 — producing a report with file/line evidence. Use when reviewing an MCP server implementation for security before release, checking a server against the baseline controls (MCP-01 to MCP-05) and the OWASP MCP Top 10, auditing tools for RCE vectors (command/code injection, unsafe deserialization, path traversal, SSTI, dependency hijacking, SSRF), verifying auth/session/rate-limit/input-validation controls on a network-exposed server, or reviewing MCP client code that handles untrusted server responses and session IDs.",
+      "category": "engineering",
+      "tags": [
+        "mcp",
+        "security",
+        "implementation",
+        "review"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/mcp-implementation-security-review",
+        "claude": "~/.claude/skills/mcp-implementation-security-review",
+        "portable": "~/.agents/skills/mcp-implementation-security-review"
+      },
+      "version": "0.1.0",
+      "license": "MIT",
+      "source": "https://github.com/github/awesome-copilot/tree/406c31f848e641e9ccb33277cb03b51b015c27c7/skills/mcp-implementation-security-review",
+      "riskLevel": "medium",
+      "path": "skills/mcp-implementation-security-review",
+      "detail": {
+        "displayName": "MCP 实现安全审查",
+        "summary": "对 MCP 服务器/客户端实现源码执行安全基线审查（MCP-01..05、7 类 RCE 向量、OWASP MCP Top 10），输出带文件/行号证据的报告。",
+        "useCases": [
+          "MCP 服务器发布前安全审查",
+          "工具处理器 RCE 向量审计",
+          "OWASP MCP Top 10 评估"
+        ],
+        "capabilities": [
+          "基线控制检查",
+          "RCE 向量识别",
+          "OWASP MCP 风险映射",
+          "证据化报告"
+        ],
+        "requirements": [
+          "目标 MCP 服务器或客户端源码"
+        ],
+        "permissions": [
+          "只读访问目标代码",
+          "写入审查报告"
+        ],
+        "markdownPath": "details/mcp-implementation-security-review.md"
+      },
+      "archive": {
+        "path": "dist/skills/mcp-implementation-security-review.zip",
+        "sha256": "a2edc210498bdfaddc7f47375979ec716984a3ddd711d8682594238f71bda15e",
+        "size": 9283
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/mcp-implementation-security-review.zip",
+        "sha256": "fd0d638940b5dd03bb2082a66474c933263fba53da02a8c81329961015392cf9",
+        "size": 9143
       }
     },
     {

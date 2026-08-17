@@ -226,6 +226,23 @@
         "permissions": ["只读访问指定配置文件"]
       }
     },
+    "mcp-implementation-security-review": {
+      "category": "engineering",
+      "tags": ["mcp", "security", "implementation", "review"],
+      "runtime": ["portable"],
+      "version": "0.1.0",
+      "license": "MIT",
+      "riskLevel": "medium",
+      "source": "https://github.com/github/awesome-copilot/tree/406c31f848e641e9ccb33277cb03b51b015c27c7/skills/mcp-implementation-security-review",
+      "detail": {
+        "displayName": "MCP 实现安全审查",
+        "summary": "对 MCP 服务器/客户端实现源码执行安全基线审查（MCP-01..05、7 类 RCE 向量、OWASP MCP Top 10），输出带文件/行号证据的报告。",
+        "useCases": ["MCP 服务器发布前安全审查", "工具处理器 RCE 向量审计", "OWASP MCP Top 10 评估"],
+        "capabilities": ["基线控制检查", "RCE 向量识别", "OWASP MCP 风险映射", "证据化报告"],
+        "requirements": ["目标 MCP 服务器或客户端源码"],
+        "permissions": ["只读访问目标代码", "写入审查报告"]
+      }
+    },
     "unit-test-vue-pinia": {
       "category": "engineering",
       "tags": ["vue", "pinia", "vitest", "testing"],
@@ -247,10 +264,10 @@
       "category": "engineering",
       "tags": ["debugging", "production", "performance", "triage"],
       "runtime": ["portable"],
-      "version": "0.1.1",
+      "version": "0.1.2",
       "license": "MIT",
       "riskLevel": "medium",
-      "source": "https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/diagnosing-bugs",
+      "source": "https://github.com/mattpocock/skills/tree/068b6e0c62393147daf03530149cdce209c93da8/skills/engineering/diagnosing-bugs",
       "detail": {
         "displayName": "系统化故障排查",
         "summary": "通过可重复反馈回路、最小复现、假设验证和回归检查定位复杂缺陷与性能回退。",
