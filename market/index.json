@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.2",
-  "generatedAt": "2026-08-24T05:02:48Z",
+  "generatedAt": "2026-08-24T09:05:00Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -644,12 +644,12 @@
       },
       "archive": {
         "path": "dist/skills/diagnosing-bugs.zip",
-        "sha256": "bacd494e6602c930742d026ab352da98deb5f1cc899f7a44e4077b7aaefae87d",
+        "sha256": "a440398c56321fd38880a7fe4b25896acc609ac1684c5af9be25ce4f0fbe5767",
         "size": 6201
       },
       "teleagentArchive": {
         "path": "dist/teleagent/diagnosing-bugs.zip",
-        "sha256": "6c38194890d3dc660dd4e828ee86792432747be89fa25166e5163bfa59720506",
+        "sha256": "9fa9f00199a6f66a66dd9604bc277affa227d13d8ff84e8bc48bb2165c4d30ea",
         "size": 6073
       }
     },
