@@ -42,7 +42,6 @@ Use the registry-provided install target for the runtime you are configuring:
 | Codex | `~/.codex/skills/<skill-id>` |
 | Claude Code | `~/.claude/skills/<skill-id>` |
 | Portable/shared | `~/.agents/skills/<skill-id>` |
-| Grok Build | Not supported as an install target. See `CLASSIFICATION.md`. |
 
 TokenPort should generate a copyable install command rather than writing local files from the browser.
 
