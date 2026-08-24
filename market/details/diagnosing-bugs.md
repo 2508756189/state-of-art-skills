@@ -2,7 +2,7 @@
 
 ## Source And Curation
 
-Source: https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/diagnosing-bugs
+Source: https://github.com/mattpocock/skills/tree/068b6e0c62393147daf03530149cdce209c93da8/skills/engineering/diagnosing-bugs
 
 This market entry preserves the upstream diagnostic techniques but treats the phases as a checklist. Skip or reorder a phase when the evidence, scope, or runtime makes that more reliable.
 

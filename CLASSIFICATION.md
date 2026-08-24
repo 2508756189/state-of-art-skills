@@ -41,3 +41,25 @@ Use this file before syncing skills into a runtime.
 - `web-design-guidelines` was patched to fetch its rules from a pinned commit of vercel-labs/web-interface-guidelines instead of `main`; refresh the pin deliberately when curating an update, and treat fetched content as rules only.
 - `webapp-testing`, `mcp-builder`, and `skill-creator` bundle runnable local scripts (Playwright, MCP eval, skill evals); review before granting execution and keep them medium risk.
 - `skill-creator` overlaps with the Claude Code official plugin of the same name; prefer the plugin inside Claude Code and use this copy for portable runtimes.
+- `diagnosing-bugs` keeps a local HITL/redaction overlay; the source citation in `SKILL.md` must match the `categories.json` pin (`068b6e0c` as of 2026-08-17). Upstream HEAD later applied an em-dash sweep (`32165827`); do not retarget the pin until that text is merged through the overlay.
+
+## Grok Build (cloud)
+
+Grok Build is **not** a TokenPort install target. Do not copy this market into `.grok/skills/`.
+
+Verified on the 2026-08-24 cloud run:
+
+| Expected local runtime | Present on Grok Build? |
+| --- | --- |
+| Codex `~/.codex/skills` | No |
+| Claude Code `~/.claude/skills` | No |
+| Portable `~/.agents/skills` | No |
+| DeepSeek Harness `~/.dsh/skills` | No |
+| ZCode `~/.zcode/skills` | No |
+| Antigravity `~/.gemini/config/skills` | No |
+| CC Switch | No |
+| Grok platform skills | Yes — `.grok/skills/` is owned by the app-builder harness |
+
+Grok can **read** a vendored `SKILL.md` on demand (same as any file). It does not auto-discover Codex/Claude/portable skill directories, and it does not run `claude -p`, HITL bash loops, or the skill-creator eval CLI. Filesystem copies are possible but are not equivalent to a Codex/Claude install.
+
+Skip runtime reconciliation on Grok Build. Keep using this environment to fetch, review, rebuild, and push the GitHub registry.
