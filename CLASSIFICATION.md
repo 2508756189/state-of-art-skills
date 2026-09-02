@@ -42,4 +42,6 @@ Use this file before syncing skills into a runtime.
 - `webapp-testing`, `mcp-builder`, and `skill-creator` bundle runnable local scripts (Playwright, MCP eval, skill evals); review before granting execution and keep them medium risk.
 - `skill-creator` overlaps with the Claude Code official plugin of the same name; prefer the plugin inside Claude Code and use this copy for portable runtimes.
 - `diagnosing-bugs` keeps a local HITL/redaction overlay; the source citation in `SKILL.md` must match the `categories.json` pin (`068b6e0c` as of 2026-08-17). Upstream HEAD later applied an em-dash sweep (`32165827`); do not retarget the pin until that text is merged through the overlay.
+- `supermemory` follows upstream v4 SDK semantics at `17eab43` (profile `q`, search threshold default `0.6`, agent tools/middleware, document/memory deletion). Keep the local optional-service and secret-handling overlay; `documentDelete`/`memoryForget` are destructive and must stay user-authorized.
+- `differential-review` is pinned to `14e5a107` for the upstream namespacing fix: the adversarial-modeler subagent must be dispatched as `differential-review:adversarial-modeler` and passed as `subagent_type`.
 

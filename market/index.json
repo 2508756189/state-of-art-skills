@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.2",
-  "generatedAt": "2026-08-24T09:05:00Z",
+  "generatedAt": "2026-09-02T02:56:42Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -656,7 +656,7 @@
     {
       "id": "differential-review",
       "name": "differential-review",
-      "description": "Performs security-focused differential review of code changes (PRs, commits, diffs). Adapts analysis depth to codebase size, uses git history for context, calculates blast radius, checks test coverage, and generates comprehensive markdown reports. Automatically detects and prevents security regressions.",
+      "description": "Performs security-focused differential review of code changes. Adapts analysis depth to codebase size, uses git blame for context, calculates blast radius by counting callers, checks test coverage of modified code, and generates a markdown report. Use when reviewing a PR, commit, or diff for security vulnerabilities, checking whether a change re-introduces a previously fixed bug, asking what else a change could break, or finding which modified code has no test covering it.",
       "category": "engineering",
       "tags": [
         "security",
@@ -671,9 +671,9 @@
         "claude": "~/.claude/skills/differential-review",
         "portable": "~/.agents/skills/differential-review"
       },
-      "version": "0.1.0",
+      "version": "0.1.1",
       "license": "CC-BY-SA-4.0",
-      "source": "https://github.com/trailofbits/skills/tree/cfe5d7b1619e47fb5b38b7e2561dad7e5f1e89af/plugins/differential-review/skills/differential-review",
+      "source": "https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/differential-review/skills/differential-review",
       "riskLevel": "medium",
       "path": "skills/differential-review",
       "detail": {
@@ -702,13 +702,13 @@
       },
       "archive": {
         "path": "dist/skills/differential-review.zip",
-        "sha256": "1785f23dfd59a0ca4d2c4a7361540076a516f15d6b2bdd0d50a3374d4243ff1f",
-        "size": 22916
+        "sha256": "8cdac234a1b313c70fdf31357b46401077f609a083c29708e7d6a9ce7d887f25",
+        "size": 23061
       },
       "teleagentArchive": {
         "path": "dist/teleagent/differential-review.zip",
-        "sha256": "8fda384992717fbc38f0f8901d2e2a5c696a1e97a5d00d78435a123fc763b8fc",
-        "size": 22596
+        "sha256": "b92dda4026300ffc40986979de34a1dd6d24c4bc79b6f7d164718ca0aeab3cc5",
+        "size": 22741
       }
     },
     {
@@ -1350,9 +1350,9 @@
         "claude": "~/.claude/skills/supermemory",
         "portable": "~/.agents/skills/supermemory"
       },
-      "version": "0.1.1",
+      "version": "0.1.2",
       "license": "MIT",
-      "source": "https://github.com/supermemoryai/supermemory/tree/5a3ff85ea559a3f6ac32237a38de5042dc4bdd1a/skills/supermemory",
+      "source": "https://github.com/supermemoryai/supermemory/tree/17eab43cd469661c2991362fb5aa6acfb8a5a917/skills/supermemory",
       "riskLevel": "medium",
       "path": "skills/supermemory",
       "detail": {
@@ -1379,13 +1379,13 @@
       },
       "archive": {
         "path": "dist/skills/supermemory.zip",
-        "sha256": "be25453aa5d877f1f227d8f1ade08f4b079c6daa3892ca14530e50998bccbbbc",
-        "size": 29714
+        "sha256": "eb6711a91d4c9ee50662a8a11195cf03177d0824e6ba07dcbae2c7302d7d0f88",
+        "size": 32598
       },
       "teleagentArchive": {
         "path": "dist/teleagent/supermemory.zip",
-        "sha256": "3431d9027abf7a8c1fede2c245a531184895edd68a956df567820e0b5651e4bb",
-        "size": 29546
+        "sha256": "1ee8a7acda1b6844c290e92c81f8fb30d8a7e8baabaa183e035340468a314892",
+        "size": 32430
       }
     },
     {
