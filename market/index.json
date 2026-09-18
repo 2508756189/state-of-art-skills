@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.2",
-  "generatedAt": "2026-09-02T02:56:42Z",
+  "generatedAt": "2026-09-18T16:43:50Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -1611,13 +1611,13 @@
       },
       "archive": {
         "path": "dist/skills/web-design-guidelines.zip",
-        "sha256": "e0301ca4a18675de4b78a4038caef4c1fb6266a772b8c44f99f0df4fed458de0",
-        "size": 888
+        "sha256": "1bfb25fdbd5eea9ce664414c39b435742abe2eb2809fb444d27455fbd07c33b0",
+        "size": 886
       },
       "teleagentArchive": {
         "path": "dist/teleagent/web-design-guidelines.zip",
-        "sha256": "f089bc6738966db412357a4e4f0b8b084c09aae653c6e4b3cfeaaf501f2185a2",
-        "size": 844
+        "sha256": "4650fd38a2e53b994452c60e14a5a45f5b0fcdcd655ab74a04d782cee14139aa",
+        "size": 842
       }
     },
     {
