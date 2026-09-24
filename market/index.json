@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.2",
-  "generatedAt": "2026-09-18T16:43:50Z",
+  "generatedAt": "2026-09-24T11:40:03Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -709,6 +709,64 @@
         "path": "dist/teleagent/differential-review.zip",
         "sha256": "b92dda4026300ffc40986979de34a1dd6d24c4bc79b6f7d164718ca0aeab3cc5",
         "size": 22741
+      }
+    },
+    {
+      "id": "docs-sync-audit",
+      "name": "docs-sync-audit",
+      "description": "Run a read-only documentation drift audit for a feature, PR, branch, release, API, configuration change, workflow, CLI, package, or repository area. Use when the user asks whether docs are stale, missing, inconsistent with code, or need updates after code changes. Checks README files, setup guides, API docs, env docs, changelogs, examples, comments, generated docs, and user-facing instructions. This is not a general code review; it compares what the docs claim against what the code does.",
+      "category": "product",
+      "tags": [
+        "documentation",
+        "audit",
+        "drift"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/docs-sync-audit",
+        "claude": "~/.claude/skills/docs-sync-audit",
+        "portable": "~/.agents/skills/docs-sync-audit"
+      },
+      "version": "0.1.0",
+      "license": "MIT",
+      "source": "https://github.com/github/awesome-copilot/tree/1f5644080a525d26a2e24f61a7609fb9b261c21a/skills/docs-sync-audit",
+      "riskLevel": "low",
+      "path": "skills/docs-sync-audit",
+      "detail": {
+        "displayName": "Documentation Sync Audit",
+        "summary": "Read-only comparison of documentation with code, configuration, commands, and user workflows, producing evidence-backed drift findings.",
+        "useCases": [
+          "release documentation checks",
+          "post-change documentation drift audits",
+          "configuration and API documentation reviews"
+        ],
+        "capabilities": [
+          "command and script verification",
+          "Markdown link checks",
+          "bidirectional environment-variable checks",
+          "documentation freshness signals"
+        ],
+        "requirements": [
+          "Python 3 standard library",
+          "a target repository or documentation directory"
+        ],
+        "permissions": [
+          "read-only access to code, configuration, and docs",
+          "write an audit report"
+        ],
+        "markdownPath": "details/docs-sync-audit.md"
+      },
+      "archive": {
+        "path": "dist/skills/docs-sync-audit.zip",
+        "sha256": "c10cf3f3d9805f875889934f5828db26aac0061a75b8366e3202c62b15fa480e",
+        "size": 13604
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/docs-sync-audit.zip",
+        "sha256": "a043c2990c88667734ba3509c4c7d4532cb6b7349f01651b14299374b7355ae0",
+        "size": 13508
       }
     },
     {

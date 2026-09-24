@@ -493,6 +493,23 @@
         "requirements": ["支持语言：Python、JavaScript/TypeScript、Go"],
         "permissions": ["读取项目代码"]
       }
+    },
+    "docs-sync-audit": {
+      "category": "product",
+      "tags": ["documentation", "audit", "drift"],
+      "runtime": ["portable"],
+      "version": "0.1.0",
+      "license": "MIT",
+      "riskLevel": "low",
+      "source": "https://github.com/github/awesome-copilot/tree/1f5644080a525d26a2e24f61a7609fb9b261c21a/skills/docs-sync-audit",
+      "detail": {
+        "displayName": "Documentation Sync Audit",
+        "summary": "Read-only comparison of documentation with code, configuration, commands, and user workflows, producing evidence-backed drift findings.",
+        "useCases": ["release documentation checks", "post-change documentation drift audits", "configuration and API documentation reviews"],
+        "capabilities": ["command and script verification", "Markdown link checks", "bidirectional environment-variable checks", "documentation freshness signals"],
+        "requirements": ["Python 3 standard library", "a target repository or documentation directory"],
+        "permissions": ["read-only access to code, configuration, and docs", "write an audit report"]
+      }
     }
   }
 }
