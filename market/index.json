@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.2",
-  "generatedAt": "2026-09-24T11:40:03Z",
+  "generatedAt": "2026-10-17T18:13:26Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -614,9 +614,9 @@
         "claude": "~/.claude/skills/diagnosing-bugs",
         "portable": "~/.agents/skills/diagnosing-bugs"
       },
-      "version": "0.1.2",
+      "version": "0.1.3",
       "license": "MIT",
-      "source": "https://github.com/mattpocock/skills/tree/068b6e0c62393147daf03530149cdce209c93da8/skills/engineering/diagnosing-bugs",
+      "source": "https://github.com/mattpocock/skills/tree/f3fc5632f401156837ee3872f14fe33ccf1024ea/skills/engineering/diagnosing-bugs",
       "riskLevel": "medium",
       "path": "skills/diagnosing-bugs",
       "detail": {
@@ -644,13 +644,13 @@
       },
       "archive": {
         "path": "dist/skills/diagnosing-bugs.zip",
-        "sha256": "a440398c56321fd38880a7fe4b25896acc609ac1684c5af9be25ce4f0fbe5767",
-        "size": 6201
+        "sha256": "bb55b34e8529acec1f21590cd7e512516ff4e3ea4945edbfde388ed68114b166",
+        "size": 6257
       },
       "teleagentArchive": {
         "path": "dist/teleagent/diagnosing-bugs.zip",
-        "sha256": "9fa9f00199a6f66a66dd9604bc277affa227d13d8ff84e8bc48bb2165c4d30ea",
-        "size": 6073
+        "sha256": "390112b91d0500273afa9174755b2c16048c54c6e0084337e31f68377921d2ca",
+        "size": 6129
       }
     },
     {
@@ -1126,7 +1126,7 @@
         "claude": "~/.claude/skills/mcp-security-audit",
         "portable": "~/.agents/skills/mcp-security-audit"
       },
-      "version": "0.1.0",
+      "version": "0.1.1",
       "license": "MIT",
       "source": "https://github.com/github/awesome-copilot/tree/e95bd8c4ba65454121f86a7ad0d3ed17ab0bcf37/skills/mcp-security-audit",
       "riskLevel": "medium",
@@ -1155,13 +1155,13 @@
       },
       "archive": {
         "path": "dist/skills/mcp-security-audit.zip",
-        "sha256": "9a8a93cc62bceda296b0e04a9fbf73452c93ee421516c95221e9c086ce225d30",
-        "size": 6498
+        "sha256": "c3f908ab892c459bb5beee642a596515b8bfe2e82049638a8eed2878fe26d3d6",
+        "size": 7523
       },
       "teleagentArchive": {
         "path": "dist/teleagent/mcp-security-audit.zip",
-        "sha256": "51c6732606a582f1840cbbf5fed583c6f36aa07b608a8faa4005ca805625a8f5",
-        "size": 6384
+        "sha256": "40c0dd8e8175d53853f6575c74d69dfac8cdf96b3c70a76ebb0a49429f6bcaea",
+        "size": 7409
       }
     },
     {
@@ -1561,6 +1561,64 @@
         "path": "dist/teleagent/test-driven-development.zip",
         "sha256": "ca2b091605d3cd77b5faf807957e2eeaf991f84696dc968e539b74c56164e298",
         "size": 8407
+      }
+    },
+    {
+      "id": "test-gap-audit",
+      "name": "test-gap-audit",
+      "description": "Run a read-only audit for missing, weak, stale, or mis-scoped test coverage. If the user does not name a scope, audit the full repository and identify important code paths, routes, features, services, workflows, and contracts that lack proper tests. If the user names a feature, PR, branch, route, workflow, service, bug fix, API, security-sensitive path, or risky code change, focus only on that specific scope. Use when the user asks what tests are missing, whether coverage is enough, what regression tests to add, or how to prove a change is safe. This is not a general bug audit and not a security review; it evaluates whether behavior is covered by tests.",
+      "category": "engineering",
+      "tags": [
+        "testing",
+        "coverage",
+        "audit",
+        "regression"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/test-gap-audit",
+        "claude": "~/.claude/skills/test-gap-audit",
+        "portable": "~/.agents/skills/test-gap-audit"
+      },
+      "version": "0.1.0",
+      "license": "MIT",
+      "source": "https://github.com/github/awesome-copilot/tree/f32d7c320d/skills/test-gap-audit",
+      "riskLevel": "low",
+      "path": "skills/test-gap-audit",
+      "detail": {
+        "displayName": "测试缺口审计",
+        "summary": "只读比对源码与测试映射，定位缺失、薄弱、过期或范围错误的测试覆盖，并按风险给出可执行补测建议。",
+        "useCases": [
+          "变更后回归测试缺口审查",
+          "覆盖率是否足够的判断",
+          "PR 安全性证明"
+        ],
+        "capabilities": [
+          "源码/测试路径映射",
+          "风险目录识别",
+          "断言薄弱点提示"
+        ],
+        "requirements": [
+          "Python 3 标准库",
+          "目标仓库或子目录"
+        ],
+        "permissions": [
+          "只读访问源码与测试",
+          "写入审计报告"
+        ],
+        "markdownPath": "details/test-gap-audit.md"
+      },
+      "archive": {
+        "path": "dist/skills/test-gap-audit.zip",
+        "sha256": "20fbe1eac63cec1346ca77351b81d11d24ac1dfe3f35a6baef95a67cdc833f9b",
+        "size": 13234
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/test-gap-audit.zip",
+        "sha256": "c853c8eed18b65e87fe43e91229fe0193a4e6d9fbe96c01357903045df225a5b",
+        "size": 13144
       }
     },
     {
