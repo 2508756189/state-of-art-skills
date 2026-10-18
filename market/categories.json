@@ -383,10 +383,10 @@
       "category": "engineering",
       "tags": ["tdd", "testing", "workflow"],
       "runtime": ["portable"],
-      "version": "6.2.0",
+      "version": "7.0.0",
       "license": "MIT",
       "riskLevel": "low",
-      "source": "https://github.com/obra/superpowers/tree/3dcbd5c4b48e02263fbf4a3c01e3fe4f81d584d9/skills/test-driven-development",
+      "source": "https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/test-driven-development",
       "detail": {
         "displayName": "测试驱动开发（Superpowers）",
         "summary": "强制红-绿-重构的 TDD 循环：先写失败测试、看它失败、再写最小实现，防止 agent 跳过测试直接写代码。",

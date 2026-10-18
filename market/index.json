@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.2",
-  "generatedAt": "2026-10-17T18:13:26Z",
+  "generatedAt": "2026-10-18T12:09:56Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -1525,9 +1525,9 @@
         "claude": "~/.claude/skills/test-driven-development",
         "portable": "~/.agents/skills/test-driven-development"
       },
-      "version": "6.2.0",
+      "version": "7.0.0",
       "license": "MIT",
-      "source": "https://github.com/obra/superpowers/tree/3dcbd5c4b48e02263fbf4a3c01e3fe4f81d584d9/skills/test-driven-development",
+      "source": "https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/test-driven-development",
       "riskLevel": "low",
       "path": "skills/test-driven-development",
       "detail": {
@@ -1554,13 +1554,13 @@
       },
       "archive": {
         "path": "dist/skills/test-driven-development.zip",
-        "sha256": "d02c9428c48ebbaccfcac5d2aaed5750b0fe2d2a3d11dde1e85601f6201eb292",
-        "size": 8551
+        "sha256": "1e54fa0c6e561a8681536eafdc66014b23bbe28c03ccd318a9461cc22233a61f",
+        "size": 8810
       },
       "teleagentArchive": {
         "path": "dist/teleagent/test-driven-development.zip",
-        "sha256": "ca2b091605d3cd77b5faf807957e2eeaf991f84696dc968e539b74c56164e298",
-        "size": 8407
+        "sha256": "4736371bdfac3e93195a2f5a997a69eea3ae4f700c465b1fe9d42dd621659c7b",
+        "size": 8666
       }
     },
     {
