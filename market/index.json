@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.2",
-  "generatedAt": "2026-10-26T17:13:16Z",
+  "generatedAt": "2026-10-27T15:20:25Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -596,6 +596,121 @@
       }
     },
     {
+      "id": "deliver-acceptance-criteria",
+      "name": "deliver-acceptance-criteria",
+      "description": "Generates structured Given/When/Then acceptance criteria for a user story or feature slice, covering the happy path, key failure scenarios, and non-functional expectations in testable form. Use when turning requirements into verifiable scenarios for engineering handoff and QA sign-off. For a dedicated catalog of boundary conditions, error states, and recovery paths across a feature, use deliver-edge-cases; to write the stories themselves, use deliver-user-stories.",
+      "category": "product",
+      "tags": [
+        "acceptance-criteria",
+        "testing",
+        "requirements",
+        "qa"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/deliver-acceptance-criteria",
+        "claude": "~/.claude/skills/deliver-acceptance-criteria",
+        "portable": "~/.agents/skills/deliver-acceptance-criteria"
+      },
+      "version": "1.1.1",
+      "license": "Apache-2.0",
+      "source": "https://github.com/product-on-purpose/pm-skills/tree/f943d9589bfe9db06fac2641f9740987ff9b3aee/skills/deliver-acceptance-criteria",
+      "riskLevel": "low",
+      "path": "skills/deliver-acceptance-criteria",
+      "detail": {
+        "displayName": "故事验收标准",
+        "summary": "把用户故事或功能切片转成可独立判定的 Given/When/Then 验收标准，覆盖异常与恢复路径。",
+        "useCases": [
+          "开发交接前的验收条件",
+          "QA 测试场景设计",
+          "缺陷与边界条件明确化"
+        ],
+        "capabilities": [
+          "主路径与异常场景",
+          "错误恢复行为",
+          "非功能验收条件"
+        ],
+        "requirements": [
+          "已定义的用户故事或功能切片"
+        ],
+        "permissions": [
+          "读取需求与故事材料",
+          "写入验收标准文档"
+        ],
+        "markdownPath": "details/deliver-acceptance-criteria.md"
+      },
+      "archive": {
+        "path": "dist/skills/deliver-acceptance-criteria.zip",
+        "sha256": "cf5c2e62a7a6cc773f11ee9aa9e1e4e142d6f0ddbc22c0e2237f86407d17ab88",
+        "size": 12052
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/deliver-acceptance-criteria.zip",
+        "sha256": "db76471b65838726c5f706c763318f7d5c7884541aa4cf0b57351921e152bb97",
+        "size": 11660
+      }
+    },
+    {
+      "id": "deliver-prd",
+      "name": "deliver-prd",
+      "description": "Creates a comprehensive Product Requirements Document that aligns stakeholders on what to build, why, and how success will be measured. Use when specifying features, epics, or product initiatives for engineering handoff.",
+      "category": "product",
+      "tags": [
+        "requirements",
+        "prd",
+        "specification",
+        "ai-evaluation"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/deliver-prd",
+        "claude": "~/.claude/skills/deliver-prd",
+        "portable": "~/.agents/skills/deliver-prd"
+      },
+      "version": "3.1.0",
+      "license": "Apache-2.0",
+      "source": "https://github.com/product-on-purpose/pm-skills/tree/f943d9589bfe9db06fac2641f9740987ff9b3aee/skills/deliver-prd",
+      "riskLevel": "low",
+      "path": "skills/deliver-prd",
+      "detail": {
+        "displayName": "产品需求文档（PRD）",
+        "summary": "把问题、目标、可测试需求、范围、AI 行为证据与执行交接契约组织成工程可落地的 PRD。",
+        "useCases": [
+          "功能或版本需求说明",
+          "工程交接前的范围对齐",
+          "AI 功能行为与评测约定"
+        ],
+        "capabilities": [
+          "需求与范围拆解",
+          "成功指标定义",
+          "AI 行为与通过规则",
+          "Agent 执行契约"
+        ],
+        "requirements": [
+          "已达成问题与方案方向的基本共识"
+        ],
+        "permissions": [
+          "读取业务资料与既有研究",
+          "写入 PRD 及项目记忆文件（需确认）"
+        ],
+        "markdownPath": "details/deliver-prd.md"
+      },
+      "archive": {
+        "path": "dist/skills/deliver-prd.zip",
+        "sha256": "4d6254114ce22f110a56552c312c5273c95d1a957ebd3cdbac3697c7d14faf7b",
+        "size": 25654
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/deliver-prd.zip",
+        "sha256": "6457b741b285ea8bca0bff3dcfe37e6262ff95a30859ffeeb7139ef6f4d3811f",
+        "size": 25510
+      }
+    },
+    {
       "id": "diagnosing-bugs",
       "name": "diagnosing-bugs",
       "description": "Diagnosis loop for hard bugs and performance regressions. Use when the user says \"diagnose\"/\"debug this\", or reports something broken/throwing/failing/slow.",
@@ -709,6 +824,64 @@
         "path": "dist/teleagent/differential-review.zip",
         "sha256": "b92dda4026300ffc40986979de34a1dd6d24c4bc79b6f7d164718ca0aeab3cc5",
         "size": 22741
+      }
+    },
+    {
+      "id": "discover-interview-synthesis",
+      "name": "discover-interview-synthesis",
+      "description": "Synthesizes user research interviews into actionable insights, patterns, and recommendations. Use after conducting user interviews, customer calls, or usability sessions to extract and communicate findings across participants. Distinct from foundation-meeting-recap, which summarizes one internal meeting for its attendees; this skill aggregates research conversations into evidence-backed findings.",
+      "category": "product",
+      "tags": [
+        "interview",
+        "research",
+        "synthesis",
+        "insights"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/discover-interview-synthesis",
+        "claude": "~/.claude/skills/discover-interview-synthesis",
+        "portable": "~/.agents/skills/discover-interview-synthesis"
+      },
+      "version": "2.3.0",
+      "license": "Apache-2.0",
+      "source": "https://github.com/product-on-purpose/pm-skills/tree/f943d9589bfe9db06fac2641f9740987ff9b3aee/skills/discover-interview-synthesis",
+      "riskLevel": "low",
+      "path": "skills/discover-interview-synthesis",
+      "detail": {
+        "displayName": "用户访谈综合",
+        "summary": "将多人的访谈记录综合成可追溯的主题、原话证据、洞察、建议与研究局限。",
+        "useCases": [
+          "用户访谈结论整理",
+          "客户访谈与可用性测试汇总",
+          "研究发现到问题定义的交接"
+        ],
+        "capabilities": [
+          "参与者画像",
+          "跨访谈主题归纳",
+          "证据引用",
+          "建议与局限说明"
+        ],
+        "requirements": [
+          "至少 3 名参与者的访谈记录或转写"
+        ],
+        "permissions": [
+          "读取访谈材料",
+          "写入研究综合文档与项目记忆文件（需确认）"
+        ],
+        "markdownPath": "details/discover-interview-synthesis.md"
+      },
+      "archive": {
+        "path": "dist/skills/discover-interview-synthesis.zip",
+        "sha256": "97e1999437cfe9989a961518685221c0321474dad49336b472b9010aa35e1645",
+        "size": 15957
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/discover-interview-synthesis.zip",
+        "sha256": "4799f0028537f0af1b689fa02bc7458ec21849ffd5cf892d83669fa41ef46bdc",
+        "size": 15551
       }
     },
     {

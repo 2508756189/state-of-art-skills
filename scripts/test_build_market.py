@@ -209,6 +209,27 @@ class BuildMarketTests(unittest.TestCase):
 
             build_market.build_market(root, write=False)
 
+    def test_allows_plain_word_containing_sk_prefix(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            skill_dir = root / "skills" / "docs"
+            skill_dir.mkdir(parents=True)
+            (skill_dir / "SKILL.md").write_text(
+                "---\n"
+                "name: docs\n"
+                "description: Describes a normal completion path.\n"
+                "---\n\n"
+                "The activity-feed writer must log through the task-completion path.\n",
+                encoding="utf-8",
+            )
+            (root / "market").mkdir()
+            (root / "market" / "categories.json").write_text(
+                json.dumps({"categories": [], "skills": {}}),
+                encoding="utf-8",
+            )
+
+            build_market.build_market(root, write=False)
+
     def test_rejects_stale_archive_contents(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

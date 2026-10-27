@@ -15,7 +15,7 @@ from typing import Any
 SCHEMA_VERSION = "1.2"
 REPO_URL = "https://github.com/2508756189/state-of-art-skills"
 SECRET_PATTERNS = [
-    re.compile(r"sk-[A-Za-z0-9_.-]{10,}"),
+    re.compile(r"(?<![A-Za-z0-9])sk-[A-Za-z0-9_.-]{10,}"),
     re.compile(r"ctp_[A-Za-z0-9_.-]{10,}"),
     re.compile(r"(?i)(api[_-]?key|token|cookie|secret)\s*[:=]\s*[A-Za-z0-9_.-]{12,}"),
 ]
