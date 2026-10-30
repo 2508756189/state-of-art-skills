@@ -57,7 +57,11 @@ def parse_frontmatter(path: Path) -> dict[str, Any]:
         raise MarketError(f"{path} missing YAML frontmatter")
     data: dict[str, Any] = {}
     current_key: str | None = None
+    block_styles: dict[str, str] = {}
     for raw_line in match.group(1).splitlines():
+        if current_key in block_styles and (not raw_line.strip() or raw_line.startswith("  ")):
+            data[current_key].append(raw_line[2:] if raw_line.startswith("  ") else "")
+            continue
         if not raw_line.strip():
             continue
         if raw_line.startswith("  ") and current_key:
@@ -70,12 +74,36 @@ def parse_frontmatter(path: Path) -> dict[str, Any]:
         key, value = raw_line.split(":", 1)
         current_key = key.strip()
         value = value.strip()
-        if value == "[]":
+        if value in {"|", "|-", "|+", ">", ">-", ">+"}:
+            block_styles[current_key] = value
+            data[current_key] = []
+        elif value == "[]":
             data[current_key] = []
         elif value:
             data[current_key] = value.strip('"').strip("'")
         else:
             data[current_key] = []
+    for key, style in block_styles.items():
+        lines = data[key]
+        if style[0] == ">":
+            folded = ""
+            for index, line in enumerate(lines):
+                folded += line
+                if index < len(lines) - 1:
+                    following = lines[index + 1]
+                    if line and following and not line.startswith(" ") and not following.startswith(" "):
+                        folded += " "
+                    elif line or not following:
+                        folded += "\n"
+            value = folded
+        else:
+            value = "\n".join(lines)
+        if style.endswith("+"):
+            data[key] = value + ("\n" if lines else "")
+        elif style.endswith("-"):
+            data[key] = value.rstrip("\n")
+        else:
+            data[key] = value.rstrip("\n") + ("\n" if value.strip("\n") else "")
     if not data.get("name") or not data.get("description"):
         raise MarketError(f"{path} frontmatter must include name and description")
     unexpected = sorted(set(data) - ALLOWED_FRONTMATTER_KEYS)

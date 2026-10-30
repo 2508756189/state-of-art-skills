@@ -1,10 +1,13 @@
 ---
 name: diagnosing-bugs
-description: Diagnosis loop for hard bugs and performance regressions. Use when the user says "diagnose"/"debug this", or reports something broken/throwing/failing/slow.
+description: |
+  Use for a hard-to-isolate code defect or performance regression that needs a reproducible signal, hypothesis testing, bisection, or instrumentation. Also applies when the user asks for systematic root-cause diagnosis. Routine fixes with an established cause and a local edit do not require this full diagnostic loop; preserve project-specific production safeguards.
 license: MIT
 ---
 
 # Diagnosing Bugs
+
+> **触发门禁：** 用于需要复现、假设验证、二分或观测的难定位代码缺陷与性能回归；已明确原因的小修复按原任务直接处理，生产操作沿用项目保护规则。
 
 ## Source And Curation
 

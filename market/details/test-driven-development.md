@@ -1,5 +1,7 @@
 # Test-Driven Development (TDD)
 
+> **适用与保全门禁：** 仅用于用户选择或项目既有的 TDD；正文中的 Delete code / Start over 只提示复查本轮新代码，优先保留或暂存，不得自动删除既有实现或无关改动。
+
 ## Overview
 
 Write the test first. Watch it fail. Write minimal code to pass.
@@ -10,34 +12,29 @@ Write the test first. Watch it fail. Write minimal code to pass.
 
 ## When to Use
 
-**Always:**
-- New features
-- Bug fixes
-- Refactoring
-- Behavior changes
+**Use when (opt-in / greenfield):**
+- The user explicitly asks for TDD / test-first / red-green-refactor
+- The project already practices TDD (existing failing-test-first conventions, CI gates, or the user confirms)
+- New greenfield modules/features where the user opts into TDD for that work
 
-**Exceptions (ask your human partner):**
-- Throwaway prototypes
-- Generated code
-- Configuration files
+**Do not force on ordinary maintenance:**
+- Routine bugfixes, refactors, or small edits in a non-TDD codebase
+- Existing production code that already works — protect it; do not delete it to "start over"
+- Generated code, config files, throwaway prototypes (ask if unsure)
 
-Thinking "skip TDD just this once"? Stop. That's rationalization.
+If the user did not ask for TDD and the repo is not already TDD-oriented, prefer incremental tests alongside the change rather than a full rewrite.
 
-## The Iron Law
+## The Iron Law (when TDD is in effect)
 
 ```
-NO PRODUCTION CODE WITHOUT A FAILING TEST FIRST
+NO NEW PRODUCTION CODE WITHOUT A FAILING TEST FIRST
 ```
 
-Write code before the test? Delete it. Start over.
+Applies to **new** code paths under an active TDD opt-in. For code written before tests in that same TDD session: prefer park/rename aside and re-implement from tests — **do not** delete unrelated existing implementation or force a repo-wide rewrite.
 
-**No exceptions:**
-- Don't keep it as "reference"
-- Don't "adapt" it while writing tests
-- Don't look at it
-- Delete means delete
-
-Implement fresh from tests. Period.
+**Do not:**
+- Delete existing maintained implementation on ordinary maintenance tasks
+- Treat "Delete it. Start over." as a global mandate outside user-opted TDD / greenfield
 
 ## Red-Green-Refactor
 

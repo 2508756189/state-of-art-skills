@@ -8,6 +8,30 @@ import build_market
 
 
 class BuildMarketTests(unittest.TestCase):
+    def test_registry_preserves_multiline_skill_descriptions(self):
+        for style, expected in [
+            ("|", "First line.\nSecond line.\n"),
+            ("|-", "First line.\nSecond line."),
+            ("|+", "First line.\nSecond line.\n\n"),
+            (">", "First line. Second line.\n"),
+            (">-", "First line. Second line."),
+            (">+", "First line. Second line.\n\n"),
+        ]:
+            with self.subTest(style=style), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                skill_dir = root / "skills" / "scoped-skill"
+                skill_dir.mkdir(parents=True)
+                (skill_dir / "SKILL.md").write_text(
+                    "---\nname: scoped-skill\ndescription: " + style + "\n"
+                    "  First line.\n  Second line.\n\nlicense: MIT\n---\n\n# Scoped Skill\n",
+                    encoding="utf-8",
+                )
+                registry = build_market.build_market(root, write=True)
+                self.assertEqual(registry["skills"][0]["description"], expected)
+                stored = json.loads((root / "market" / "index.json").read_text(encoding="utf-8"))
+                self.assertEqual(stored["skills"][0]["description"], expected)
+                self.assertEqual(stored["skills"][0]["license"], "MIT")
+
     def test_mcp_security_audit_detects_risks_without_leaking_values(self):
         script_path = Path(__file__).parents[1] / "skills" / "mcp-security-audit" / "scripts" / "audit_mcp_config.py"
         spec = importlib.util.spec_from_file_location("mcp_security_audit", script_path)

@@ -1,5 +1,7 @@
 # Diagnosing Bugs
 
+> **触发门禁：** 用于需要复现、假设验证、二分或观测的难定位代码缺陷与性能回归；已明确原因的小修复按原任务直接处理，生产操作沿用项目保护规则。
+
 ## Source And Curation
 
 Source: https://github.com/mattpocock/skills/tree/f3fc5632f401156837ee3872f14fe33ccf1024ea/skills/engineering/diagnosing-bugs

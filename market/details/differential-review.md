@@ -8,7 +8,7 @@ Security-focused code review for PRs, commits, and diffs.
 2. **Evidence-Based**: Every finding backed by git history, line numbers, attack scenarios
 3. **Adaptive**: Scale to codebase size (SMALL/MEDIUM/LARGE)
 4. **Honest**: Explicitly state coverage limits and confidence level
-5. **Output-Driven**: Always generate comprehensive markdown report file
+5. **Output-Driven (when this skill applies)**: Generate a comprehensive markdown report when the user asked for differential/security review; for ordinary impact/test-gap questions, answer in-thread unless they asked for a formal report file
 
 ---
 
@@ -22,7 +22,7 @@ Security-focused code review for PRs, commits, and diffs.
 | "Blast radius is obvious" | You'll miss transitive callers | Calculate quantitatively |
 | "No tests = not my problem" | Missing tests = elevated risk rating | Flag in report, elevate severity |
 | "Just a refactor, no security impact" | Refactors break invariants | Analyze as HIGH until proven LOW |
-| "I'll explain verbally" | No artifact = findings lost | Always write report |
+| "I'll explain verbally" | Findings can be lost on full security reviews | Write a report when the user asked for differential/security review; otherwise a concise in-thread answer is OK |
 
 ---
 

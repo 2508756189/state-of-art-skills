@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.2",
-  "generatedAt": "2026-10-27T15:20:25Z",
+  "generatedAt": "2026-10-30T09:44:51Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -540,7 +540,7 @@
     {
       "id": "dashmotion",
       "name": "dashmotion",
-      "description": "Create dark-themed, animated technical diagrams as self-contained HTML+SVG files — flowcharts whose connectors visibly flow, and architecture diagrams where requests travel as light dots through the system (Diagrid/Temporal landing-page style). Use this skill whenever the user asks for a flowchart, workflow, pipeline, process diagram, state machine, system architecture, infrastructure, cloud, microservices, or network topology diagram — and especially when they mention \"animated\", \"flowing\", \"dynamic\", \"alive\", \"GIF-like\", or want a diagram for a landing page, README, docs, or product demo. Also use it to convert Mermaid source (a mermaid code block or .mmd file) into an animated diagram — \"animate this mermaid\", \"make this flowchart move\". Prefer this over static diagram output whenever the diagram represents anything that moves: requests, events, data, jobs, messages, or control flow.",
+      "description": "Create dark-themed animated/interactive technical diagrams as self-contained HTML+SVG (flowing connectors, traveling dots).\nUse only when the user wants animated/interactive HTML diagrams, or explicitly asks to animate a flowchart/architecture/Mermaid into motion.\nIf the user asks for Mermaid source, static SVG/PNG, or a plain image diagram, respect that and do not override with dashmotion animation.\n",
       "category": "design",
       "tags": [
         "diagram",
@@ -557,7 +557,7 @@
         "claude": "~/.claude/skills/dashmotion",
         "portable": "~/.agents/skills/dashmotion"
       },
-      "version": "2.2.4",
+      "version": "2.2.5",
       "license": "MIT",
       "source": "https://github.com/csthink/dashmotion/tree/ae2fe4f28c60caa53da8b15fa3537f4ea576f4ad",
       "riskLevel": "medium",
@@ -586,13 +586,13 @@
       },
       "archive": {
         "path": "dist/skills/dashmotion.zip",
-        "sha256": "c52c8a08fe67ca83f6c44ec3c4192e1664dede5b0bd66a30e124efc2dd390494",
-        "size": 55112
+        "sha256": "b268a913541a863b59f8a2989ead30da3c3f516626293881bc375b48840dbcf6",
+        "size": 55363
       },
       "teleagentArchive": {
         "path": "dist/teleagent/dashmotion.zip",
-        "sha256": "fa3e2c05ef1a2952569492398b2144d7203116a82edd1e42af6a0374c6e6dd66",
-        "size": 54870
+        "sha256": "5ea13e9fe6319a5a85894313e3de2bfd39456530a6df379486b2aa3eb57eb3bf",
+        "size": 55099
       }
     },
     {
@@ -713,7 +713,7 @@
     {
       "id": "diagnosing-bugs",
       "name": "diagnosing-bugs",
-      "description": "Diagnosis loop for hard bugs and performance regressions. Use when the user says \"diagnose\"/\"debug this\", or reports something broken/throwing/failing/slow.",
+      "description": "Use for a hard-to-isolate code defect or performance regression that needs a reproducible signal, hypothesis testing, bisection, or instrumentation. Also applies when the user asks for systematic root-cause diagnosis. Routine fixes with an established cause and a local edit do not require this full diagnostic loop; preserve project-specific production safeguards.\n",
       "category": "engineering",
       "tags": [
         "debugging",
@@ -729,7 +729,7 @@
         "claude": "~/.claude/skills/diagnosing-bugs",
         "portable": "~/.agents/skills/diagnosing-bugs"
       },
-      "version": "0.1.3",
+      "version": "0.1.4",
       "license": "MIT",
       "source": "https://github.com/mattpocock/skills/tree/f3fc5632f401156837ee3872f14fe33ccf1024ea/skills/engineering/diagnosing-bugs",
       "riskLevel": "medium",
@@ -759,19 +759,19 @@
       },
       "archive": {
         "path": "dist/skills/diagnosing-bugs.zip",
-        "sha256": "bb55b34e8529acec1f21590cd7e512516ff4e3ea4945edbfde388ed68114b166",
-        "size": 6257
+        "sha256": "e753d769753df74ed8212dd5d7294231f8447cfdc911a45f48008baad04a6ec4",
+        "size": 7117
       },
       "teleagentArchive": {
         "path": "dist/teleagent/diagnosing-bugs.zip",
-        "sha256": "390112b91d0500273afa9174755b2c16048c54c6e0084337e31f68377921d2ca",
-        "size": 6129
+        "sha256": "814775bcec4836098b5bfd2fd21b2e2f20e017e52a494ead621544ab98bff042",
+        "size": 6957
       }
     },
     {
       "id": "differential-review",
       "name": "differential-review",
-      "description": "Performs security-focused differential review of code changes. Adapts analysis depth to codebase size, uses git blame for context, calculates blast radius by counting callers, checks test coverage of modified code, and generates a markdown report. Use when reviewing a PR, commit, or diff for security vulnerabilities, checking whether a change re-introduces a previously fixed bug, asking what else a change could break, or finding which modified code has no test covering it.",
+      "description": "Security-focused differential review of a PR/commit/diff: blast radius, regression risk, test coverage of modified code, markdown security report.\nUse when the user explicitly asks for differential review, security review of a change, or whether a fix re-introduces a past bug.\nDo NOT expand ordinary impact-analysis or test-gap questions into a full mandatory security report unless they asked for differential/security review.\n",
       "category": "engineering",
       "tags": [
         "security",
@@ -786,7 +786,7 @@
         "claude": "~/.claude/skills/differential-review",
         "portable": "~/.agents/skills/differential-review"
       },
-      "version": "0.1.1",
+      "version": "0.1.2",
       "license": "CC-BY-SA-4.0",
       "source": "https://github.com/trailofbits/skills/tree/14e5a1070020c5d101e8362756f3201fb677b467/plugins/differential-review/skills/differential-review",
       "riskLevel": "medium",
@@ -817,13 +817,13 @@
       },
       "archive": {
         "path": "dist/skills/differential-review.zip",
-        "sha256": "8cdac234a1b313c70fdf31357b46401077f609a083c29708e7d6a9ce7d887f25",
-        "size": 23061
+        "sha256": "72361c2fc7b998382d8eaf3392e61d22f2c269798231ed180629581274327a0e",
+        "size": 23592
       },
       "teleagentArchive": {
         "path": "dist/teleagent/differential-review.zip",
-        "sha256": "b92dda4026300ffc40986979de34a1dd6d24c4bc79b6f7d164718ca0aeab3cc5",
-        "size": 22741
+        "sha256": "749a22e59c2deecc085a7aa23398e5e621c33e5d0d9cf0dc9fe2470f5911d161",
+        "size": 23232
       }
     },
     {
@@ -1622,7 +1622,7 @@
     {
       "id": "taste-skill",
       "name": "design-taste-frontend",
-      "description": "Anti-slop frontend skill for landing pages, portfolios, and redesigns. The agent reads the brief, infers the right design direction, and ships interfaces that do not look templated. Real design systems when applicable, audit-first on redesigns, strict pre-flight check.",
+      "description": "Anti-slop frontend skill for landing pages, portfolios, and redesigns. Infer design direction from the brief; prefer existing real/brand assets when available; do not MUST-generate images merely because an image-gen tool exists.\nAudit-first on redesigns; strict pre-flight check. Not for dashboards/data tables/multi-step product UI.\n",
       "category": "design",
       "tags": [
         "taste",
@@ -1639,7 +1639,7 @@
         "claude": "~/.claude/skills/taste-skill",
         "portable": "~/.agents/skills/taste-skill"
       },
-      "version": "1.0.0",
+      "version": "1.0.1",
       "license": "MIT",
       "source": "https://github.com/leonxlnx/taste-skill/tree/e988add20dab0fa97d7a76781c48961c8184288e/skills/taste-skill",
       "riskLevel": "medium",
@@ -1671,19 +1671,19 @@
       },
       "archive": {
         "path": "dist/skills/taste-skill.zip",
-        "sha256": "9fd4cdd50f7714f9008f86e84d0fc35d2a62bc0bd5a16fc39b9fdf2c05164303",
-        "size": 35697
+        "sha256": "63a4cff9aaf3c3d03696d71c179c5943a32b585abab9ee3af79a2270917f6ca9",
+        "size": 36274
       },
       "teleagentArchive": {
         "path": "dist/teleagent/taste-skill.zip",
-        "sha256": "29a0cd03520dfa6de6e7ef44c72829df4275c2f9c9d97f5d729810192b73d5ee",
-        "size": 35649
+        "sha256": "fa9a871ba57600f286c1859691a74383a46b2ca23325f0ffa68c9c2eb7c7744b",
+        "size": 36202
       }
     },
     {
       "id": "test-driven-development",
       "name": "test-driven-development",
-      "description": "Use when implementing any feature or bugfix, before writing implementation code",
+      "description": "Use only when the user explicitly asks for TDD / test-first / red-green-refactor, or the project already follows TDD.\nDo not auto-trigger on every feature/bugfix. On ordinary maintenance, protect existing code — do not force \"delete it and start over.\"\nWithin opted-in TDD, any restart applies only to new code written for that TDD task; preserve pre-existing implementation and unrelated work.\n",
       "category": "engineering",
       "tags": [
         "tdd",
@@ -1698,14 +1698,14 @@
         "claude": "~/.claude/skills/test-driven-development",
         "portable": "~/.agents/skills/test-driven-development"
       },
-      "version": "7.0.0",
+      "version": "7.0.1",
       "license": "MIT",
       "source": "https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/test-driven-development",
       "riskLevel": "low",
       "path": "skills/test-driven-development",
       "detail": {
         "displayName": "测试驱动开发（Superpowers）",
-        "summary": "强制红-绿-重构的 TDD 循环：先写失败测试、看它失败、再写最小实现，防止 agent 跳过测试直接写代码。",
+        "summary": "按用户选择或项目既有约定执行红-绿-重构；保护既有实现和无关改动。",
         "useCases": [
           "新功能实现",
           "缺陷修复",
@@ -1717,6 +1717,7 @@
           "测试质量指导"
         ],
         "requirements": [
+          "用户明确选择 TDD，或项目已有 TDD 约定",
           "项目具备可运行的测试框架"
         ],
         "permissions": [
@@ -1727,13 +1728,13 @@
       },
       "archive": {
         "path": "dist/skills/test-driven-development.zip",
-        "sha256": "1e54fa0c6e561a8681536eafdc66014b23bbe28c03ccd318a9461cc22233a61f",
-        "size": 8810
+        "sha256": "769c5b54b851ac71f518d76c4ab005e059370485d4ef287b1bfbc88a6f0297ee",
+        "size": 9987
       },
       "teleagentArchive": {
         "path": "dist/teleagent/test-driven-development.zip",
-        "sha256": "4736371bdfac3e93195a2f5a997a69eea3ae4f700c465b1fe9d42dd621659c7b",
-        "size": 8666
+        "sha256": "eb9c5744e7ca20ac20323879dd39a711b309819f6f23cdacb67335f7be9bfc51",
+        "size": 9795
       }
     },
     {
