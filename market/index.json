@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.2",
-  "generatedAt": "2026-10-30T09:44:51Z",
+  "generatedAt": "2026-11-02T09:09:47Z",
   "repository": "https://github.com/2508756189/state-of-art-skills",
   "categories": [
     {
@@ -653,6 +653,65 @@
       }
     },
     {
+      "id": "deliver-edge-cases",
+      "name": "deliver-edge-cases",
+      "description": "Documents edge cases, error states, boundary conditions, race conditions, and recovery paths for a feature - the systematic catalog of what can go wrong and the failure modes to design for. Use during specification to map the failure surface and ensure comprehensive coverage, or during QA planning to identify boundary and limit scenarios to test. Distinct from deliver-acceptance-criteria, which writes story-level Given/When/Then checks; this skill produces the whole-feature edge-case catalog.",
+      "category": "product",
+      "tags": [
+        "edge-cases",
+        "failure-modes",
+        "recovery",
+        "qa"
+      ],
+      "runtime": [
+        "portable"
+      ],
+      "installTargets": {
+        "codex": "~/.codex/skills/deliver-edge-cases",
+        "claude": "~/.claude/skills/deliver-edge-cases",
+        "portable": "~/.agents/skills/deliver-edge-cases"
+      },
+      "version": "2.1.1",
+      "license": "Apache-2.0",
+      "source": "https://github.com/product-on-purpose/pm-skills/tree/e843dfc98f161d0d48f3b3810439f397c9648ceb/skills/deliver-edge-cases",
+      "riskLevel": "medium",
+      "path": "skills/deliver-edge-cases",
+      "detail": {
+        "displayName": "功能边界与异常场景",
+        "summary": "系统梳理整项功能的输入边界、失败状态、并发与恢复路径，并区分需求事实和待确认决策。",
+        "useCases": [
+          "功能规格补齐",
+          "QA 测试场景准备",
+          "故障与恢复行为评审"
+        ],
+        "capabilities": [
+          "失败面分析",
+          "边界条件",
+          "错误消息与恢复路径",
+          "按影响排序"
+        ],
+        "requirements": [
+          "已定义的功能范围",
+          "可核对的项目约束与策略"
+        ],
+        "permissions": [
+          "读取需求材料",
+          "写入边界场景文档"
+        ],
+        "markdownPath": "details/deliver-edge-cases.md"
+      },
+      "archive": {
+        "path": "dist/skills/deliver-edge-cases.zip",
+        "sha256": "516946ec8db8e9e0a3ad09104f1891775706ca0da56b08b2a93924a6955560c5",
+        "size": 14763
+      },
+      "teleagentArchive": {
+        "path": "dist/teleagent/deliver-edge-cases.zip",
+        "sha256": "e9eb543a3f83acd9dbb4e876b28d9ecd83569d4ebd1ac2d3359d0d4eea9c918c",
+        "size": 14459
+      }
+    },
+    {
       "id": "deliver-prd",
       "name": "deliver-prd",
       "description": "Creates a comprehensive Product Requirements Document that aligns stakeholders on what to build, why, and how success will be measured. Use when specifying features, epics, or product initiatives for engineering handoff.",
@@ -701,13 +760,13 @@
       },
       "archive": {
         "path": "dist/skills/deliver-prd.zip",
-        "sha256": "4d6254114ce22f110a56552c312c5273c95d1a957ebd3cdbac3697c7d14faf7b",
-        "size": 25654
+        "sha256": "91d885d339b47756ac237b60b1ae7f03930c4c2936418c50120dc1b15623f298",
+        "size": 26140
       },
       "teleagentArchive": {
         "path": "dist/teleagent/deliver-prd.zip",
-        "sha256": "6457b741b285ea8bca0bff3dcfe37e6262ff95a30859ffeeb7139ef6f4d3811f",
-        "size": 25510
+        "sha256": "a3446a71f883efc6256878510b082295c127303b3730137aae28f52515a0cddc",
+        "size": 25996
       }
     },
     {
@@ -1299,7 +1358,7 @@
         "claude": "~/.claude/skills/mcp-security-audit",
         "portable": "~/.agents/skills/mcp-security-audit"
       },
-      "version": "0.1.1",
+      "version": "0.1.2",
       "license": "MIT",
       "source": "https://github.com/github/awesome-copilot/tree/e95bd8c4ba65454121f86a7ad0d3ed17ab0bcf37/skills/mcp-security-audit",
       "riskLevel": "medium",
@@ -1328,13 +1387,13 @@
       },
       "archive": {
         "path": "dist/skills/mcp-security-audit.zip",
-        "sha256": "c3f908ab892c459bb5beee642a596515b8bfe2e82049638a8eed2878fe26d3d6",
-        "size": 7523
+        "sha256": "fe7301789fdcce8835f4544bf1058f2b26e4f93edc47d1d12c88a3ed74e165ef",
+        "size": 8123
       },
       "teleagentArchive": {
         "path": "dist/teleagent/mcp-security-audit.zip",
-        "sha256": "40c0dd8e8175d53853f6575c74d69dfac8cdf96b3c70a76ebb0a49429f6bcaea",
-        "size": 7409
+        "sha256": "b246183ca8e4135d4907c68341f0b46d7b2ce27d1eeaae21fdafa19cb52af977",
+        "size": 8009
       }
     },
     {

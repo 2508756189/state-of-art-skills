@@ -213,7 +213,7 @@
       "category": "engineering",
       "tags": ["mcp", "security", "supply-chain", "governance"],
       "runtime": ["portable"],
-      "version": "0.1.1",
+      "version": "0.1.2",
       "license": "MIT",
       "riskLevel": "medium",
       "source": "https://github.com/github/awesome-copilot/tree/e95bd8c4ba65454121f86a7ad0d3ed17ab0bcf37/skills/mcp-security-audit",
@@ -577,6 +577,23 @@
         "capabilities": ["主路径与异常场景", "错误恢复行为", "非功能验收条件"],
         "requirements": ["已定义的用户故事或功能切片"],
         "permissions": ["读取需求与故事材料", "写入验收标准文档"]
+      }
+    },
+    "deliver-edge-cases": {
+      "category": "product",
+      "tags": ["edge-cases", "failure-modes", "recovery", "qa"],
+      "runtime": ["portable"],
+      "version": "2.1.1",
+      "license": "Apache-2.0",
+      "riskLevel": "medium",
+      "source": "https://github.com/product-on-purpose/pm-skills/tree/e843dfc98f161d0d48f3b3810439f397c9648ceb/skills/deliver-edge-cases",
+      "detail": {
+        "displayName": "功能边界与异常场景",
+        "summary": "系统梳理整项功能的输入边界、失败状态、并发与恢复路径，并区分需求事实和待确认决策。",
+        "useCases": ["功能规格补齐", "QA 测试场景准备", "故障与恢复行为评审"],
+        "capabilities": ["失败面分析", "边界条件", "错误消息与恢复路径", "按影响排序"],
+        "requirements": ["已定义的功能范围", "可核对的项目约束与策略"],
+        "permissions": ["读取需求材料", "写入边界场景文档"]
       }
     }
   }

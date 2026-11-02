@@ -28,6 +28,10 @@ SHELL_FLAGS = {"-c", "/c", "-command", "-encodedcommand", "-enc"}
 NPM_LAUNCHERS = {"npx", "npx.cmd", "bunx", "bunx.cmd"}
 DLX_LAUNCHERS = {"pnpm", "pnpm.cmd", "yarn", "yarn.cmd", "bun", "bun.cmd"}
 UV_LAUNCHERS = {"uvx", "uvx.exe"}
+PYTHON_EXACT_SPEC = re.compile(
+    r"^[A-Za-z0-9][A-Za-z0-9._-]*(?:\[[^\]]+\])?\s*(?:==|===)\s*"
+    r"(?![^\s]*\*)[A-Za-z0-9][A-Za-z0-9.!+_-]*$"
+)
 EXACT_SEMVER = re.compile(r"^v?\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$")
 MUTABLE_TAG = re.compile(r"^[A-Za-z][A-Za-z0-9._-]*$")
 LOCAL_HOSTS = {"127.0.0.1", "::1", "localhost"}
@@ -162,6 +166,7 @@ def package_targets(command: str, args: list[str]) -> tuple[list[str] | None, st
     """
     base = command_basename(command)
     lowered = [value.lower() for value in args]
+    python_spec_flags: set[str] = set()
     if base in {"npm", "npm.cmd"}:
         if not lowered or lowered[0] not in {"exec", "x"}:
             return None, ""
@@ -174,10 +179,17 @@ def package_targets(command: str, args: list[str]) -> tuple[list[str] | None, st
         if not lowered or lowered[0] != "run":
             return None, ""
         mode, rest = "pipx-run", args[1:]
+        python_spec_flags = {"--spec"}
     elif base in NPM_LAUNCHERS:
         mode, rest = "npm-launcher", args
     elif base in UV_LAUNCHERS:
         mode, rest = "uvx", args
+        python_spec_flags = {"--from"}
+    elif base in {"uv", "uv.exe"}:
+        if lowered[:2] != ["tool", "run"]:
+            return None, ""
+        mode, rest = "uv-tool-run", args[2:]
+        python_spec_flags = {"--from"}
     else:
         return None, ""
 
@@ -185,11 +197,19 @@ def package_targets(command: str, args: list[str]) -> tuple[list[str] | None, st
     index = 0
     while index < len(rest):
         value = rest[index]
-        if value in {"-p", "--package", "--from"}:
+        if value in python_spec_flags or (not python_spec_flags and value in {"-p", "--package", "--from"}):
             index += 1
             if index >= len(rest) or not rest[index] or rest[index].startswith("-"):
                 return None, mode
             selectors.append(rest[index])
+            if python_spec_flags:
+                break
+        elif python_spec_flags and any(value.startswith(flag + "=") for flag in python_spec_flags):
+            selector = value.split("=", 1)[1]
+            if not selector:
+                return None, mode
+            selectors.append(selector)
+            break
         elif value.startswith(("--package=", "--from=")):
             selector = value.split("=", 1)[1]
             if not selector:
@@ -219,6 +239,19 @@ def package_findings(server: str, config: dict[str, Any]) -> list[dict[str, str]
         return [finding("info", "package-selector-unclear", server, f"$.mcp_servers.{server}.args", "Package runner selector could not be classified statically.", "Review the launcher and selector as text; do not execute the configured command.")]
     results: list[dict[str, str]] = []
     for target in targets:
+        if mode in {"pipx-run", "uvx", "uv-tool-run"}:
+            if target.startswith((".", "/", "\\", "~", "git+", "http://", "https://", "file:")) or " @ " in target:
+                results.append(finding("info", "package-selector-unclear", server, f"$.mcp_servers.{server}.args", "Python package selector uses a URL, VCS, or local path that cannot be verified statically.", "Review the source immutability and package provenance manually; do not execute it."))
+                continue
+            if PYTHON_EXACT_SPEC.fullmatch(target):
+                continue
+            requirement = re.match(r"^([A-Za-z0-9][A-Za-z0-9._-]*(?:\[[^\]]+\])?)\s*(?:===|==|~=|!=|<=|>=|<|>)", target)
+            package = requirement.group(1) if requirement else target
+            if requirement:
+                results.append(finding("low", "non-exact-package", server, f"$.mcp_servers.{server}.args", f"Package reference '{target}' is not an exact version.", f"Pin {package} to the exact version that was actually reviewed."))
+            else:
+                results.append(finding("medium", "mutable-package", server, f"$.mcp_servers.{server}.args", f"Package reference '{target}' can resolve to different code later.", f"Pin {package} to the exact version that was actually reviewed."))
+            continue
         if target.startswith((".", "/", "\\", "git+", "http://", "https://")):
             continue
         package, version = split_package_spec(target)

@@ -12,6 +12,8 @@ Use this skill for a read-only security review of MCP configuration before a ser
 
 Inspired by GitHub's `github/awesome-copilot` skill `skills/mcp-security-audit`. `e95bd8c4ba65454121f86a7ad0d3ed17ab0bcf37` was the original baseline; the mutable-package-reference semantics reviewed against upstream `727ff2edbeba95fac8a7a7be4ff34f72fd605012` are reimplemented here. Both are MIT licensed.
 
+The upstream follow-up at `github/awesome-copilot@61fa1fa8fcc63d6dbd2f07a75aeb8e214df5acfb` adds Python package-runner guidance for `uv tool run` and `pipx --spec`. The local read-only scanner now classifies exact Python pins, ranges, mutable names, and URL/VCS/path sources while retaining manual review for selectors it cannot safely parse.
+
 The market adaptation replaces illustrative snippets with one deterministic Python script, adds Codex TOML and Windows launcher handling, implements optional approved-server checks, redacts evidence, and documents limits. It does not copy or execute an MCP server.
 
 ## Workflow
@@ -39,7 +41,7 @@ python scripts\audit_mcp_config.py .mcp.json --approved filesystem --approved gi
 
 - Hardcoded secrets, bearer tokens, private keys, and credentials embedded in URLs.
 - Shell launchers such as `cmd /c`, PowerShell `-Command`, or `sh -c`.
-- Package selectors that can resolve to different code later, across `npx`, `bunx`, `npm exec`, `pnpm`/`yarn`/`bun` `dlx`/`x`, `uvx`, and `pipx run`. Bare names, `@latest`, dist-tags, and ranges are flagged; only an exact version is treated as pinned. Unclassified launcher flags are reported for manual review rather than passed as clean.
+- Package selectors that can resolve to different code later, across `npx`, `bunx`, `npm exec`, `pnpm`/`yarn`/`bun` `dlx`/`x`, `uvx`, `uv tool run`, and `pipx run`. Bare names, `@latest`, dist-tags, and version ranges are flagged; Python URL, VCS, and local-path sources are sent to manual review. Unclassified launcher flags are reported for manual review rather than passed as clean.
 - Plain HTTP remote endpoints except loopback hosts.
 - Servers missing from an explicitly supplied approved-name list.
 - External hosts and environment variables that must exist at runtime.

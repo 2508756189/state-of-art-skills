@@ -8,6 +8,17 @@ import build_market
 
 
 class BuildMarketTests(unittest.TestCase):
+    def test_deliver_edge_cases_keeps_feature_scope_and_policy_guards(self):
+        package = Path(__file__).parents[1] / "skills" / "deliver-edge-cases"
+        skill = (package / "SKILL.md").read_text(encoding="utf-8")
+        fixtures = json.loads((package / "evals" / "trigger-fixtures.json").read_text(encoding="utf-8"))
+
+        self.assertIn("Do not assume fail-open behavior", skill)
+        self.assertIn("deliver-acceptance-criteria", skill)
+        self.assertEqual(fixtures["skill"], "deliver-edge-cases")
+        self.assertTrue(any(item.get("expect") == "no-trigger" and item.get("near_miss_of") == "deliver-acceptance-criteria" for item in fixtures["queries"]))
+        self.assertEqual(list((package / "scripts").glob("*")) if (package / "scripts").exists() else [], [])
+
     def test_registry_preserves_multiline_skill_descriptions(self):
         for style, expected in [
             ("|", "First line.\nSecond line.\n"),
@@ -65,6 +76,18 @@ class BuildMarketTests(unittest.TestCase):
         self.assertIn("insecure-remote-url", codes)
         self.assertIn("unapproved-server", codes)
         self.assertNotIn("production-password-value", rendered)
+
+        python_runner_cases = [
+            ({"command": "uv", "args": ["tool", "run", "--from", "mcp-server==1.2.3", "mcp-server"]}, set()),
+            ({"command": "uvx", "args": ["mcp-server==1.2.3"]}, set()),
+            ({"command": "pipx", "args": ["run", "--spec", "mcp-server>=1.2", "mcp-server"]}, {"non-exact-package"}),
+            ({"command": "pipx", "args": ["run", "mcp-server"]}, {"mutable-package"}),
+            ({"command": "uvx", "args": ["git+https://example.invalid/mcp-server.git@v1"]}, {"package-selector-unclear"}),
+        ]
+        for server_config, expected in python_runner_cases:
+            with self.subTest(server_config=server_config):
+                findings = module.package_findings("python", server_config)
+                self.assertEqual({item["code"] for item in findings}, expected)
 
         with tempfile.TemporaryDirectory() as tmp:
             bom_json = Path(tmp) / "mcp_config.json"
